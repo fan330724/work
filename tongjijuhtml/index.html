@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link rel="stylesheet" href="./css/normalize.css">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html {
+				font-size: 100px;
+				height: 100%;
+			}
+
+			body {
+				/* width: 100vw; */
+				/* height: 100%; */
+				font-size: 16px;
+				background: url("image/index.png") no-repeat;
+				background-size: 100% 100%;
+				background-attachment: fixed;
+			}
+
+			.main {
+				height: 50%;
+				position: fixed;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				margin: auto;
+				padding: 10px 20px 0;
+			}
+
+			.top {
+				background: red;
+				border-radius: 10px;
+				text-align: center;
+				color: #F7FFFF;
+				font-size: .35rem;
+				height: 40px;
+				width: 6rem;
+				margin: 0 auto;
+				line-height: 40px;
+				letter-spacing: 2px;
+				margin-top: 22px;
+			}
+
+			.center {
+				width: 6.3rem;
+				height: 4rem;
+				border: 2px solid #E60012;
+				border-radius: 5px;
+				padding: 10px;
+				font-size: .3rem;
+				line-height: .5rem;
+				color: #C4002A;
+				text-indent: 2em;
+				font-weight: bold;
+				letter-spacing: 1px;
+				margin: 20px auto;
+				overflow-y: auto;
+			}
+
+			.center::-webkit-scrollbar {
+				background-color: transparent;
+			}
+
+			.center::-webkit-scrollbar-thumb {
+				border-radius: 10px;
+				-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+				background-color: red;
+			}
+
+			.footer {
+				text-align: center;
+			}
+
+			.footer a {
+				display: inline-block;
+				width: 2.5rem;
+				height: 50px;
+				text-decoration: none;
+				background: url(./image/btn-bj.png) no-repeat;
+				background-size: 100% 100%;
+				text-align: center;
+				color: white;
+				letter-spacing: 2px;
+				font-size: .32rem;
+				line-height: 50px;
+				margin-right: 10px;
+			}
+
+			.footer button {
+				width: 2.5rem;
+				height: 50px;
+				background: url(./image/btn-bj1.png) no-repeat;
+				background-size: 100% 100%;
+				border: none;
+				text-align: center;
+				color: white;
+				letter-spacing: 2px;
+				font-size: .32rem;
+				line-height: 50px;
+			}
+
+			.ranking {
+				position: fixed;
+				right: 0;
+				top: 50px;
+				background: red;
+				border-top-left-radius: 10px;
+				border-bottom-left-radius: 10px;
+				text-align: center;
+				width: 60px;
+				height: 28px;
+				font-size: 14px;
+				color: white;
+				line-height: 28px;
+			}
+
+			ul li {
+				text-indent: 2em;
+				list-style: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="content">
+			<div class="ranking" onclick="ranking()">排行榜</div>
+			<div class="main">
+				<div class="top">
+					全省统计法律法规知识竞赛
+				</div>
+				<div class="center">
+					<ul>
+						<li>
+							《山西省统计条例》经山西省第十三届人大常委会第25次会议通过，自2021年6月1日起施行。为宣传好、使用好《山西省统计条例》，省统计局决定面向社会开展统计法律法规知识竞赛活动。竞赛于6月6日开赛，至6月15日结束。省统计局诚邀社会各界人士和统计系统干部职工扫码关注“山西省统计局”微信公众号，积极参赛！！
+						</li>
+						<li>
+							知识竞赛设置“优秀组织奖”“个人优胜奖”奖项。省统计局将按照各市统计局组织参与竞赛答题情况，评选出优秀组织奖3名，颁发“优秀组织奖”奖杯和荣誉证书；将按个人累计积分排名，分专业、业余组前200名发放电子荣誉证书，给予奖励。获奖名单将分别在山西省统计局网站、“山西省统计局”微信公众号上公布。
+						</li>
+						<li>通过学习统计法律，参与知识竞赛活动，提升全省统计系统干部职工依法统计能力，提高全社会的统计法律意识，以实际行动喜迎中国共产党建党100周年！
+						</li>
+					</ul>
+				</div>
+				<div class="footer">
+					<a href="./rule.html">活动规则</a>
+					<button>开始答题</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="./js/adjust.js"></script>
+		<script>
+			function ranking() {
+				window.location.href = "ranking.html"
+			}
+		</script>
+	</body>
+
+</html>

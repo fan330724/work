@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link rel="stylesheet" href="./css/normalize.css">
+		<link rel="stylesheet" href="./css/subject.css">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html {
+				font-size: 100px;
+				height: 100%;
+			}
+
+			body {
+				/* width: 100vw; */
+				/* height: 12.34rem; */
+				background: url("image/bj.png") no-repeat;
+				background-size: 100% 100%;
+				font-size: 16px;
+			}
+
+			ul li {
+				list-style: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="content">
+				<div class="top">
+					第<span class="questioned"></span>题/共<span class="question_sum"></span>题
+				</div>
+				<div class="main">
+					<!--试题区域-->
+					<ul class="list-unstyled question" id="" name="">
+						<li class="question_title"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="time">
+				<img class="" src="./image/time.png"></img>
+				<span class="date"></span>
+			</div>
+			<div class="tishi"></div>
+			<div class="end"></div>
+			<div class="button" onclick="submit()"></div>
+		</div>
+
+		<div class="pop">
+			<div class="alert-mask"></div>
+			<div class="modalDlg">
+				<div class="title">提示</div>
+				<div class="center">
+					竞赛期间，参赛人员可参与三次答题，最终成绩以最高得分为准。
+				</div>
+				<div class="footer">
+					<button type="button" onclick="onCancel()">取消</button>
+					<button type="button" onclick="onConfirm()">确认</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="./js/adjust.js"></script>
+		<script src="./js/jquery-1.12.3.min.js"></script>
+		<script src="./js/Questions.js"></script>
+		<script src="./js/subject.js"></script>
+	</body>
+
+</html>

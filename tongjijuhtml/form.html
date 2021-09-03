@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/picker.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 100px;
+      height: 100%;
+    }
+
+    body {
+      /* width: 100vw; */
+      background: url("image/bj.png") no-repeat;
+      background-size: 100% 100%;
+      font-size: 16px;
+    }
+
+    .submit {
+      display: block;
+      text-decoration: none;
+      width: 2rem;
+      height: .8rem;
+      background: #C4002A;
+      border-radius: 30px;
+      text-align: center;
+      line-height: .8rem;
+      font-size: .4rem;
+      color: white;
+      letter-spacing: 8px;
+      border: none;
+      position: fixed;
+      bottom: .9rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .content {
+      width: 6rem;
+      height: 9.5rem;
+      background: url("image/con-bj.png") no-repeat;
+      background-size: 100% 100%;
+      margin: 0 auto;
+      padding: .3rem .42rem;
+      margin-top: 1rem;
+    }
+
+    h4 {
+      color: #C4002A;
+      font-size: 0.4rem;
+      text-align: center;
+      letter-spacing: 5px;
+      margin: .1rem 0 .3rem;
+    }
+
+    p {
+      color: #000000;
+      font-size: .3rem;
+      line-height: .53rem;
+      letter-spacing: 2px;
+      margin-top: .24rem;
+      display: flex;
+      align-items: center;
+    }
+
+    p:nth-of-type(1) {
+      margin-top: 0;
+    }
+
+    p span {
+      text-align: right;
+      display: inline-block;
+      width: 1.6rem;
+      margin-right: 6px;
+    }
+
+    select {
+      width: 4.1rem !important;
+      padding-left: 6px !important;
+    }
+
+    .bg {
+      background: url(./image/input-bj.png) no-repeat;
+      background-size: 100% 100%;
+      border: none;
+      padding-left: 10px;
+      width: 3.9rem;
+      height: .6rem;
+      font-size: .3rem;
+    }
+
+    .bg::placeholder {
+      color: #000000;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <h4>报名信息</h4>
+    <form role="form" action="" method="POST" onsubmit="return check()">
+      <p>
+        <span>昵称:</span>
+        <input type="text" placeholder="[必填]请输入昵称" name="nickName" id="nickName" class="bg">
+      </p>
+      <p>
+        <span>身份:</span>
+        <select name="sex" id="sex" class="bg">
+          <option value="">[必填]请选择身份</option>
+          <option value="0">统计系统</option>
+          <option value="1">其它</option>
+        </select>
+      </p>
+      <p>
+        <span>手机号码:</span>
+        <input type="number" placeholder="[必填]请输入手机号码" name="phone" id="phone" class="bg">
+      </p>
+      <p>
+        <span>所在地:</span>
+        <input type="text" placeholder="[必填]省 地市" name="city" id="city" class="bg" value="" readonly="readonly">
+      </p>
+      <input type="submit" value="提交" class="submit">
+    </form>
+  </div>
+
+  <script src="./js/adjust.js"></script>
+  <script src="./js/jquery-1.12.3.min.js"></script>
+  <script src="./js/location1.js"></script>
+  <script src="./js/Picker.js"></script>
+  <script>
+    var city = [
+      {
+        name: "太原",
+        child: ["杏花岭区", "迎泽区", "小店区", "晋源区", "尖草坪区", "万柏林区", "阳曲县", "清徐县", "娄烦县", "古交市"]
+      },
+      {
+        name: "吕梁",
+        child: ["离石区", "临县", "岚县", "兴县", "方山县", "中阳县", "柳林县", "文水县", "交城县", "交口县", "石楼县", "汾阳市", "孝义市"]
+      },
+      {
+        name: "临汾",
+        child: ["尧都区", "曲沃县", "翼城县", "襄汾县", "洪洞县", "古县", "安泽县", "浮山县", "吉县", "乡宁县", "大宁县", "隰县", "永和县", "蒲县", "汾西县", "霍州市", "侯马市"]
+      },
+      {
+        name: "忻州",
+        child: ["忻府区", "定襄县", "五台县", "代县", "繁峙县", "宁武县", "静乐县", "神池县", "五寨县", "岢岚县", "河曲县", "保德县", "偏关县", "原平市"]
+      },
+      {
+        name: "运城",
+        child: ["盐湖区", "临猗县", "万荣县", "闻喜县", "夏县", "稷山县", "新绛县", "绛县", "垣曲县", "平陆县", "芮城县", "河津市", "永济市"]
+      },
+      {
+        name: "晋中",
+        child: ["榆次区", "太谷县", "祁县", "寿阳县", "昔阳县", "平遥县", "灵石县", "左权县", "和顺县", "榆社县", "介休"]
+      },
+      {
+        name: "朔州",
+        child: ["朔城区", "平鲁区", "怀仁市", "山阴县", "右玉县", "应县"]
+      },
+      {
+        name: "晋城",
+        child: ["城区", "泽州县", "沁水县", "阳城县", "陵川县", "高平市"]
+      },
+      {
+        name: "长治",
+        child: ["城区", "郊区", "长治县", "长子县", "沁县", "沁源县", "平顺县", "武乡县", "襄垣县", "屯留县", "黎城县", "壶关县", "潞城市"]
+      },
+      {
+        name: "阳泉",
+        child: ["城区", "郊区", "矿区", "平定县", "盂县"]
+      },
+      {
+        name: "大同",
+        child: ["平城区", "云冈区", "新荣区", "云州区", "左云县", "阳高县", "浑源县", "天镇县", "广灵县", "灵丘县"]
+      },
+    ];
+    // 渲染市
+    function loadJson() {
+      $.each(city, function (entryIndex, entry) {
+        var html = `<option value="${entry.name}">${entry.name}</option>`
+        /*将区名插入*/
+        $("#city").append(html);
+      });
+    }
+    //渲染区
+    $("#city").change(() => {
+      $("#area").html(`<option value="">[必填]请选择</option>`)
+      var select = ($("#city option:selected").text());
+      $.each(city, function (entryIndex, entry) {
+        /*检测现在所选定的值*/
+        if (entry.name == select) {
+          $.each(entry.child, function (entryIndex, entry) {
+            var citys = `<option value="${entry}">${entry}</option>`
+            $("#area").append(citys)
+          })
+        }
+      });
+    })
+
+    //表单验证
+    // function check() {
+    //   var city = $("#city option:selected").text();
+    //   var area = $("#area option:selected").text();
+    //   var name = $("#name").val();
+    //   var sex = $("#sex option:selected").text()
+    //   var age = $("#age").val()
+    //   var retire = $("#retire option:selected").text()
+    //   var company = $("#company").val()
+    //   var post = $("#post").val()
+    //   var phone = $("#phone").val()
+    //   var operate = $("#operate option:selected").text()
+    //   if (city == '[必填]请选择') {
+    //     alert("请选择市级")
+    //     return false
+    //   } else if (area == "[必填]请选择") {
+    //     alert("请选择县级")
+    //     return false
+    //   } else if (name == null || name == "") {
+    //     alert("请输入姓名")
+    //     return false
+    //   } else if (sex == "[必填]请选择") {
+    //     alert("请选择性别");
+    //     return false
+    //   } else if (age == null || age == "") {
+    //     alert("请输入年龄")
+    //     return false
+    //   } else if (retire == "[必填]请选择") {
+    //     alert("请选择离(退)休")
+    //     return false
+    //   } else if (company == null || company == "") {
+    //     alert('请输入原单位');
+    //     return false
+    //   } else if (post == null || post == "") {
+    //     alert('请输入原职务');
+    //     return false
+    //   } else if (phone == null || phone == '') {
+    //     alert('请输入手机号');
+    //     return false
+    //   } else if (!(/^[1][3,4,5,6,7,8,9]\d{9}$/.test(phone))) {
+    //     alert("请输入正确的手机号")
+    //     return false
+    //   } else if (operate == "[必填]请选择") {
+    //     alert("请选择手机运营商")
+    //     return false
+    //   } else {
+    //     return true;
+    //   }
+    // }
+
+
+    function check() {
+      var name = $("#name").val();
+      var sex = $("#sex option:selected").text();
+      var nickName = $("#nickName").val();
+      var phone = $("#phone").val();
+      var city = $("#city").val();
+      if (nickName == null || nickName == '') {
+        alert("请输入昵称")
+        return false
+      } else if (sex == "[必填]请选择身份") {
+        alert("请选择身份");
+        return false
+      } else if (phone == null || phone == '') {
+        alert('请输入手机号');
+        return false
+      } else if (!(/^[1][3,4,5,6,7,8,9]\d{9}$/.test(phone))) {
+        alert("请输入正确的手机号")
+        return false
+      } else if (city == null || city == '') {
+        alert("请选择省地市")
+        return false
+      } else {
+        return true
+      }
+    }
+    //选择城市
+    $("#city").Picker({
+      
+      city: true,		//false 表示该列不显示
+      area: true,  	//false 表示该列不显示
+      pca: ['山西', '太原', '小店区'],	//默认省市区
+      pick: function (res) {
+        console.log(res);
+      } // 确定之后回调
+    })
+  </script>
+</body>
+
+</html>

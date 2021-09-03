@@ -1,0 +1,317 @@
+.content {
+	width: 6.4rem;
+	/* height: 9rem; */
+	border-radius: 10px;
+	/* border: 1px solid red; */
+	margin: 0 auto;
+	margin-top: 1rem;
+}
+
+.box {
+	width: 6.4rem;
+	/* height: 9rem; */
+	border-radius: 10px;
+	/* border: 1px solid red; */
+	margin: 0 auto;
+}
+
+.top {
+	background: red;
+	text-align: center;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	height: 1rem;
+	line-height: 1rem;
+	color: white;
+	font-size: .35rem;
+}
+
+.main {
+	background: white;
+	padding: 20px;
+}
+
+.question_title {
+	font-size: .35rem;
+	line-height: .6rem;
+	letter-spacing: 2px;
+	font-weight: bold;
+}
+
+.question_title strong {
+	font-size: .35rem;
+	line-height: .6rem;
+	letter-spacing: 2px;
+}
+
+.question_info {
+	margin: 15px 0;
+	font-size: .35rem;
+}
+
+.question_info input {
+	transform: scale(1.5);
+	margin-right: 10px;
+}
+
+.question_info label {
+	letter-spacing: 1px;
+	line-height: 20px;
+}
+
+.button {
+	width: 2.5rem;
+	height: 50px;
+	background: url(../image/btn-bj1.png) no-repeat;
+	background-size: 100% 100%;
+	text-align: center;
+	color: white;
+	letter-spacing: 2px;
+	font-size: .35rem;
+	line-height: 50px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.time {
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.time img {
+	width: .7rem;
+	height: .7rem;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.time .date {
+	font-size: .35rem;
+	font-weight: bold;
+}
+
+.tishi {
+	height: 40px;
+	text-align: center;
+	font-size: .35rem;
+	margin-top: 10px;
+	display: none;
+	background: #E60012;
+	color: white;
+	line-height: 40px;
+}
+
+.none {
+	display: block;
+}
+
+.cur {
+	background: #06BD01;
+}
+
+.end {
+	color: #FF0012;
+	text-align: center;
+	margin-top: 15px;
+	font-size: .35rem;
+	font-weight: bold;
+	display: none;
+}
+
+
+/**
+    * 单选框自定义样式
+    **/
+input[type=radio] {
+	/*去除浏览器默认样式*/
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	/*自定义样式*/
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 13px;
+	height: 13px;
+	border: 1px solid #00bfff;
+	outline: none;
+	cursor: pointer;
+	/*设置为圆形，看起来是个单选框*/
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	margin-top: -4px;
+}
+
+/**
+    * 单选框 选中之后的样式
+    **/
+input[type=radio]:after {
+	content: '';
+	position: absolute;
+	width: 7px;
+	height: 7px;
+	display: block;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	background: #00bfff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	transform: scale(0);
+	/*增加一些动画*/
+	-webkit-transition: all ease-in-out 300ms;
+	-moz-transition: all ease-in-out 300ms;
+	transition: all ease-in-out 300ms;
+}
+
+input[type=radio]:checked:after {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	transform: scale(1);
+}
+
+input[type=radio]:disabled {
+	opacity: .4;
+}
+
+input[type=checkbox] {
+	/*同样，首先去除浏览器默认样式*/
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	/*编辑我们自己的样式*/
+	position: relative;
+	width: 13px;
+	height: 13px;
+	background: transparent;
+	border: 1px solid #00BFFF;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	outline: none;
+	cursor: pointer;
+}
+
+input[type=checkbox]:after {
+	content: '√';
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: #00BFFF;
+	color: #fff;
+	text-align: center;
+	line-height: 13px;
+	/*增加动画*/
+	-webkit-transition: all ease-in-out 300ms;
+	-moz-transition: all ease-in-out 300ms;
+	transition: all ease-in-out 300ms;
+	/*利用border-radius和opacity达到填充的假象，首先隐藏此元素*/
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	opacity: 0;
+	font-size: 8px;
+}
+
+input[type=checkbox]:checked:after {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	opacity: 1;
+}
+
+input[type=checkbox]:disabled {
+	opacity: .4;
+}
+
+
+
+/* 弹出框样式 */
+.pop {
+	transition: all ease-in-out 300ms;
+	letter-spacing: 2px;
+	display: none;
+}
+
+.pop .alert-mask {
+	opacity: 0.5;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #000;
+	z-index: 9000;
+}
+
+.pop .modalDlg {
+	width: 80%;
+	height: 30%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 9999;
+	box-sizing: border-box;
+	background: url(../image/con-bj.png) no-repeat;
+	background-size: 100% 100%;
+	padding: 5px 15px;
+	border-radius: 10px;
+}
+
+.pop .title {
+	text-align: center;
+	font-size: 22px;
+	padding: 10px 0;
+	margin-bottom: 3px;
+	letter-spacing: 3px;
+	font-weight: bold;
+}
+
+.pop .center {
+	text-indent: 2em;
+	font-size: 16px;
+	line-height: 26px;
+}
+
+.pop .footer {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.pop .footer button {
+	width: 120px;
+	height: 50px;
+	border: none;
+	outline: none;
+	text-align: center;
+	color: white;
+	letter-spacing: 2px;
+	font-size: 15px;
+	line-height: 50px;
+}
+
+.pop .footer button:nth-of-type(1) {
+	background: url(../image/btn-bj.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.pop .footer button:nth-of-type(2) {
+	background: url(../image/btn-bj1.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+

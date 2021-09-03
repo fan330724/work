@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+		<html lang="en">
+			<head>
+				<meta charset="utf-8">
+				<title>原生js canvas 画海报</title>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+				<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+				<script src="./js/jquery-1.12.3.min.js"></script>
+				<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.showPoster {
+			display: block;
+			width: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			margin: auto;
+		}
+				</style>
+			</head>
+			<body>
+				<img class="showPoster" id="posterBox">
+				<script type="text/javascript">
+		// 注意 测试时如果使用本地图片，要使用服务器打开，不然可能会碰到跨域问题
+
+		let posterBox = document.getElementById("posterBox");
+		var c = document.createElement('canvas');
+		// 生成海报 原生绘制
+		function Poster() {
+			console.log("原生js canvas 开始画海报 satrt");
+			let that = this;
+			let width = 750;
+			let height = 667;
+			c.width = width;
+			c.height = height;
+			const ctx = c.getContext("2d");
+			// 画 大背景
+			let bg = new Image();
+			bg.src = './image/ron.png'; // 背景图片地址
+			bg.setAttribute("crossOrigin", "anonymous");
+			bg.onload = () => {
+				ctx.drawImage(bg, 0, 0, c.width, c.height);
+				// 画 手机号
+				ctx.font = "22px PingFangSC";
+				ctx.fillStyle = "#4a4a4a";
+				ctx.fillText("1439", (c.width / 2) - 25, (c.height / 2) - 65);
+				// 画 昵称
+				ctx.font = "28px PingFangSC";
+				ctx.fontAlain = "center";
+				ctx.fillText('姓名大萨达撒', (c.width / 2) - 28, (c.height / 2) - 10);
+			}
+			setTimeout(() => { // 延迟1s设置img地址，因为可能直接设置，canvas还没有画完，就会空白
+				posterBox.src = c.toDataURL();
+			}, 1000);
+			console.log("原生js canvas 开始画海报 end");
+		}
+		Poster()
+				</script>
+			</body>
+		</html>
