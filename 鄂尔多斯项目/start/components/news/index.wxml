@@ -1,0 +1,13 @@
+<!--components/news/index.wxml-->
+<view class="list">
+  <view class="left">
+    <slot></slot>
+  </view>
+  <view class="right">
+    <view class="top">
+      <view class="title">{{news.title}}</view>
+      <view class="date">{{news.createTime}}</view>
+    </view>
+    <view class="txt">{{news.content}}</view>
+  </view>
+</view>

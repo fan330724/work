@@ -1,0 +1,61 @@
+<!--pages/historyclassdetail/historyclassdetail.wxml-->
+<view class="box">
+  <block wx:if="{{getUserStart == 'student'}}">
+    <view class="list" wx:for="{{list}}" wx:key="*this">
+      <view class="list-title">{{item.courseName}}</view>
+      <view class="list-main">
+        <view class="left">
+          <view class="left-item">
+            <text class="left-span">签到时间：</text>
+            <text>{{item.signin}}</text>
+          </view>
+          <view class="left-item">
+            <text class="left-span">签退时间：</text>
+            <text>{{item.signout}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{getUserStart != 'student'}}">
+    <view class="list" wx:for="{{list}}" wx:key="*this">
+      <view class="list-title">{{item.courseName}}</view>
+      <view class="list-main">
+        <view class="left">
+          <view class="left-item">
+            <text class="left-span">上课时间：</text>
+            <text>{{item.startTime}}</text>
+          </view>
+          <view class="left-item">
+            <text class="left-span">结束时间：</text>
+            <text>{{item.endTime}}</text>
+          </view>
+          <view class="left-item">
+            <text class="left-span">培训地点：</text>
+            <text>{{item.adress}}</text>
+          </view>
+          <view class="left-item">
+            <text class="left-span">报名人数：</text>
+            <text>{{item.total}}</text>
+          </view>
+        </view>
+        <view class="right" catchtap="toteacher" data-id="{{item.teacher_id}}">
+          <image src="{{item.avatar}}"></image>
+          <text>{{item.teacherName}}</text>
+        </view>
+      </view>
+
+      <view class="list-footer">
+        <navigator hover-class="none" class="btn" url="/pages/checkon/checkon?id={{item.id}}&date={{item.startTime}}&total={{item.total}}">
+          考勤记录
+        </navigator>
+        <navigator hover-class="none" class="btn" url="/pages/menuappraise/menuappraise?id={{item.id}}&type=课程">
+          查看评价
+        </navigator>
+        <navigator hover-class="none" class="btn" url="/pages/playback/playback?id={{item.id}}">
+          查看回放
+        </navigator>
+      </view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "start":"/components/start/index"
+  },
+  "navigationBarTitleText": "评价"
+}

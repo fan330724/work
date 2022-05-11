@@ -1,0 +1,214 @@
+<!--pages/my/my.wxml-->
+<view class="box">
+  <view class="header" wx:if="{{userinfo}}">
+    <block>
+      <view class="left">
+        <view class="userinfo-avatar" bindtap="tomyxinxi">
+          <image src="{{userinfo.avatarUrl}}"></image>
+        </view>
+        <view class="user-li">
+          <view class="userinfo-nickname">
+            {{userinfo.nickName}}
+          </view>
+          <view class="user-text">
+            {{userText}}
+          </view>
+        </view>
+      </view>
+      <view class="right">
+        <image src="/images/my-set.png" class="myset"></image>
+        <image src="/images/my-new.png" class="mynew"></image>
+      </view>
+    </block>
+  </view>
+  <view bindtap="getUserProfile" class="ava" wx:else>获取信息</view>
+
+  <!-- 学员端横向列表显示 -->
+  <block wx:if="{{getUserStart == 'student'}}">
+    <view class="tabbar">
+      <view class="list" bindtap="totabbar" data-id="1">
+        <view class="title">
+          总课程
+        </view>
+        <view class="number">{{list.registered}}</view>
+      </view>
+      <view class="list" bindtap="totabbar" data-id="2">
+        <view class="title">
+          培训中课程
+        </view>
+        <view class="number">{{list.training}}</view>
+      </view>
+      <view class="list" bindtap="totabbar" data-id="3">
+        <view class="title">
+          已完成课程
+        </view>
+        <view class="number">{{list.accomplish}}</view>
+      </view>
+    </view>
+  </block>
+  <!-- 教师端横向列表显示 -->
+  <block wx:if="{{getUserStart == 'teacher'}}">
+    <view class="tabbar">
+      <view class="list" bindtap="totabbar" data-id="1">
+        <view class="title">
+          未培训课程
+        </view>
+        <view class="number number-color">{{list.registered}}</view>
+      </view>
+      <view class="list" bindtap="totabbar" data-id="2">
+        <view class="title">
+          培训中课程
+        </view>
+        <view class="number">{{list.training}}</view>
+      </view>
+      <view class="list" bindtap="totabbar" data-id="3">
+        <view class="title">
+          已完成课程
+        </view>
+        <view class="number">{{list.accomplish}}</view>
+      </view>
+    </view>
+  </block>
+  <!-- 员工端横向列表显示 -->
+  <!-- <block wx:if="{{getUserStart == 'staff'}}">
+    <view class="tabbar">
+      <view class="list" bindtap="totabbar" data-id="1">
+        <view class="title">
+          未完成任务
+        </view>
+        <view class="number number-color">{{list.registered}}</view>
+      </view>
+      <view class="list" bindtap="totabbar" data-id="2">
+        <view class="title">
+          已完成任务
+        </view>
+        <view class="number">{{list.training}}</view>
+      </view>
+    </view>
+  </block> -->
+
+
+  <view class="p">
+    <!-- 学员端纵向列表显示 -->
+    <block wx:if="{{getUserStart == 'student'}}">
+      <view class="p-item" bindtap="topin">
+        <view>
+          <image src="../../images/comment.png"></image>
+          <text>我的评价</text>
+        </view>
+        <view class="icon">
+          <text class="iconfont icon-jiantou"></text>
+        </view>
+      </view>
+      <view class="p-item" bindtap="toAddPin">
+        <view>
+          <image src="../../images/comment.png"></image>
+          <text>添加评价</text>
+        </view>
+        <view class="icon">
+          <text class="iconfont icon-jiantou"></text>
+        </view>
+      </view>
+    </block>
+    <!-- 教师端纵向列表显示 -->
+    <block wx:if="{{getUserStart == 'teacher'}}">
+      <view class="p-item" bindtap="topin">
+        <view>
+          <image src="../../images/comment.png"></image>
+          <text>对我的评价</text>
+        </view>
+        <view class="icon">
+          <text class="iconfont icon-jiantou"></text>
+        </view>
+      </view>
+    </block>
+
+    <!-- 员工端纵向列表显示 -->
+    <block wx:if="{{getUserStart == 'staff'}}">
+      <view class="p-item" bindtap="torepairRecord">
+        <view>
+          <image src="../../images/comment.png"></image>
+          <text>报修记录</text>
+        </view>
+        <view class="icon">
+          <text class="iconfont icon-jiantou"></text>
+        </view>
+      </view>
+      <view class="p-item" bindtap="bindPickerChange">
+        <view>
+          <image src="../../images/baoti.png"></image>
+          <text>报账提交</text>
+        </view>
+        <view class="icon">
+          <text class="iconfont icon-jiantou"></text>
+        </view>
+      </view>
+      <view class="p-item" bindtap="toclockIn">
+        <view>
+          <image src="../../images/daka.png"></image>
+          <text>打卡</text>
+        </view>
+        <view class="icon">
+          <text class="iconfont icon-jiantou"></text>
+        </view>
+      </view>
+      <view class="p-item" bindtap="toapprove">
+        <view>
+          <image src="../../images/shenpi.png"></image>
+          <text>审批</text>
+        </view>
+        <view class="icon">
+          <text class="iconfont icon-jiantou"></text>
+        </view>
+      </view>
+    </block>
+
+    <!-- 领导端纵向列表显示 -->
+    <block wx:if="{{getUserStart == 'leader'}}">
+      <view class="p-item" bindtap="topin">
+        <view>
+          <image src="../../images/comment.png"></image>
+          <text>评价</text>
+        </view>
+        <view class="icon">
+          <text class="iconfont icon-jiantou"></text>
+        </view>
+      </view>
+      <view class="p-item" bindtap="toapprase">
+        <view>
+          <image src="../../images/shenpi.png"></image>
+          <text>审批</text>
+        </view>
+        <view class="icon">
+          <text class="iconfont icon-jiantou"></text>
+        </view>
+      </view>
+    </block>
+
+    <!-- 学员端   教师端纵向列表显示 -->
+    <block wx:if="{{getUserStart == 'student' || getUserStart == 'teacher' || getUserStart == 'leader'}}">
+      <view class="p-item" bindtap="toTongXun">
+        <view>
+          <image src="../../images/tongxunlu.png"></image>
+          <text>通讯录</text>
+        </view>
+        <view class="icon">
+          <text class="iconfont icon-jiantou"></text>
+        </view>
+      </view>
+    </block>
+
+    <!-- 三端都显示 -->
+    <view class="p-item" bindtap="toreset">
+      <view>
+        <image src="../../images/password.png"></image>
+        <text>修改密码</text>
+      </view>
+      <view class="icon">
+        <text class="iconfont icon-jiantou"></text>
+      </view>
+    </view>
+  </view>
+
+  <view class="btn" bindtap="exit">退出当前账号</view>
+</view>

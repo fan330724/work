@@ -1,0 +1,18 @@
+<!--pages/bd/bd.wxml-->
+<view class="bd">
+  <view class="img">
+    <image src="/icons/bd.png"></image>
+  </view>
+  <view class="content">
+    <view class="main">
+      <view class="title">什么是BD？</view>
+      <view class="text">
+        平台的推广者，对平台的产品信息进行推广。凡是用户通过BD分享的商品购买，在用户确认收货之后，BD即可获取到此商品的佣金，当BD自己购买本商品的时候，可以直接享受本商品的优惠金额。当BD分享的商品被新用户购买后，以后此用户购买的所有商品此BD都可以获取到相对应的佣金，直到此用户成为BD。
+      </view>
+    </view>
+    <view class="footer">
+      <image src="/icons/bd1.png"></image>
+      <view class="btn" bindtap="onbd">成为BD</view>
+    </view>
+  </view>
+</view>

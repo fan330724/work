@@ -1,0 +1,64 @@
+/* components/list/list.wxss */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+
+.goods_item {
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  margin-top: 20rpx;
+  width: 48%;
+}
+
+.goods_item:nth-of-type(1),
+.goods_item:nth-of-type(2) {
+  margin-top: 0rpx;
+}
+
+.goods_item .goods_img_wrap image {
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.goods_info_wrap {
+  padding: 20rpx;
+}
+
+.goods_name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #333333;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  letter-spacing: 1px;
+}
+
+.goods_account {
+  color: #999999;
+  font-size: 24rpx;
+  letter-spacing: 1px;
+  margin: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.goods_price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--themeColor);
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.goods_price .right {
+  width: 90rpx;
+  height: 50rpx;
+}

@@ -1,0 +1,15 @@
+<!--pages/jilu/jilu.wxml-->
+<view class="box">
+  <view class="item" wx:for="{{list}}" wx:key="*this">
+    <view class="date flex">
+      <view class="text">创建时间：</view>
+      <text class="txt">{{item.createTime}}</text>
+    </view>
+    <block wx:for="{{item.val}}" wx:for-item="item1">
+      <view class="date flex">
+        <view class="text">{{item1.name}}：</view>
+        <text class="txt">{{item1.values}}</text>
+      </view>
+    </block>
+  </view>
+</view>

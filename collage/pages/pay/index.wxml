@@ -1,0 +1,72 @@
+<!-- 收货地址 -->
+<view class="revice_address_row">
+  <view class="address" bindtap="getaddress" wx:if="{{address[0].addressId == ''}}">
+    <view class="left">
+      <image src="/icons/add.png"></image>
+      <text>请选择收货地址</text>
+    </view>
+    <view class="icon">
+      <text class="iconfont icon-jiantou"></text>
+    </view>
+  </view>
+  <view class="user_info_row" wx:for="{{address}}" wx:key="addressId" bindtap="getaddress" wx:if="{{address}}">
+    <view class="user_info">
+      <view style="font-size: 38rpx;">{{item.name}}</view>
+      <view>{{item.tel || item.telephone}}</view>
+    </view>
+    <view class="user_phone">{{item.floorNum}}{{item.detail || item.remarks}}</view>
+  </view>
+</view>
+
+<!-- 购物车内容 -->
+<view class="cart_content">
+  <view class="cart_main">
+    <view class="cart_item" wx:for="{{cart[0].children}}" wx:key="shopId">
+      <!-- 商品图片 -->
+      <view class="cart_img_wrap">
+        <image mode="widthFix" src="{{'https://www.zhlezh.com/' + item.proUrl}}"></image>
+      </view>
+      <!-- 商品信息 -->
+      <view class="cart_info_wrap">
+        <view class="goods_name">{{item.goodsName}}</view>
+        <view class="goods_price_wrap">
+          <view class="goods_price">￥{{item.price}}</view>
+          <view class="cart_num_tool">
+            <view class="goods_num">X {{item.num}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cart_remark">
+    <view class="cart_coupon flex" wx:if="{{cart[0].kdprice}}">
+      <view>配送费</view>
+      <text>￥{{cart[0].kdprice}}</text>
+    </view>
+    <view class="cart_coupon flex">
+      <view>优惠券</view>
+      <text>-￥{{cart[0].ifNew}}</text>
+    </view>
+    <view class="cart_price flex">
+      <view>总价</view>
+      <text>￥{{costPrice}}</text>
+    </view>
+  </view>
+  <view class="remark">
+    <view class="remark_title">订单备注</view>
+    <textarea bindinput="bindTextAreaBlur" placeholder="还有什么要叮嘱商家的吗？" />
+  </view>
+</view>
+
+<!-- 底部工具栏 -->
+<view class="footer_tool">
+  <!-- 总价格 -->
+  <view class="total_price_wrap">
+    <view class="total_price">
+      总价: <text class="total_price_text">￥{{totalPrice}}</text>
+    </view>
+  </view>
+  <view class="order_pay_wrap" bindtap="handleOrderPay">
+    提交订单({{totalNum}})
+  </view>
+</view>

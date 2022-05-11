@@ -1,0 +1,21 @@
+<!--pages/menudetail/menudetail.wxml-->
+<view class="box">
+  <block wx:if="{{list.length > 0}}">
+    <view class="list" wx:for="{{list}}" wx:key="*this" >
+      <view class="flex">
+        <view class="name">{{item.userName}}</view>
+        <view class="date">{{item.time}}</view>
+      </view>
+
+      <view class="list-top">
+        <view class="list-title">{{item.name}}</view>
+      </view>
+      <view class="main">
+        {{item.menuName}}
+      </view>
+    </view>
+  </block>
+  <view class="none" wx:else>
+    <image src="/images/noneDate.png"></image>
+  </view>
+</view>

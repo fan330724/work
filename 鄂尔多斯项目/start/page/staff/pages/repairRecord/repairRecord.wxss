@@ -1,0 +1,39 @@
+/* page/staff/pages/repairRecord/repairRecord.wxss */
+.list {
+  font-size: 28rpx;
+  color: #8C9198;
+  padding: 30rpx;
+  border-bottom: 1px solid #E6EAF0;
+}
+
+.list-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  color: #3D444D;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.content {
+  margin-top: 5px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.none {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.none image {
+  width: 500rpx;
+  height: 540rpx;
+}

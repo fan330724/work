@@ -1,0 +1,24 @@
+/* page/student/pages/informationDetail/informationDetail.wxss */
+.box{
+  padding: 0 30rpx;
+}
+.header{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.title{
+  color: #000000;
+  font-size: 36rpx;
+  text-align: center;
+  padding: 30rpx 0;
+  letter-spacing: 2px;
+}
+.date{
+  color: #ABB1BA;
+  font-size: 28rpx;
+}
+.main{
+  padding-bottom: 26px;
+}

@@ -1,0 +1,45 @@
+<!--pages/playback/playback.wxml-->
+<view class="box">
+  <video id="myVideo" src="{{videoSrc}}" enable-danmu controls object-fit="fill" title="{{title}}" bindpause="bindpause" bindended="bindended"
+    style="width: 100%; height: 460rpx;">
+    <!-- <cover-view class="video_cover" wx:if="{{isShow}}" bindtap="bindplay">
+      <cover-image src="{{videoCoverImg}}" mode="widthFix"></cover-image>
+      <cover-view class="video_bg_black">
+        <cover-view class="video_bg_btn">
+          点击查看回放
+        </cover-view>
+      </cover-view>
+    </cover-view> -->
+  </video>
+
+  <view class="main">
+    <view class="title">推荐课程</view>
+    <view>
+      <block wx:for="{{list}}" wx:key="id">
+        <view class="list flex" bindtap="toplayback" data-id="{{item.id}}">
+          <view class="left">
+            <view class="top flex">
+              <image src="/images/playicon.png"></image>
+              <view class="tit">{{item.courseName}}</view>
+            </view>
+            <view class="footer">
+              <view class="footer-list flex">
+                <view class="text" wx:if="{{getUserStart == 'student'}}">报名时间：</view>
+                <view class="text" wx:if="{{getUserStart == 'teacher'}}">开课时间：</view>
+                <view class="txt">{{item.time || item.startTime}}</view>
+              </view>
+
+              <view class="footer-list flex">
+                <view class="text">培训地点：</view>
+                <view class="txt">{{item.adress}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="right">
+            可回放
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

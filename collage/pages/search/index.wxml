@@ -1,0 +1,17 @@
+<view class="search_row">
+  <input value="{{inpValue}}" placeholder="请输入您要搜索的商品" bindinput="handleInput"> </input>
+  <button bindtap="handleCancel" hidden="{{!isFocus}}">取消</button>
+</view>
+<view class="search_content">
+  <block wx:if="{{show}}">
+    <view class="empty">
+      <image src="/assets/image/empty/empty.png" class="empty__image"></image>
+      <view class="empty__text">未找到数据</view>
+    </view>
+  </block>
+  <block wx:for="{{goods}}" wx:key="*this" wx:if="{{show == false}}">
+    <goodslist item="{{item}}" bindaddCart="addCart"></goodslist>
+  </block>
+
+</view>
+<pop start="{{start}}" list="{{popList}}" bindclose="close"></pop>

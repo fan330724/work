@@ -1,0 +1,140 @@
+/* components/list/index.wxss */
+.box {
+  padding: 30rpx;
+  box-shadow: 0 2px 8px rgba(113, 112, 112, .3);
+  border-radius: 10px;
+  margin-bottom: 23px;
+  background: white;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+.box-header,.box-center{
+  /* border-bottom: 1px solid #E6E8EB; */
+  padding-bottom: 10px;
+}
+.header-top {
+  justify-content: space-between;
+}
+.top-title {
+  color: #282B32;
+  font-size: 36rpx;
+  font-weight: bold;
+  margin: -2px 0 0 0px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.header-content {
+  margin-top: 8px;
+  font-size: 26rpx;
+}
+
+.text {
+  color: #282B32;
+  font-weight: bold;
+  flex: 1;
+}
+
+.txt {
+  color: #6D7275;
+  flex: 3;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.date,
+.tip {
+  align-items: baseline;
+  margin-top: 5px;
+}
+
+.box-center {
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 5px;
+}
+
+scroll-view {
+  white-space: nowrap;
+  display: flex;
+  align-items: flex-start;
+}
+.left{
+  /* flex: 2.9; */
+  overflow: hidden;
+}
+.right{
+  /* flex: 1.1; */
+  margin-left: 10px;
+}
+.list-item {
+  height: 165rpx;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  margin-right: 15px;
+}
+
+.list-item:nth-last-of-type(1) {
+  margin-right: 0px;
+}
+
+.list-item image {
+  width: 88rpx;
+  height: 88rpx;
+}
+
+.list-item text {
+  font-size: 26rpx;
+  color: #6D7275;
+  letter-spacing: 1px;
+  margin-top: 7px;
+}
+
+.btn {
+  padding: 5px 10px;
+  color: #DF121C;
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: -25px;
+  border: 1px solid #DF121C;
+  border-radius: 5px;
+}
+.btn1{
+  background: #F1F6FD;
+  color: #BEC1C5;
+}
+.btn2{
+  background: linear-gradient(270deg, #FF5656 0%, #FC8558 100%);
+  color: #ffffff;
+}
+
+.btn3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn3 image{
+  width: 30rpx;
+  height: 23rpx;
+  margin-right: 3px;
+}
+.btn3 text{
+  display: block;
+}
+.box-footer{
+  color: #6D7275;
+  font-size: 28rpx;
+  margin-top: 10px;
+}
+.box-footer text{
+  color: #282B32;
+}

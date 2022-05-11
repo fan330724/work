@@ -1,0 +1,39 @@
+<!--pages/checkon/checkon.wxml-->
+<view class="box">
+  <view class="title">课程考勤</view>
+  <view class="top">
+    <view class="top-date">上课时间：{{date}}</view>
+    <view class="top-list">
+      <view class="top-list-item">应到人数：{{total}}</view>
+      <view class="top-list-item">签到人数：{{list.maplist[0].signInCount}}</view>
+      <view class="top-list-item">签退人数：{{list.maplist[0].signOutCount}}</view>
+    </view>
+    <view class="top-footer">
+      <view class="top-footer-list">
+        <view class="top-footer-title">未签到人员</view>
+        <text>{{list.maplist[0].signInPeople}}</text>
+      </view>
+      <view class="top-footer-list">
+        <view class="top-footer-title">未签退人员</view>
+        <text>{{list.maplist[0].signOutPeople}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="list">
+    <view class="table">
+      <view class="list-item-title">签到人员</view>
+      <view class="list-item-title">签到时间</view>
+      <view class="list-item-title">签退时间</view>
+    </view>
+    <view class="list-item">
+      <block wx:for="{{list.list}}" wx:key="*this">
+        <view class="list-item-list">
+          <view class="item">{{item.userName}}</view>
+          <view class="item {{item.signin == '未签到'?'active':''}}">{{item.signin}}</view>
+          <view class="item {{item.signout == '未签退'?'active':''}}">{{item.signout}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

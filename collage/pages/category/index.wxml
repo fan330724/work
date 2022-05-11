@@ -1,0 +1,22 @@
+<view class="cates">
+  <SearchInput></SearchInput>
+  <view class="cates_container">
+    <!-- 左侧菜单 -->
+    <scroll-view scroll-y class="left_menu">
+      <view class="menu_item {{index===currentIndex?'active':''}}" wx:for="{{leftMenuList}}" wx:key="*this"
+        bindtap="handleItemTap" data-id="{{item.classifyId}}" data-index="{{index}}">
+        {{item.classifyName}}
+      </view>
+    </scroll-view>
+    <!-- 右侧商品内容 -->
+    <scroll-view scroll-top="{{scrollTop}}" scroll-y class="right_content">
+      <view class="goods_group">
+      <block wx:for="{{rightContent}}" wx:key="*this">
+        <goodslist item="{{item}}" bindaddCart="addCart"></goodslist>
+      </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<pop start="{{start}}" list="{{popList}}" bindclose="close" ></pop>

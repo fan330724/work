@@ -1,0 +1,22 @@
+<!--pages/regist/regist.wxml-->
+<view class="v1">
+
+  <!-- v2父容器  子view使用绝对布局 -->
+  <view class="v2">
+    <view class="dltext">注册</view>
+
+    <!-- 手机号 -->
+    <view class="phoneCs">
+      <input placeholder="请输入账号" bindinput="registInput" />
+    </view>
+
+    <!-- 密码 -->
+    <view class="passwordCs">
+      <input placeholder="请输入密码" password="{{inpType}}" bindinput="topassword" />
+      <image src="{{inpType?'/images/logo-hide.png':'/images/logo-show.png'}}" bindtap="toshow" class="eye"></image>
+    </view>
+    <view class="zhuce">
+      <button class="btn-dl" type="primary" bindtap="onsubmit">注册</button>
+    </view>
+  </view>
+</view>

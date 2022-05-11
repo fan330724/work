@@ -1,0 +1,11 @@
+<!--page/tabbar/pages/classDetail/index.wxml-->
+<view class="box">
+  <block wx:for="{{list}}" wx:key="*this">
+    <navigator class="list" hover-class="none" url="/pages/historyclassdetail/historyclassdetail?classId={{item.id}}">
+      <view class="list-title">{{item.name}}</view>
+      <!-- <view class="list-name">负责人：<text>张三</text></view> -->
+      <view class="list-name">上课时间：<text>{{item.startTime}}-{{item.endTime}}</text></view>
+      <view class="btn" catchtap="tostopat" data-id="{{item.id}}">住宿情况</view>
+    </navigator>
+  </block>
+</view>

@@ -1,0 +1,2 @@
+<!--pages/tongxunDetail/tongxunDetail.wxml-->
+<BmsDirectory userList="{{list}}" bindgetcall="onPhone"></BmsDirectory>

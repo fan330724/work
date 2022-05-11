@@ -1,0 +1,41 @@
+<!--pages/apprase/apprase.wxml-->
+<view class="content">
+  <!-- 没有数据页 -->
+  <view class="fail" wx:if="{{show}}">
+    <image src="/images/noneDate.png"></image>
+  </view>
+  <view class="box" wx:for="{{lists}}" wx:key='id' wx:for-item="list" wx:if="{{show == false}}">
+    <view class="box-header" >
+      <view class="header-top flex">
+        <view class="top-left">
+          <view class="top-title">{{list.userName}}</view>
+        </view>
+        <view class="sun sun1" wx:if="{{list.status == 1 || list.status == 2}}">审核中</view>
+        <view class="sun sun2" wx:if="{{list.status == 3}}">审核通过</view>
+        <view class="sun sun1" wx:if="{{list.status == 4}}">审核拒绝</view>
+      </view>
+      <view class="header-content">
+        <view class="tip flex">
+          <view class="text">开始时间：</view>
+          <text class="txt">{{list.startTime}}</text>
+        </view>
+        <view class="tip flex">
+          <view class="text">结束时间：</view>
+          <text class="txt">{{list.endTime}}</text>
+        </view>
+        <view class="tip flex">
+          <view class="text">请假天数：</view>
+          <text class="txt">{{list.total}}天</text>
+        </view>
+        <view class="date flex tip">
+          <view class="text">请假原因：</view>
+          <text class="txt">{{list.reason}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="button" wx:if="{{list.status == 1 || list.status == 2}}">
+      <view class="btn sun sun2" style="margin-right: 20rpx;" bindtap="editvacation" data-status="3" data-id="{{list.id}}">通过</view>
+      <view class="btn sun sun1" bindtap="editvacation" data-status="4" data-id="{{list.id}}">拒绝</view>
+    </view>
+  </view>
+</view>

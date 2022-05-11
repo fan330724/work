@@ -1,0 +1,112 @@
+page {
+  padding-bottom: 90rpx;
+}
+.detail_swiper{
+  width: 100%;
+  height: 523rpx;
+}
+.detail_swiper image{
+  width: 100%;
+  height: 100%;
+}
+.goods_price {
+  padding: 10rpx 30rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--themeColor);
+}
+.goods_name_row {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 8px solid #F7F7F7;
+}
+.goods_name_row .goods_name {
+  color: #333333;
+  font-size: 34rpx;
+  padding: 0 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.goods_name_row .goods_collect {
+  color: #9B9B9B;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -30rpx;
+}
+.goods_collect button{
+  border: none;
+  width: 118rpx;
+  height: 110rpx;
+  margin: 0;
+  padding: 0;
+}
+.goods_collect button image{
+  width: 100%;
+  height: 100%;
+}
+.goods_collect text{
+  margin-top: 10rpx;
+}
+.goods_info .goods_info_title {
+  font-size: 32rpx;
+  color: var(--themeColor);
+  font-weight: 600;
+  padding: 20rpx;
+}
+.btm_tool {
+  border-top: 1rpx solid #ccc;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  display: flex;
+}
+.btm_tool .tool_item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  position: relative;
+}
+.btm_tool .btn_cart {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffa500;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.btm_tool .btn_buy {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eb4450;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.goods_account{
+  color: #999999;
+  font-size: 24rpx;
+  letter-spacing: 1px;
+  padding: 6rpx 30rpx;
+  display: flex;
+}
+.goods_account view:nth-of-type(1){
+  margin-right: 30rpx;
+}

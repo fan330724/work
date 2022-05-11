@@ -1,0 +1,51 @@
+<!--page/staff/pages/approve/approve.wxml-->
+<view class="box">
+  <view class="list">
+    <view class="title">请假类型</view>
+    <picker range="{{leaveType}}" range-key="name" bindchange="bindStartChange">
+      <view class="select" wx:if="{{!startChange}}">
+        <view class="txt">请选择</view>
+        <text class="iconfont icon-jiantou icon"></text>
+      </view>
+      <view>
+        {{startChange}}
+      </view>
+    </picker>
+  </view>
+  <view class="list">
+    <view class="title">开始时间</view>
+    <date-time-picker value="{{dateChange}}" bind:change="bindDateChange">
+      <view class="select" wx:if="{{!dateChange}}">
+        <view class="txt">请选择</view>
+        <text class="iconfont icon-jiantou icon"></text>
+      </view>
+      <view>
+        {{dateChange}}
+      </view>
+    </date-time-picker>
+  </view>
+  <view class="list">
+    <view class="title">结束时间</view>
+    <date-time-picker value="{{endDateChange}}" bind:change="bindEndDateChange">
+      <view class="select" wx:if="{{!endDateChange}}">
+        <view class="txt">请选择</view>
+        <text class="iconfont icon-jiantou icon"></text>
+      </view>
+      <view>
+        {{endDateChange}}
+      </view>
+    </date-time-picker>
+  </view>
+  <view class="list">
+    <view class="title">请假时长</view>
+    <view class="time">{{timeChange}}天</view>
+  </view>
+  <view class="list flex">
+    <view class="title">请假事由</view>
+    <textarea placeholder="请输入请假事由" bindinput="bindContentChange" auto-height></textarea>
+  </view>
+
+  <view class="btn" bindtap="bindSubmit">
+    提交
+  </view>
+</view>

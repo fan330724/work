@@ -1,0 +1,6 @@
+<!--page/student/pages/newsDetail/newsDetail.wxml-->
+<view class="box">
+  <view wx:for="{{list}}" wx:key="*this" class="mar-top">
+    <newsDetail list="{{item}}"></newsDetail>
+  </view>
+</view>

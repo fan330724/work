@@ -1,0 +1,99 @@
+.add {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 60rpx;
+    margin-bottom: 30rpx;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20rpx 0;
+    background: var(--themeColor);
+    color: white;
+    border: none;
+    letter-spacing: 1px;
+}
+
+.list {
+    padding: 30rpx;
+    color: #3C3C3C;
+}
+
+.list .center {
+    border-bottom: 1px solid #D7D7D7;
+    padding-bottom: 10px;
+}
+
+.list .center .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list .center .top .name {
+    margin-right: 20rpx;
+    margin-bottom: 5rpx;
+    font-size: 38rpx;
+}
+
+.list .center .top .phone {
+    font-size: 28rpx;
+}
+
+.center .bottom {
+    font-size: 28rpx;
+}
+
+.list .right {
+    text-align: center;
+    color: #929292;
+    font-size: 28rpx;
+    display: flex;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20rpx;
+}
+
+.right .edit {
+    margin-right: 20rpx;
+}
+
+.right .edit,
+.right .delete {
+    display: flex;
+    align-items: center;
+}
+
+.right image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+
+/*checkbox 选项框大小  */
+radio .wx-radio-input {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 0;
+}
+
+/*checkbox选中后样式  */
+radio .wx-radio-input.wx-radio-input-checked {
+    background: var(--themeColor) !important;
+}
+
+/*checkbox选中后图标样式  */
+radio .wx-radio-input.wx-radio-input-checked::before {
+    width: 30rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    text-align: center;
+    font-size: 26rpx;
+    color: #fff;
+    background: transparent;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+}

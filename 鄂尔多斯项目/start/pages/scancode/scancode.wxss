@@ -1,0 +1,36 @@
+/* pages/scancode/scancode.wxss */
+page{
+  background: #F7F9FA;
+}
+.list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  margin: 10px 0;
+  color: #5B5E63;
+  font-size: 28rpx;
+}
+.select{
+  color: #8C9198;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+}
+.icon{
+  font-size: 36rpx;
+  margin-left: 3px;
+  font-weight: bold;
+}
+.btn{
+  width: 650rpx;
+  height: 88rpx;
+  background: #296EFF;
+  text-align: center;
+  color: white;
+  font-size: 34rpx;
+  line-height: 88rpx;
+  margin: 30px auto 0;
+  border-radius: 25px;
+}

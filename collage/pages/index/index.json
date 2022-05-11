@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "pop":"/components/pop/pop",
+    "goodslist":"/components/list/list"
+  },
+  "navigationBarTitleText": "首页"
+}

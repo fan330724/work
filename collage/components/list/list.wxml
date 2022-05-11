@@ -1,0 +1,27 @@
+<!--components/list/list.wxml-->
+<view class="flex">
+  <view class="goods_item" catchtap="togoodsdetail" data-goods="{{item}}" wx:for="{{list}}" wx:key="*this"
+    style="height:{{height}}">
+    <!-- 顶部 图片容器 -->
+    <view class="goods_img_wrap">
+      <image
+        src="{{item.goodsPic?'https://' + item.goodsPic:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"
+        lazy-load="{{ true }}" mode="widthFix" id="imgHeight">
+      </image>
+    </view>
+    <!-- 底部 商品容器 -->
+    <view class="goods_info_wrap">
+      <view class="goods_name">{{item.name || item.goodsName}}</view>
+      <view class="goods_account">
+        <view class="" wx:if="{{item.saleNum}}">销量:{{item.saleNum}}</view>
+        <view class="" wx:if="{{item.ifBd == 1}}">佣金:{{item.yongjin}}</view>
+      </view>
+      <view class="goods_price">
+        <view class="left">￥{{item.children[0].price}}</view>
+        <view class="right" catchtap="addCart" data-list="{{item}}">
+          <image src="/icons/add_cart.png" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,54 @@
+@import "./styles/iconfont.wxss";
+
+/* 在微信小程序中 不支持 通配符 '*' */
+page,view,text,swiper,swiper-item,image,navigator{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*
+ 主题颜色 通过变量来实现 
+ 1 less 中 存在 变量这个知识
+ 2 原生的css和wxss也是支持 变量 
+ */
+ page{
+   /* 定义主题颜色 */
+   --themeColor:#FE5E56;
+   /*
+    定义统一字体大小  假设设计稿 大小是 375px 
+    1px= 2rpx
+    14px = 28rpx
+     */
+     font-size: 28rpx;
+ }
+
+ image{
+   width: 100%;
+ }
+
+ 
+ @font-face {
+  font-family: "iconfont";
+  src: url('iconfont.eot?t=1540364458716');
+  /* IE9*/
+  src: url('iconfont.eot?t=1540364458716#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAPwAAsAAAAABjgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFY8jEgIY21hcAAAAYAAAABLAAABcOc+texnbHlmAAABzAAAAEAAAABAiBGNNGhlYWQAAAIMAAAALQAAADYTCrbraGhlYQAAAjwAAAAcAAAAJAfeA4NobXR4AAACWAAAAAgAAAAICAAAAGxvY2EAAAJgAAAABgAAAAYAIAAAbWF4cAAAAmgAAAAeAAAAIAENABxuYW1lAAACiAAAAUUAAAJtPlT+fXBvc3QAAAPQAAAAIAAAADHf6dd3eJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2BkYWCcwMDKwMHUyXSGgYGhH0IzvmYwYuRgYGBiYGVmwAoC0lxTGByeiT0TY27438AQw9zA0AAUZgTJAQDglQwPeJxjYGBgZWBgYAZiHSBmYWBgDGFgZAABP6AoI1icmYELLM7CoARWwwISfyb2/z+MBPJZwCQDIxvDKOABkzJQHjisIJiBEQBetgnBAAABAAAAAAKgApoADwAACQEmJyYOARQfAQcGFBYyNwKg/vEEBQIUEQjn5wkRFwgBgAEOBQIEAhAXCOjoCBcRCQB4nGNgZGBgAGL5J5Nd4/ltvjJwszCAwPVvlquQaRYGpllAioOBCcQDACInCZYAAAB4nGNgZGBgbvjfwBDDwgACQJKRARUwAQBHCAJrBAAAAAQAAAAAAAAAACAAAHicY2BkYGBgYhBgANEgFgMDFxAyMPwH8xkACicBKgAAeJxlj01OwzAQhV/6B6QSqqhgh+QFYgEo/RGrblhUavdddN+mTpsqiSPHrdQDcB6OwAk4AtyAO/BIJ5s2lsffvHljTwDc4Acejt8t95E9XDI7cg0XuBeuU38QbpBfhJto41W4Rf1N2MczpsJtdGF5g9e4YvaEd2EPHXwI13CNT+E69S/hBvlbuIk7/Aq30PHqwj7mXle4jUcv9sdWL5xeqeVBxaHJIpM5v4KZXu+Sha3S6pxrW8QmU4OgX0lTnWlb3VPs10PnIhVZk6oJqzpJjMqt2erQBRvn8lGvF4kehCblWGP+tsYCjnEFhSUOjDFCGGSIyujoO1Vm9K+xQ8Jee1Y9zed0WxTU/3OFAQL0z1xTurLSeTpPgT1fG1J1dCtuy56UNJFezUkSskJe1rZUQuoBNmVXjhF6XNGJPyhnSP8ACVpuyAAAAHicY2BigAAuBuyAiZGJkZmBPSszMa8kv5SBAQAUfwMX') format('woff'),
+    url('iconfont.ttf?t=1540364458716') format('truetype'),
+    /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('iconfont.svg?t=1540364458716#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jiantou:before {
+  content: "\e616";
+}

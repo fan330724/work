@@ -1,0 +1,126 @@
+/* page/tabbar/pages/index/index.wxss */
+.swiperBox {
+  position: relative;
+}
+
+.page-body swiper {
+  width: 750rpx;
+  height: 402rpx;
+}
+
+/*首页跑马灯效果*/
+@keyframes around {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    /* var接受传入的变量 */
+    margin-left: var(--marqueeWidth--);
+  }
+}
+
+.marquee_container {
+  background-color: RGBA(221, 195, 121, 1);
+  height: 60rpx;
+  line-height: 60rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.marquee_text {
+  color: var(--themeColor);
+  font-size: 32rpx;
+  white-space: nowrap;
+  animation-name: around;
+  animation-duration: 10s;
+  /*过渡时间*/
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/*首页跑马灯效果*/
+
+
+.list{
+  display: flex;
+  flex-flow: row wrap;
+  background: white;
+  padding-bottom: 35rpx;
+}
+.list navigator,.list .none{
+  width: 25%;
+}
+.list-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 35rpx;
+}
+.list-item image{
+  width: 90rpx;
+  height: 90rpx;
+}
+.list-item text{
+  color: #6D7275;
+  font-size: 32rpx;
+  margin-top: 10rpx;
+}
+
+
+.footer{
+  background: #E45C44;
+  display: flex;
+  padding: 35rpx 20rpx;
+}
+.footer-item{
+  color: #FFFFFF;
+  font-size: 20rpx;
+  flex: 1;
+}
+.footer-item .footer-title{
+  color: #FFFFFF;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+}
+.footer-title image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 15rpx;
+}
+.footer-list{
+  margin-top: 15rpx;
+}
+
+.footer-list{
+  display: flex;
+  align-items: center;
+}
+.footer-flex image{
+  width: 28rpx;
+  height: 21rpx;
+  margin-right: 10rpx;
+}
+.footer-list view{
+  flex: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.footer-list text{
+  flex: 1.5;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.footer-img image{
+  width: 101rpx;
+  height: 70rpx;
+}

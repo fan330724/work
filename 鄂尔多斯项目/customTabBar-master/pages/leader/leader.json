@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "stafflist":"../../components/staffList/index",
+    "apprase":"../../components/apprase/index"
+  },
+  "navigationBarTitleText": "工作审批"
+}

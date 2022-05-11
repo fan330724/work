@@ -1,0 +1,69 @@
+/* page/staff/pages/clockDetail/clockDetail.wxss */
+page{
+  background: #F7F9FA;
+}
+.box{
+  padding: 30rpx;
+}
+.main{
+  background: white;
+}
+.footer{
+  padding: 30rpx;
+}
+.rule{
+  color: #6D7275;
+  font-size: 28rpx;
+  margin-bottom: 10px;
+}
+.list{
+  display:flex;
+  align-items: center;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.round{
+  background: var(--themeColor);
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.span{
+  color: #969B9E;
+  font-size: 24rpx;
+}
+.start{
+  padding: 0 5px;
+  height: 40rpx;
+  border-radius: 5px;
+  border: 1px solid #296EFF;
+  line-height: 40rpx;
+  text-align: center;
+  color: #296EFF;
+  font-size: 24rpx;
+  margin-left: 10px;
+}
+.start-cur{
+  border-color: #FFAF2D;
+  color: #FFAF2D;
+}
+
+
+.active-coloro {
+  color: #fff !important;
+  background: #188be4 !important;
+}
+
+.active-colort {
+  color: #fff !important;
+  background: #b8d5eb !important;
+}
+/* 出勤  */
+.dotcolor-o{
+  background-color: #188be4 !important;  
+}
+/* 未出勤  */
+.dotcolor-t{
+  background-color: #FF7F50 !important;  
+}

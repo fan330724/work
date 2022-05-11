@@ -1,0 +1,92 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/register/register",
+    "pages/forget/forget",
+    "pages/center/center",
+    "pages/user-info/user-info",
+    "pages/news-detail/news-detail",
+    "pages/xuesheng/list",
+    "pages/xuesheng/add-or-update",
+    "pages/xuesheng/detail",
+    "pages/qingxie/list",
+    "pages/qingxie/add-or-update",
+    "pages/qingxie/detail",
+    "pages/jifenhuode/list",
+    "pages/jifenhuode/add-or-update",
+    "pages/jifenhuode/detail",
+    "pages/renwuleixing/list",
+    "pages/renwuleixing/add-or-update",
+    "pages/renwuleixing/detail",
+    "pages/renwufabu/list",
+    "pages/renwufabu/add-or-update",
+    "pages/renwufabu/detail",
+    "pages/renwuxinxi/list",
+    "pages/renwuxinxi/add-or-update",
+    "pages/renwuxinxi/detail",
+    "pages/baomingxinxi/list",
+    "pages/baomingxinxi/add-or-update",
+    "pages/baomingxinxi/detail",
+    "pages/renwukaishi/list",
+    "pages/renwukaishi/add-or-update",
+    "pages/renwukaishi/detail",
+    "pages/renwujieshu/list",
+    "pages/renwujieshu/add-or-update",
+    "pages/renwujieshu/detail",
+    "pages/storeup/list",
+    "pages/storeup/add-or-update",
+    "pages/storeup/detail",
+    "pages/news/list",
+    "pages/news/add-or-update",
+    "pages/news/detail",
+    "pages/discussrenwuxinxi/list",
+    "pages/discussrenwuxinxi/add-or-update",
+    "pages/discussrenwuxinxi/detail",
+    "pages/index/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "苏科大劳动积分系统",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#BBBBBB",
+    "selectedColor": "#BDDFE5",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabs/index.png",
+        "selectedIconPath": "static/tabs/index1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/renwuxinxi/list",
+        "iconPath": "/static/tabs/icon1.png",
+        "selectedIconPath": "/static/tabs/icon1_act.png",
+        "text": "任务信息"
+      },
+      {
+        "pagePath": "pages/news/list",
+        "iconPath": "static/tabs/news.png",
+        "selectedIconPath": "static/tabs/news_act.png",
+        "text": "公告信息"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "iconPath": "static/tabs/mine.png",
+        "selectedIconPath": "static/tabs/mine1.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "uni-load-more": "/components/mescroll-uni/mescroll-uni",
+    "mescroll-uni": "/components/mescroll-uni/mescroll-uni",
+    "uni-popup": "/components/uni-popup/uni-popup"
+  },
+  "sitemapLocation": "sitemap.json"
+}

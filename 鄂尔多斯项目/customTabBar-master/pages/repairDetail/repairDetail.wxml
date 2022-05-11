@@ -1,0 +1,41 @@
+<!--page/staff/pages/repairDetail/repairDetail.wxml-->
+<view class="box">
+  <view class="list">
+    <view class="title">{{list.remark}}提交</view>
+    <view class="content">{{list.content}}</view>
+  </view>
+  <view class="list">
+    <view class="title">{{list.remark}}状态</view>
+    <view class="sun sun1" wx:if="{{list.status == 0}}">审核中</view>
+    <view class="sun sun2" wx:if="{{list.status == 1}}">审核通过</view>
+    <view class="sun sun1" wx:if="{{list.status == 2}}">审核拒绝</view>
+  </view>
+  <view class="list" wx:if="{{list.detail}}">
+    <view class="title">采购明细</view>
+    <view class="content">{{list.detail}}</view>
+  </view>
+  <view class="list" wx:if="{{list.reimbursementName}}">
+    <view class="title">提交类型</view>
+    <view class="content">{{list.reimbursementName}}</view>
+  </view>
+  <view class="list">
+    <view class="title">提交时间</view>
+    <view class="content">{{list.createTime}}</view>
+  </view>
+  <view class="list">
+    <view class="title">图片</view>
+    <view class="picImg">
+      <block wx:for="{{list.picUrls}}" wx:key="*this">
+        <image src="{{item}}" bindtap="enlarge" data-list="{{list.picUrls}}" data-src="{{item}}"></image>
+      </block>
+      <block wx:if="{{list.picUrls == '' || list.picUrls == []}}">
+        <image src="/images/noneimg.png"></image>
+      </block>
+    </view>
+  </view>
+
+  <view wx:if="{{getUserStart == 'leader'&& list.status == 0}}">
+    <view class="btn sun2" bindtap="editRepair" data-status="1">审核通过</view>
+    <view class="btn sun1" style="margin-top: 30rpx;" bindtap="editRepair"  data-status="2">审核拒绝</view>
+  </view>
+</view>

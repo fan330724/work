@@ -1,0 +1,7 @@
+/* pages/tongxunDetail/tongxunDetail.wxss */
+.titlestyle{
+  background: none !important;
+}
+.msgstyle{
+  background: none !important;
+}

@@ -1,0 +1,21 @@
+
+<view class="box">
+  <form bindsubmit="submit">
+    <view class="p">
+      <input type="number" maxlength="11" placeholder="请输入手机号" name="phone" placeholder-class="inp" bindinput="phone"/>
+    </view>
+    <view class="p flex">
+      <input type="text" placeholder="请输入验证码" name="code" placeholder-class="inp" bindinput="code"/>
+      <view class="code {{start?'codes':''}}" bindtap="goGetCode">
+         {{text}}
+      </view>
+    </view>
+    <view class="p">
+      <input type="text" placeholder="请输入新密码" name="newPassword" placeholder-class="inp" bindinput="newPas"/>
+    </view>
+    <view class="p">
+      <input type="text" placeholder="请再次输入新密码" name="newsPassword" placeholder-class="inp" bindinput="newPas1"/>
+    </view>
+    <button formType="submit" class="btn">确认提交</button>
+  </form>
+</view>

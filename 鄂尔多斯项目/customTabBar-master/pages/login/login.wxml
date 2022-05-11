@@ -1,0 +1,31 @@
+<!--pages/login/login.wxml-->
+<view class="title">
+  <image src="/images/164898347449100.png"></image>
+</view>
+<view class="box">
+  <view class="main">
+    <view class="h3">用户登录</view>
+    <view class="list">
+      <input type="text" placeholder="请输入登录账号" bindinput="registInput" placeholder-class="plaseholder" />
+    </view>
+    <view class="list mar-top">
+      <view class="inp">
+        <input password="{{inpType}}" placeholder="输入您的密码" bindinput="topassword" placeholder-class="plaseholder" />
+        <image src="{{inpType?'/images/logo-hide.png':'/images/logo-show.png'}}" bindtap="toshow"></image>
+      </view>
+    </view>
+    <view class="foot">
+      <checkbox-group bindchange="onchecked">
+        <checkbox value="true"></checkbox>
+      </checkbox-group>
+      <view class="text">
+        <text>阅读相关条例</text>
+        <text>《相关条例》</text>
+      </view>
+    </view>
+
+    <view class="btn" bindtap="onsubmit">登录</view>
+
+    <!-- <view class="pass" bindtap="topass">忘记密码？</view> -->
+  </view>
+</view>

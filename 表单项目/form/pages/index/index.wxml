@@ -1,0 +1,13 @@
+<!--pages/index/index.wxml-->
+<view class="box">
+  <view class="item" wx:for="{{list}}" wx:key="*this" bindtap="ondetail" data-id="{{item.id}}">
+    <view class="date flex">
+      <view class="text">模板名称：</view>
+      <text class="txt">{{item.name}}</text>
+    </view>
+    <view class="date flex">
+      <view class="text">创建时间：</view>
+      <text class="txt">{{item.createTime}}</text>
+    </view>
+  </view>
+</view>

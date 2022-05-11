@@ -1,0 +1,59 @@
+/* components/goodslist/goodslist.wxss */
+
+.goods_item {
+  display: flex;
+  padding: 10px;
+  background: #ffffff;
+}
+
+.goods_item .goods_img_wrap {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goods_item .goods_info_wrap {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 10px;
+}
+
+.goods_item .goods_info_wrap .goods_name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  color: #333333;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  letter-spacing: 1px;
+}
+.goods_item .goods_info_wrap .goods_account{
+  color: #999999;
+  font-size: 24rpx;
+  letter-spacing: 1px;
+  padding: 2px 0 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.goods_item .goods_info_wrap .goods_old_price {
+  color: #999999;
+  font-size: 24rpx;
+  text-decoration: line-through;
+}
+
+.goods_item .goods_info_wrap .goods_price {
+  color: var(--themeColor);
+  font-size: 30rpx;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.goods_item .goods_info_wrap .goods_price .right {
+  width: 89rpx;
+  height: 48rpx;
+}

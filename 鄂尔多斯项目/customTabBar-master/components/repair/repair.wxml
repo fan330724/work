@@ -1,0 +1,31 @@
+<!--components/repair/repair.wxml-->
+<view>
+  <form bindsubmit="onSubmit">
+    <view class="list">
+      <view>报修提交</view>
+      <input type="text" name="repair" id="" placeholder="输入报修详情" />
+    </view>
+    <view class="list">
+      <view>采购明细</view>
+      <input type="text" name="repairDetail" id="" placeholder="输入采购明细" />
+    </view>
+    <view class="list">
+      <view>上传图片</view>
+      <view class="uploader">
+        <view class="uploader-list" wx:for="{{pics}}" wx:key="*this">
+          <image src='{{item}}' data-index="{{index}}" mode="aspectFit" />
+          <view class='delete' data-index="{{index}}" bindtap='deleteImg'>
+            <image src="/images/delete.png"></image>
+          </view>
+        </view>
+        <view class="upadd" bindtap='chooseImage' wx:if="{{pics.length < 3 }}">
+          <image src="/images/upadd.png"></image>
+        </view>
+      </view>
+    </view>
+    <button form-type="submit" class="btn">提交</button>
+    <navigator class="butt" hover-class="none" url="/pages/workdetail/workdetail?name=报修&type=0">
+      查看报修记录
+    </navigator>
+  </form>
+</view>

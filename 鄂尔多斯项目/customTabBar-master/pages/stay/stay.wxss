@@ -1,0 +1,25 @@
+/* pages/stay/stay.wxss */
+.box{
+  padding: 30rpx;
+}
+.title{
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+image{
+  width: 670rpx;
+  height: 286rpx;
+  margin: 30rpx 0;
+}
+
+.main{
+  font-size: 28rpx;
+}
+.main-item{
+  margin-bottom: 30rpx;
+}
+.main-title{
+  margin-bottom: 20rpx;
+}

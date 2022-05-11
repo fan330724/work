@@ -1,0 +1,35 @@
+<view class="padd">
+    <form bindsubmit="formSubmit">
+        <view class="int">
+            <view class="span">收货人</view>
+            <input class="padding" name="name" placeholder="请输入收货人姓名" type="text" value="{{list.name}}"></input>
+        </view>
+        <view class="int">
+            <view class="span">手机号</view>
+            <input class="padding" name="phone" placeholder="请输入手机号" type="number" value="{{list.telephone}}"></input>
+        </view>
+        <view class="int">
+            <view class="span">收货地址</view>
+            <picker bindchange="picker" class="padding" mode="region" value="{{cart}}" name="picer">
+                <view class="{{cart=='点击选择收货地址'?'city':''}}">{{cart}}</view>
+            </picker>
+        </view>
+        <view class="int">
+            <view class="span">门牌号</view>
+            <textarea autoHeight class="padding" name="textarea" placeholder="详细地址，例如：3号楼 2单元101"
+                value="{{list.remarks}}"></textarea>
+        </view>
+        <view class="ifmr">
+            <view class="mr-left">
+                <view class="mr-tit">设为默认地址</view>
+                <view class="mr-tet">每次购物时会优先定位至改地址，方便您轻松购物</view>
+            </view>
+            <view class="mr-right">
+                <radio-group bindchange="handeItemChange" data-checked="{{checked}}">
+                    <radio checked="{{checked}}" value="{{checked}}"></radio>
+                </radio-group>
+            </view>
+        </view>
+        <button class="bttn" formType="submit">保存收货信息</button>
+    </form>
+</view>

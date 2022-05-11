@@ -1,0 +1,27 @@
+<!--components/pop/pop.wxml-->
+<view wx:if="{{start}}">
+  <view class="alert-mask" catchtap="bindClose"></view>
+  <view class="model">
+    <view class="top">
+      <image
+        src="{{list.goodsPic?'https://' + list.goodsPic :'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}">
+      </image>
+    </view>
+    <view class="center">
+      <text>￥{{list.children[0].price}}</text>
+      <view class="right">
+        <view class="{{number == 1?'reduce disabled':'reduce'}}" bindtap="handleItemNumEdit" data-operation="{{-1}}">-
+        </view>
+        <view class="number">{{number}}</view>
+        <view class="plus" bindtap="handleItemNumEdit" data-operation="{{1}}">+</view>
+      </view>
+    </view>
+    <view class="footer" bindtap="addCart" data-list="{{list}}">
+      加入购物车
+    </view>
+    <view class="close" catchtap="bindClose">
+      <image src="/icons/close.png" mode="widthFix"></image>
+    </view>
+  </view>
+
+</view>

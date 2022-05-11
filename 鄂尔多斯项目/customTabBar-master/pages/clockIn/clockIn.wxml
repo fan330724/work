@@ -1,0 +1,66 @@
+<!--page/staff/pages/clockIn/clockIn.wxml-->
+<view class="box">
+  <view class="top">
+    <view class="left">
+      <view class="userinfo-avatar">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="user-li">
+        <view class="userinfo-nickname">
+          {{list.nickName}}
+        </view>
+        <view class="user-text">
+          {{list.grade}}
+        </view>
+      </view>
+    </view>
+    <view class="right">
+      <view class="record" bindtap="bindClockDetail">统计</view>
+      <view class="date">{{list.nowTime}}</view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footer-list">
+      <view class="list-item">
+        <view class="round active"></view>
+        <view class="span">{{list.gotoClockTime}}</view>
+      </view>
+      <view class="list-clockIn" bindtap="bindClock" wx:if="{{list.remark == '上班打卡'}}">
+        <view class="text">{{list.remark}}</view>
+        <view class="list-date">{{time}}</view>
+      </view>
+
+      <view class="success" wx:if="{{list.gotoClockDate != '' && list.gotoClockDate}}">
+        <view class="success-text">打卡时间 {{list.gotoClockDate}}</view>
+        <view class="success-start {{list.gotoclockType == '迟到' || list.gotoclockType == '请假' ? 'success-cur': ''}}">{{list.gotoclockType}}</view>
+      </view>
+    </view>
+    <view class="footer-list">
+      <view class="list-item">
+        <view class="round {{list.afterClockDate&&list.afterClockDate != '' ? 'active' : ''}}"></view>
+        <view class="span">{{list.afterClockTime}}</view>
+      </view>
+      <view class="list-clockIn" bindtap="bindClock" wx:if="{{list.remark == '下班打卡'}}">
+        <view class="text">{{list.remark}}</view>
+        <view class="list-date">{{time}}</view>
+      </view>
+      <view class="success" wx:if="{{list.afterClockDate && list.afterClockDate !=''}}">
+        <view class="success-text">打卡时间 {{list.afterClockDate}}</view>
+        <view class="success-start {{list.afterClockType == '早退' || list.afterClockType == '请假'? 'success-cur': ''}}">{{list.afterClockType}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 弹出框 -->
+<view class="pop">
+  <view class="alert-mask" wx:if="{{showModal}}"></view>
+  <view class="modalDlg" wx:if="{{showModal}}">
+    <view class="pop-title">打卡成功</view>
+    <view class="pop-main">
+      <view class="pop-date">08:00</view>
+      <view class="pop-text">上班打卡成功</view>
+    </view>
+    <view class="pop-btn" catchtap="bindKnow">知道了</view>
+  </view>
+</view>

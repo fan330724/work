@@ -1,0 +1,15 @@
+<!--page/staff/pages/repairRecord/repairRecord.wxml-->
+<view class="none" wx:if="{{show}}">
+  <image src="/images/noneDate.png"></image>
+</view>
+<view class="box" wx:else>
+  <block wx:for="{{list}}" wx:key="*this">
+    <view class="list" bindtap="torepairDetail" data-id="{{item.id}}">
+      <view class="list-top">
+        <view class="title">报修记录</view>
+        <view class="date">{{item.createTime}}</view>
+      </view>
+      <view class="content">{{item.content}}</view>
+    </view>
+  </block>
+</view>

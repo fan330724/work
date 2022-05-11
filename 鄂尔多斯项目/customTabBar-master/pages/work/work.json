@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "repair":"/components/repair/repair",
+    "account":"/components/account/index",
+    "approve":"/components/approve/index"
+  },
+  "navigationBarTitleText": "工作审批"
+}

@@ -1,0 +1,30 @@
+/* pages/welcome/welcome.wxss */
+.pos{
+  position: relative;
+}
+.next{
+  background: #FFF2E2;
+  color: #FF9C2F;
+  font-size: 32rpx;
+  width: 350rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  bottom: 0rpx;
+  transform: translateX(-50%);
+}
+.pos image{
+  width: 100vw;
+  height: 100vh;
+}
+.btn{
+  position: absolute;
+  top: 20rpx;
+  left: 50rpx;
+  color: #FD921B;
+  font-size: 36rpx;
+}

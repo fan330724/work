@@ -1,0 +1,42 @@
+/* components/inforlist/index.wxss */
+.flex{
+  display: flex;
+}
+.box{
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #F0F2F5;
+}
+.left{
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.top{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #43464B;
+  font-size: 28rpx;
+  line-height: 45rpx;
+}
+.footer{
+  margin-top: 10px;
+  color: #ABB1BA;
+  font-size: 24rpx;
+}
+.pin{
+  margin-left: 15px;
+}
+.pin image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 5px;
+  margin-top: 2rpx;
+}
+.right image{
+  width: 260rpx;
+  height: 144rpx;
+  margin-left: 5px;
+}

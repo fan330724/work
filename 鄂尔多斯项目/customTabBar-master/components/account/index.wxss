@@ -1,0 +1,59 @@
+/* components/account/index.wxss */
+
+.list {
+  padding: 30rpx;
+  color: #5B5E63;
+  font-size: 28rpx;
+  margin: 10px 0;
+}
+
+.list input,
+.mart {
+  margin-top: 10px;
+
+}
+
+.uploader {
+  display: flex;
+  margin-top: 40rpx;
+}
+
+.uploader-list {
+  width: 196rpx;
+  height: 196rpx;
+  position: relative;
+  margin-right: 30rpx;
+}
+
+.uploader-list .delete {
+  position: absolute;
+  top: -20rpx;
+  right: -20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.upadd {
+  width: 196rpx;
+  height: 196rpx;
+}
+
+.btn {
+  background-color: var(--themeColor);
+  width: 650rpx !important;
+  height: 88rpx;
+  line-height: 87rpx;
+  color: white;
+  font-size: 34rpx;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 23px;
+  margin-bottom: 10px;
+}
+.butt{
+  text-align: center;
+  color: var(--themeColor);
+  font-size: 30rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}

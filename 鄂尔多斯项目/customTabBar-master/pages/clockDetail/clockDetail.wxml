@@ -1,0 +1,27 @@
+<!--page/staff/pages/clockDetail/clockDetail.wxml-->
+<view class="box">
+  <view class="main">
+    <calendar mystatus='{{mystatus}}' circle_show="true" pitch_on="circle" active_type="circle"
+      active-coloro='active-coloro' active-colort='active-colort ' dotcolor-o="dotcolor-o" dotcolor-t="dotcolor-t"
+      bindnextMonth="bindnextMonth" bindprevMonth="bindprevMonth" bindselectDate="bindselectDate" />
+    <view class="footer">
+      <view class="rule" wx:if="{{!list.clockType}}">规则：固定上下班 {{goto}}-{{after}}</view>
+      <view class="rule" wx:if="{{list.clockType}}">规则：{{list.clockType}}</view>
+      <block wx:if="{{!list.clockType}}">
+        <view class="list">
+          <view class="round"></view>
+          <view class="span">上班时间：{{list.gotoClockDate}}</view>
+          <view class="start {{list.gotoclockType == '缺卡' || list.gotoclockType == '请假'? 'start-cur':''}}">
+            {{list.gotoclockType}}</view>
+        </view>
+        <view class="list">
+          <view class="round"></view>
+          <view class="span">下班时间：{{list.afterClockDate}}</view>
+          <view class="start {{list.afterClockType == '缺卡' || list.gotoclockType == '请假'? 'start-cur':''}}">
+            {{list.afterClockType}}</view>
+        </view>
+      </block>
+
+    </view>
+  </view>
+</view>

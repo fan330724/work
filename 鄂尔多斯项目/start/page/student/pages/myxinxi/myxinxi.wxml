@@ -1,0 +1,27 @@
+<!--pages/myxinxi/myxinxi.wxml-->
+<view class="box">
+  <view class="list">
+    <text>头像</text>
+    <view class="userinfo-avatar">
+      <image src="{{userinfo.avatarUrl}}"></image>
+    </view>
+  </view>
+  <view class="list">
+    <text>昵称</text>
+    <view class="userinfo-nickname">
+      {{userinfo.nickName}}
+    </view>
+  </view>
+  <view class="list">
+    <text>手机号</text>
+    <view class="userinfo-nickname">{{list.phonenumber}}</view>
+  </view>
+  <view class="list">
+    <text>民族</text>
+    <view class="userinfo-nickname">{{list.national}}</view>
+  </view>
+  <view class="list">
+    <text>性别</text>
+    <view class="userinfo-nickname">{{list.sex}}</view>
+  </view>
+</view>

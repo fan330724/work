@@ -1,0 +1,14 @@
+<!--page/tabbar/pages/addressBook/index.wxml-->
+<view class="box">
+  <view class="none" wx:if="{{show}}">
+    <image src="/images/noneDate.png"></image>
+  </view>
+  <block wx:else>
+    <view style='padding-bottom:{{isIphoneX?166:120}}rpx;'>
+      <view class="box1" bindtap="toTonxunDetail" wx:for="{{list}}" wx:key="pid" data-id="{{item.pid}}">
+        <view class="title">{{item.name}}</view>
+        <view class="num">{{item.count}}人</view>
+      </view>
+    </view>
+  </block>
+</view>

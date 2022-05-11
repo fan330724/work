@@ -1,0 +1,42 @@
+<!--pages/home/index.wxml-->
+<!-- 轮播图 -->
+<view class="page-body">
+  <swiper catchtap="onSwiperTap" indicator-dots autoplay="autoplay" circular indicator-active-color="#FB5C3C"
+    indicator-color="#FFBCAE" snap-to-edge>
+    <swiper-item wx:for="{{swiperTap}}" wx:key="index">
+      <image src="{{item.image}}" data-id="{{item.id}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="list">
+  <navigator url="{{item.url}}" wx:for="{{centerList}}" wx:key="*this" hover-class="none" extra-data="{{item.url}}">
+    <view class="list-item">
+      <image src="{{item.image}}"></image>
+      <text>{{item.text}}</text>
+    </view>
+  </navigator>
+</view>
+<view class="continue">
+  <view class="tab">
+    <view class="{{active == item.id?'active':''}} fontSize" data-id="{{item.id}}" bindtap="tab" wx:for="{{tabbar}}"
+      wx:key="index">{{item.name}}
+      <view class="cur" wx:if="{{active == item.id}}"></view>
+    </view>
+  </view>
+  <view class="mt">
+    <view class="fail" wx:if="{{show}}">
+      <image src="/images/noneDate.png"></image>
+    </view>
+    <view wx:else>
+      <scroll-view scroll-y="true" style="height: {{height}};">
+        <block wx:for="{{list}}" wx:key="index">
+          <infolist list="{{item}}"></infolist>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+
+<view class="button" bindtap="toLogin">
+  立即登录
+</view>

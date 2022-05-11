@@ -1,0 +1,27 @@
+<!--pages/commission/commission.wxml-->
+<view class="commission">
+    <view class="amount">
+        <text>{{list.zmoney}}</text>
+        <view>佣金总额</view>
+    </view>
+    <view class="centers">|</view>
+    <view class="amount">
+        <text>{{list.ydmoney}}</text>
+        <view>已提现金额</view>
+    </view>
+</view>
+
+<view class="mtop">
+    <view class="lists" wx:for="{{list.children}}" wx:key="*this">
+        <view class="infor">
+            <view class="avatar">
+                <image src="{{item.avatarUrl}}"></image>
+            </view>
+            <view class="uers">
+                <view>{{item.nickName}}</view>
+                <text>{{item.time}}</text>
+            </view>
+        </view>
+        <view class="money">￥{{item.money}}</view>
+    </view>
+</view>

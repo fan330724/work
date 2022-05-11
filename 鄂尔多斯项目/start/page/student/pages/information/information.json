@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "infolist":"/components/inforlist/index"
+  },
+  "navigationBarTitleText": "资讯"
+}

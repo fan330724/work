@@ -1,0 +1,10 @@
+<!--page/student/pages/informationDetail/informationDetail.wxml-->
+<view class="box">
+  <view class="header">
+    <view class="title">{{list.title}}</view>
+    <view class="date">{{list.createTime}}</view>
+  </view>
+  <view class="main">
+    <rich-text class="" nodes="{{list.content}}"></rich-text>
+  </view>
+</view>

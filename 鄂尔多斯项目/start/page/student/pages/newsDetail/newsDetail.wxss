@@ -1,0 +1,10 @@
+/* page/student/pages/newsDetail/newsDetail.wxss */
+.box{
+  padding: 30rpx;
+}
+.mar-top{
+  margin-top: 20px;
+}
+.mar-top:nth-of-type(1){
+  margin: 0;
+}

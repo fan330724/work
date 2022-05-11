@@ -1,0 +1,6 @@
+<!--pages/welcome/welcome.wxml-->
+<view class="pos">
+  <image src="/icons/welcome.png" mode="widthFix"></image>
+  <view class="next" bindtap="next">立即体验</view>
+  <view class="btn">必读</view>
+</view>

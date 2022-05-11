@@ -1,0 +1,42 @@
+<!--components/staffList/index.wxml-->
+<view class="box" catchtap="tocourseDetail" data-id="{{list.id}}">
+  <view class="box-header">
+    <view class="header-top flex">
+      <view class="top-left">
+        <view class="top-title">{{list.remark}}记录</view>
+      </view>
+      <view class="sun sun1" wx:if="{{list.status == 0}}">审核中</view>
+      <view class="sun sun2" wx:if="{{list.status == 1}}">审核通过</view>
+      <view class="sun sun1" wx:if="{{list.status == 2}}">审核拒绝</view>
+    </view>
+    <view class="header-content">
+      <view class="tip flex">
+        <view class="text">提交内容：</view>
+        <text class="txt">{{list.content}}</text>
+      </view>
+      <view class="tip flex" wx:if="{{list.reimbursementName}}">
+        <view class="text">提交类型：</view>
+        <text class="txt">{{list.reimbursementName}}</text>
+      </view>
+      <view class="tip flex" wx:if="{{list.detail}}">
+        <view class="text">采购明细：</view>
+        <text class="txt">{{list.detail}}</text>
+      </view>
+      <view class="date flex tip">
+        <view class="text">提交时间：</view>
+        <text class="txt">{{list.createTime}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="box-picurl">
+    <view class="picImg">
+      <block wx:if="{{list.picUrls == '' || list.picUrls == []}}">
+          <image src="/images/noneimg.png"></image>
+      </block>
+      <block wx:for="{{list.picUrls}}" wx:key="*this" wx:if="{{item != '' || item != []}}">
+        <image src="{{item}}" catchtap="enlarge" data-list="{{list.picUrls}}" data-src="{{item}}" ></image>
+      </block>
+      
+    </view>
+  </view>
+</view>

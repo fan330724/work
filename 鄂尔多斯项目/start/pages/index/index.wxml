@@ -1,0 +1,163 @@
+<!--pages/index/index.wxml-->
+<!-- 轮播图 -->
+<view class="page-body">
+  <swiper catchtap="onSwiperTap" indicator-dots autoplay="autoplay" circular indicator-active-color="#296EFF"
+    indicator-color="#ffffff" previous-margin="15px" next-margin="15px" snap-to-edge>
+    <swiper-item wx:for="{{swiperTap}}" wx:key="index">
+      <image src="{{item.image}}" data-id="{{item.id}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="container">
+
+  <!-- 学员端列表显示 -->
+  <view class="list" wx:if="{{getUserStart == 'student'}}">
+    <view class="list-item" bindtap="toscancode">
+      <image src="../../images/scancode.png"></image>
+      <text>扫一扫</text>
+    </view>
+    <view class="list-item" bindtap="tomall">
+      <image src="../../images/zi.png"></image>
+      <text>资讯</text>
+    </view>
+    <view class="list-item" bindtap="toschool">
+      <image src="../../images/school.png"></image>
+      <text>中心简介</text>
+    </view>
+    <view class="list-item" bindtap="tonews">
+      <image src="../../images/news.png"></image>
+      <text>消息</text>
+    </view>
+  </view>
+  <!-- 教师端列表显示  -->
+  <view class="list" wx:if="{{getUserStart == 'teacher'}}">
+    <view class="list-item" bindtap="tomall">
+      <image src="../../images/zi.png"></image>
+      <text>资讯</text>
+    </view>
+    <view class="list-item" bindtap="toschool">
+      <image src="../../images/school.png"></image>
+      <text>中心简介</text>
+    </view>
+    <view class="list-item" bindtap="tonews">
+      <image src="../../images/news.png"></image>
+      <text>消息</text>
+    </view>
+  </view>
+  <!-- 员工端列表显示 -->
+  <view class="list" wx:if="{{getUserStart == 'staff'}}">
+    <view class="list-item" bindtap="tomall">
+      <image src="../../images/zi.png"></image>
+      <text>资讯</text>
+    </view>
+    <view class="list-item" bindtap="torepair">
+      <image src="../../images/baoset.png"></image>
+      <text>报修</text>
+    </view>
+    <view class="list-item" bindtap="toschool">
+      <image src="../../images/school.png"></image>
+      <text>中心简介</text>
+    </view>
+    <view class="list-item" bindtap="tonews">
+      <image src="../../images/news.png"></image>
+      <text>消息</text>
+    </view>
+  </view>
+  <!-- 领导端列表显示 -->
+  <view class="list" wx:if="{{getUserStart == 'leader'}}">
+    <view class="list-item" bindtap="tomall">
+      <image src="../../images/zi.png"></image>
+      <text>资讯</text>
+    </view>
+    <view class="list-item" bindtap="toleader">
+      <image src="../../images/baoset.png"></image>
+      <text>报修报账</text>
+    </view>
+    <view class="list-item" bindtap="toschool">
+      <image src="../../images/school.png"></image>
+      <text>中心简介</text>
+    </view>
+  </view>
+  
+
+  <!-- 学员端内容列表显示 -->
+  <view wx:if="{{getUserStart == 'student'}}">
+    <view class="footer">
+      <view class="footer-header">
+        <text>近期课程</text>
+        <view class="right" bindtap="onmore">
+          <text>更多</text>
+          <view class="icon">
+            <text class="iconfont icon-jiantou"></text>
+          </view>
+        </view>
+      </view>
+      <view>
+        <block wx:for="{{list}}" wx:key="index">
+          <list list="{{item}}"></list>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <!-- 教师端内容列表显示 -->
+  <view wx:if="{{getUserStart == 'teacher' || getUserStart == 'leader'}}">
+    <view class="footer" wx:if="{{recentList && recentList.length > 0}}">
+      <view class="footer-header">
+        <text>近期课程</text>
+        <view class="right" bindtap="onmore" data-text="近期课程">
+          <text>更多</text>
+          <view class="icon">
+            <text class="iconfont icon-jiantou"></text>
+          </view>
+        </view>
+      </view>
+      <view>
+        <block wx:for="{{recentList}}" wx:key="index">
+          <teacherlist list="{{item}}"></teacherlist>
+        </block>
+      </view>
+    </view>
+    <view class="footer" wx:if="{{pastList && pastList.length > 0}}">
+      <view class="footer-header">
+        <text>往期课程</text>
+        <view class="right" bindtap="onmore" data-text="往期课程">
+          <text>更多</text>
+          <view class="icon">
+            <text class="iconfont icon-jiantou"></text>
+          </view>
+        </view>
+      </view>
+      <view>
+        <block wx:for="{{pastList}}" wx:key="index">
+          <teacherlist list="{{item}}"></teacherlist>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <!-- 员工端内容列表显示 -->
+  <!-- <view wx:if="{{getUserStart == 'staff'}}">
+    <view class="footer">
+      <view class="footer-header">
+        <text>我的任务</text>
+        <view class="right" bindtap="onmore" data-text="我的任务">
+          <text>更多</text>
+          <view class="icon">
+            <text class="iconfont icon-jiantou"></text>
+          </view>
+        </view>
+      </view>
+      <view>
+        <block wx:for="{{list}}" wx:key="*this">
+          <stafflist list="{{item}}"></stafflist>
+        </block>
+      </view>
+    </view>
+  </view> -->
+</view>
+
+<!-- 学员端-教师端课程提示 -->
+<view class="tishi" wx:if="{{ToRemind}}">
+  <view class="tishi-title">{{audit}}</view>
+</view>

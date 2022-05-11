@@ -1,0 +1,27 @@
+<!--pages/work/work.wxml-->
+<view class="box">
+  <!-- tab切换页 -->
+  <view class="tab">
+    <view class="{{active == 0?'active':''}}" data-id="0" bindtap="tab">报修
+      <view class="cur" wx:if="{{active == 0}}"></view>
+    </view>
+    <view class="{{active == 1?'active':''}}" data-id="1" bindtap="tab">报账
+      <view class="cur" wx:if="{{active == 1}}"></view>
+    </view>
+    <view class="{{active == 2?'active':''}}" data-id="2" bindtap="tab">请假
+      <view class="cur" wx:if="{{active == 2}}"></view>
+    </view>
+  </view>
+  <!-- 内容页 -->
+  <view class="mt">
+    <block wx:if="{{active == 0}}">
+      <repair></repair>
+    </block>
+    <block wx:if="{{active == 1}}">
+      <account></account>
+    </block>
+    <block wx:if="{{active == 2}}">
+      <approve></approve>
+    </block>
+  </view>
+</view>

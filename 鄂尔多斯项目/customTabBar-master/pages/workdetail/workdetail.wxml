@@ -1,0 +1,15 @@
+<!--pages/workdetail/workdetail.wxml-->
+<view class="box">
+  <!-- 没有数据页 -->
+  <view class="fail" wx:if="{{show}}">
+    <image src="/images/noneDate.png"></image>
+  </view>
+  <block wx:if="{{name == '请假'}}">
+    <apprase lists="{{list}}"></apprase>
+  </block>
+  <block wx:else>
+    <block wx:for="{{list}}" wx:key="*this">
+      <stafflist list="{{item}}" catchcourseDetail="courseDetail"></stafflist>
+    </block>
+  </block>
+</view>

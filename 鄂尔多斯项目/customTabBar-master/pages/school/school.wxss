@@ -1,0 +1,25 @@
+/* pages/school/school.wxss */
+
+.box{
+  padding: 30rpx;
+}
+.title{
+  color: #06121E;
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.foot{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #5B5E63;
+  font-size: 24rpx;
+  margin: 20px 0;
+}
+
+.main{
+  color: #43464B;
+  font-size: 28rpx;
+}

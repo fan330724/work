@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "pop":"/components/pop/pop",
+    "goodslist":"/components/goodslist/goodslist"
+  },
+  "navigationBarTitleText":"搜索中心"
+}

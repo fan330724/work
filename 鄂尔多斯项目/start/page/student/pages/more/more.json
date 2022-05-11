@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "list":"/components/list/index",
+    "teacherlist":"/components/teacherList/index"
+  },
+  "navigationBarTitleText": "往期课程"
+}

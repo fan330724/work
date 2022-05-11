@@ -1,0 +1,10 @@
+<!--pages/tongxun/tongxun.wxml-->
+<view class="none" wx:if="{{show}}">
+  <image src="/images/noneDate.png"></image>
+</view>
+<block wx:else>
+  <view class="box" bindtap="toTonxunDetail" wx:for="{{list}}" wx:key="pid" data-id="{{item.pid}}">
+    <view class="title">{{item.name}}</view>
+    <view class="num">{{item.count}}人</view>
+  </view>
+</block>

@@ -1,0 +1,18 @@
+/**app.wxss**/
+page{
+  /* 定义主题颜色 */
+  --themeColor:#F21314;
+}
+.box{
+  background: url('https://stu.yikang.co/profile/upload/appraise/2022/03/30/1e331d295c860a42e00ba9248a4b92a.png') no-repeat;
+  background-size: 100%,100%;
+  overflow-y: scroll;
+  height: 100vh;
+}
+image{
+  width: 100%;
+  height: 100%;
+}
+view {
+  letter-spacing: 1px;
+}

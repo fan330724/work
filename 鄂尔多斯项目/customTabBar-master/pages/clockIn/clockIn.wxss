@@ -1,0 +1,172 @@
+/* page/staff/pages/clockIn/clockIn.wxss */
+page {
+  background: #F7F9FA;
+}
+
+.box {
+  padding: 30rpx;
+}
+
+.top {
+  background: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+}
+
+.userinfo-avatar {
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 13px;
+}
+
+.userinfo-nickname {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.user-text,.date{
+  margin-top: 10px;
+  color: #6D7275;
+  font-size: 28rpx;
+}
+.right{
+  color: var(--themeColor);
+  font-size: 36rpx;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.record{
+  font-weight: bold;
+}
+
+.footer{
+  margin-top: 20px;
+  background: white;
+  padding: 15px;
+  color: #969B9E;
+  font-size: 24rpx;
+}
+.list-item{
+  display:flex;
+  align-items: center;
+}
+.round{
+  background: #EBEDF0;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.active{
+  background: var(--themeColor);
+}
+.list-clockIn{
+  background: var(--themeColor);
+  width: 192rpx;
+  height: 192rpx;
+  border-radius: 50%;
+  color: white;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.cur{
+  background: #FFB437;
+}
+.list-date{
+  margin-top: 5px;
+}
+.success{
+  display: flex;
+  margin: 20px 0;
+}
+.success-text{
+  color: #020C17;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-right: 8px;
+}
+.success-start{
+  width: 96rpx;
+  height: 40rpx;
+  border-radius: 5px;
+  border: 2px solid #296EFF;
+  line-height: 40rpx;
+  text-align: center;
+  color: #296EFF;
+  font-size: 24rpx;
+}
+
+.success-cur{
+  border-color: #FFAF2D;
+  color: #FFAF2D;
+}
+
+
+/* 弹出框 */
+.pop .alert-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.3;
+}
+
+.pop .modalDlg {
+  width: 534rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 9999;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+}
+.pop-title{
+  font-size: 48rpx;
+  padding: 20px 0;
+}
+.pop-main{
+  text-align: center;
+}
+.pop-date{
+  color: var(--themeColor);
+  font-size: 92rpx;
+}
+.pop-text{
+  font-size: 40rpx;
+  color: #888D95;
+}
+.pop-btn{
+  width: 534rpx;
+  height: 100rpx;
+  background: var(--themeColor);
+  text-align: center;
+  line-height: 100rpx;
+  color: white;
+  font-size: 48rpx;
+  margin-top: 30px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

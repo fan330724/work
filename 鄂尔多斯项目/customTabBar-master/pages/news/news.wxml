@@ -1,0 +1,10 @@
+<!--pages/news/news.wxml-->
+<view class="box">
+  <block wx:for="{{list}}" wx:key="*this">
+    <news news="{{item}}" bindtap="tonews" data-id="{{item}}">
+      <image src="/images/xinews.png" wx:if="{{item.type == 1}}"></image>
+      <image src="/images/diaonews.png" wx:if="{{item.type == 3}}"></image>
+      <image src="/images/kenews.png" wx:if="{{item.type == 4}}"></image>
+    </news>
+  </block>
+</view>

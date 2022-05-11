@@ -1,0 +1,93 @@
+<!--pages/order_detail/index.wxml-->
+<view class="main">
+  <!-- 收货地址 -->
+  <view class="revice_address_row back">
+    <view class="user_info_row">
+      <view class="user_info">
+        <view style="font-size: 38rpx;">{{list.addressName}}</view>
+        <view>{{list.addressTel}}</view>
+      </view>
+      <view class="user_phone">{{list.floorNum}}{{list.addressDetail}}</view>
+    </view>
+  </view>
+
+  <view class="cart_content back">
+    <view class="cart_main">
+      <view class="cart_item" wx:for="{{list.csList}}" wx:key="*this">
+        <!-- 商品图片 -->
+        <view class="cart_img_wrap">
+          <image mode="widthFix" src="{{'https://www.zhlezh.com/' + item.picUrl}}"></image>
+        </view>
+        <!-- 商品信息 -->
+        <view class="cart_info_wrap">
+          <view class="goods_name">{{item.proName}}</view>
+          <view class="goods_price_wrap">
+            <view class="goods_price">￥{{item.price}}</view>
+            <view class="cart_num_tool">
+              <view class="goods_num">X {{item.proNum}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="cart_remark">
+      <view class="cart_price flex">
+        <view>商品总价</view>
+        <text>￥{{list.orderPrice}}</text>
+      </view>
+      <view class="cart_coupon flex">
+        <view>优惠券</view>
+        <text>-￥{{list.ifNew}}</text>
+      </view>
+      <view class="cart_coupon flex">
+        <view>配送费</view>
+        <text>￥{{list.ifKd}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="order back">
+    <view class="order_list order_flex">
+      <view class="order_list">
+        <view class="span">订单编号：</view>
+        <text>{{list.orderNumber}}</text>
+      </view>
+      <view class="copy" bindtap="oncopy" data-copy="{{list.orderNumber}}">复制</view>
+    </view>
+    <view class="order_list">
+      <view class="span">下单时间：</view>
+      <text>{{list.payDate}}</text>
+    </view>
+    <view class="order_list">
+      <view class="span">支付方式：</view>
+      <text wx:if="{{list.payType == 1}}">微信支付</text>
+    </view>
+    <view class="order_list" wx:if="{{list.orderState == 4 || list.orderState == 5}}">
+      <view class="span">物流公司：</view>
+      <text>{{list.wlname}}</text>
+    </view>
+    <view class="order_list order_flex" wx:if="{{list.orderState == 4 || list.orderState == 5}}">
+      <view class="order_list">
+        <view class="span">快递单号：</view>
+        <text>{{list.wlnumber}}</text>
+      </view>
+      <view class="copy" bindtap="oncopy" data-copy="{{list.wlnumber}}">复制</view>
+    </view>
+  </view>
+
+  <view class="foor">如收到的商品出现质量、错发、漏发等问题，可联系客服</view>
+</view>
+
+<view class="fixed">
+  <view class="cell_btn" catchtap="onkdPlugin" data-num="{{list.wlnumber}}"
+    wx:if="{{list.orderState == 4 || list.orderState == 5}}">
+    查看物流
+  </view>
+  <view class="cell_btn" catchtap="onprice" data-orderid="{{orderRecordPId}}" wx:if="{{list.orderState == 1}}">
+    立即支付
+  </view>
+  <view class="cell_btn" catchtap="onsuccess" data-orderid="{{orderRecordPId}}" wx:if="{{list.orderState == 4}}">
+    确认收货
+  </view>
+
+</view>

@@ -1,0 +1,40 @@
+/* page/tabbar/pages/classDetail/index.wxss */
+.box {
+  padding: 30rpx;
+}
+
+.list {
+  padding: 30rpx 20rpx;
+  font-size: 28rpx;
+  color: #282B32;
+  box-shadow: 0 2px 8px rgba(113, 112, 112, .3);
+  border-radius: 10px;
+  margin-bottom: 40rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-title {
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+
+.list-name {
+  margin-top: 30rpx;
+}
+
+.list-name text {
+  color: #6D7275;
+}
+
+.btn {
+  width: 160rpx;
+  height: 60rpx;
+  text-align: center;
+  color: var(--themeColor);
+  border: 1px solid var(--themeColor);
+  line-height: 60rpx;
+  font-size: 28rpx;
+  margin-top: 30rpx;
+  align-self: flex-end;
+}

@@ -1,0 +1,74 @@
+page {
+  background-color: #f7f7f7;
+}
+
+.pages {
+  background-color: #ffffff;
+}
+
+.pay {
+  text-align: center;
+  padding-top: 65rpx;
+}
+
+.pay image {
+  width: 145rpx;
+  height: 184rpx;
+}
+
+.pay .success {
+  font-size: 31rpx;
+  color: #080808;
+}
+
+/* 支付信息 */
+.information {
+  padding: 30px 27px;
+  margin-top: 112rpx;
+  font-size: 28rpx;
+  color: #686868;
+}
+
+.information .lists {
+  margin-bottom: 10px;
+}
+
+.information .money {
+  color: red;
+}
+
+.information .way {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #EAEAEA;
+}
+
+/* 查看订单 */
+.btns {
+  padding-top: 50px;
+}
+
+.btns .check {
+  text-align: center;
+  width: 600rpx;
+  height: 90rpx;
+  border-radius: 45px;
+  line-height: 90rpx;
+  margin-bottom: 48rpx;
+  font-size: 31rpx;
+  border: 2px solid #D1D1D1;
+  color: #686868;
+  margin: 0 auto;
+}
+
+.text {
+  width: 394rpx;
+  height: 63rpx;
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #8D8D8D;
+  line-height: 44rpx;
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 20rpx auto;
+}

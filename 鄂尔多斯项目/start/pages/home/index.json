@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "infolist":"/components/inforlist/index"
+  }
+}

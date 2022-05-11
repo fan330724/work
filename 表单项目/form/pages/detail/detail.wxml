@@ -1,0 +1,35 @@
+<!--pages/detail/detail.wxml-->
+<view class="box">
+  <form action="" bindsubmit="onsubmit">
+    <block wx:for="{{list.controlnList}}" wx:key="id">
+      <view class="list-item">
+        <view class="span"><text class="text">*</text><text>{{item.controlnName}}</text></view>
+        <input type="text" name='{{item.controlnName}}' placeholder="请输入{{item.controlnName}}"
+          wx:if="{{item.number == 'input' && item.controlnName != '手机号'}}" />
+        <input type="number" name='{{item.controlnName}}' placeholder="请输入{{item.controlnName}}"
+          wx:if="{{item.number == 'input' && item.controlnName == '手机号'}}" maxlength="11" />
+        <radio-group wx:if="{{item.number == 'radio'}}" name='{{item.controlnName}}'>
+          <label class="radio">
+            <radio value="男" />男
+          </label>
+          <label class="radio" style="margin-left: 20rpx;">
+            <radio value="女" />女
+          </label>
+        </radio-group>
+
+        <textarea auto-height placeholder="请输入{{item.controlnName}}" name='{{item.controlnName}}'
+          wx:if="{{item.number == 'textarea'}}"></textarea>
+
+        <picker mode="date" name='{{item.controlnName}}' wx:if="{{item.number == 'picker'}}" bindchange="bindDateChange">
+          <view class="picker" wx:if="{{!date}}">
+            请选择日期
+          </view>
+          <view class="" wx:else>{{date}}</view>
+        </picker>
+      </view>
+    </block>
+    <button form-type="submit" type="primary">提交内容</button>
+  </form>
+
+  <view class="btn" bindtap="onjilu">查看记录</view>
+</view>

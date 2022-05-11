@@ -1,0 +1,87 @@
+page{
+  background: #F7F7F7;
+}
+.top-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 99;
+  box-shadow: 0 0 20rpx -5rpx rgba(0, 0, 0, 0.1);
+}
+
+swiper{
+  height: 100vh;
+}
+.cells{
+  /* margin-top: 20rpx;  */
+}
+.cell:nth-of-type(1){
+  margin-top: 0;
+}
+.cell{
+  margin-top: 30rpx;
+  padding: 30rpx;
+  background: #ffffff;
+}
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cell__bd{
+  color: #292929;
+  letter-spacing: 1px;
+  font-size: 28rpx;
+  padding-bottom: 30rpx;
+}
+.cell_center{
+  border-top: 1px solid #F7F7F7;
+  border-bottom: 1px solid #F7F7F7;
+  padding: 30rpx 0;
+}
+.cell_center image{
+  width: 120rpx;
+  height: 100rpx;
+  margin-left: 20rpx;
+}
+.cell_center image:nth-of-type(1){
+  margin-left: 0rpx;
+}
+.cell_num{
+  font-size: 26rpx;
+  color: #626262;
+}
+.cell_num icon{
+  font-size: 40rpx;
+  margin-top: -7rpx;
+}
+.cell_footer{
+  color: #B0B0B0;
+  font-size: 28rpx;
+  padding: 20rpx 0;
+}
+.cell_price text{
+  color: var(--themeColor);
+}
+
+.cell_foot{
+  padding-top: 30rpx;
+  border-top: 1px solid #F7F7F7;
+  justify-content: flex-end;
+}
+.cell_foot .cell_btn{
+  width: 155rpx;
+  background-color: var(--themeColor);
+  color: #ffffff;
+  letter-spacing: 1px;
+  border-radius: 28rpx;
+  font-size: 26rpx;
+  text-align: center;
+  height: 56rpx;
+  line-height: 56rpx;
+}
+.marle{
+  margin-left: 20rpx;
+}

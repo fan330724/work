@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "BmsDirectory": "plugin://BmsDirectory/BmsDirectory"
+  },
+  "navigationBarTitleText": "通讯录"
+}

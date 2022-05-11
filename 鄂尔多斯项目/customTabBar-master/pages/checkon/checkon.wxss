@@ -1,0 +1,72 @@
+/* pages/checkon/checkon.wxss */
+.box {
+  padding: 30rpx;
+}
+
+.title {
+  text-align: center;
+  font-size: 34rpx;
+  color: #282B32;
+  margin-bottom: 30rpx;
+}
+
+.top {
+  padding: 20rpx;
+  box-shadow: 0 2px 8px rgba(113, 112, 112, .3);
+  font-size: 28rpx;
+  color: #282B32;
+  border-radius: 10px;
+}
+
+.top-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 20rpx 0;
+  margin-bottom: 30rpx;
+}
+
+.top-footer-title {
+  color: var(--themeColor);
+}
+
+.top-footer-list text {
+  display: block;
+  margin: 20rpx 0;
+}
+
+.list {
+  color: #020C17;
+  font-size: 32rpx;
+  margin-top: 40rpx;
+}
+
+.list .table {
+  display: flex;
+}
+
+.list-item-title {
+  width: 33%;
+  text-align: center;
+}
+
+.list-item-list {
+  display: flex;
+}
+
+.list-item-list view {
+  width: 33%;
+  text-align: center;
+}
+
+.list-item .item {
+  color: #5B5E63;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin: 20rpx 0;
+}
+
+.list-item .active {
+  color: var(--themeColor);
+}

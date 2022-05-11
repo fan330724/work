@@ -1,0 +1,12 @@
+<!--pages/teaching/teaching.wxml-->
+<view class="box">
+  <view class="leader" wx:for="{{list}}" wx:key="id" bindtap="toteacher" data-id="{{item.id}}">
+    <view class="leader-img">
+      <image src="{{item.avatar}}"></image>
+    </view>
+    <view class="leader-content">
+      <view class="leader-title">{{item.name}}</view>
+      <view class="leader-subject" wx:if="{{item.subjectName}}">{{item.subjectName}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,59 @@
+<!--page/student/pages/addPin/addpin.wxml-->
+<view class="continue">
+  <!-- tab切换页 -->
+  <view class="tab">
+    <view class="{{active == 2?'active':''}}" data-id="2" bindtap="tab">就餐评价
+      <view class="cur" wx:if="{{active == 2}}"></view>
+    </view>
+    <view class="{{active == 3?'active':''}}" data-id="3" bindtap="tab">住宿评价
+      <view class="cur" wx:if="{{active == 3}}"></view>
+    </view>
+  </view>
+  <!-- 内容页 -->
+  <view class="mt">
+    <block wx:if="{{active == 2}}">
+      <view class="box">
+        <start bindselectScore="selectScore" list="{{list}}"></start>
+        <view class="text">
+          <view class="title">评价语：</view>
+          <textarea bindinput="toinput"></textarea>
+        </view>
+        <view class="uploader">
+          <view class="uploader-list" wx:for="{{pics}}" wx:key="*this">
+            <image src='{{item}}' data-index="{{index}}" mode="aspectFit" />
+            <view class='delete' data-index="{{index}}" bindtap='deleteImg'>
+              <image src="/images/delete.png"></image>
+            </view>
+          </view>
+          <view class="upadd" bindtap='chooseImage' wx:if="{{pics.length < 3 }}">
+            <view>+</view>
+            <text>添加照片</text>
+          </view>
+        </view>
+        <view class="btn" bindtap="tosubmit">确认提交</view>
+      </view>
+    </block>
+    <block wx:if="{{active == 3}}">
+      <view class="box">
+        <start bindselectScore="selectScore" list="{{list}}"></start>
+        <view class="text">
+          <view class="title">评价语：</view>
+          <textarea bindinput="toinput"></textarea>
+        </view>
+        <view class="uploader">
+          <view class="uploader-list" wx:for="{{pics}}" wx:key="*this">
+            <image src='{{item}}' data-index="{{index}}" mode="aspectFit" />
+            <view class='delete' data-index="{{index}}" bindtap='deleteImg'>
+              <image src="/images/delete.png"></image>
+            </view>
+          </view>
+          <view class="upadd" bindtap='chooseImage' wx:if="{{pics.length < 3 }}">
+            <view>+</view>
+            <text>添加照片</text>
+          </view>
+        </view>
+        <view class="btn" bindtap="tosubmit">确认提交</view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<!--pages/teacher/teacher.wxml-->
+<view class="box">
+  <view class="box1">
+    <view class="header">
+      <view class="left">
+        <image src="{{date.avatar}}" binderror="imageError"></image>
+      </view>
+      <view class="right">
+        <view class="name">{{date.NAME || date.name}}</view>
+        <view class="txt" wx:if="{{date.subjectName}}">{{date.subjectName}}</view>
+      </view>
+    </view>
+    <view class="main">
+      <view class="h3">教师介绍</view>
+      <view class="text">
+        <rich-text nodes="{{date.Introduction || date.introduce}}"></rich-text>
+      </view>
+
+    </view>
+  </view>
+</view>

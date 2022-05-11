@@ -1,0 +1,50 @@
+<block wx:if="{{list}}">
+  <view class="pages">
+    <!-- 订单支付成功 -->
+    <view class="pay">
+      <image src="/icons/success.png"></image>
+      <view class="success">订单支付成功！</view>
+    </view>
+    <!-- 支付信息 -->
+    <view class="information">
+      <view class="lists">
+        <view>订单编号： <text>{{list.orderNumber}}</text></view>
+      </view>
+      <view class="lists">
+        <view>实付金额： <text class="money">{{list.orderPrice}}元</text></view>
+      </view>
+      <view class="lists way">
+        <view>支付方式： <text wx:if="{{list.payType == 1}}">微信支付</text></view>
+      </view>
+      <view class="lists">
+        <view>收货人： <text>{{list.addressName}} {{ list.addressTel}}</text></view>
+      </view>
+      <view class="lists">
+        <view>收货地址： <text>{{list.addressDetail}}</text></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 查看订单 -->
+  <view class="btns">
+    <view class="check" bindtap="toOrder">查看订单</view>
+  </view>
+</block>
+
+<block wx:else>
+  <view class="pages">
+    <!-- 订单支付成功 -->
+    <view class="pay">
+      <image src="/icons/error.png"></image>
+      <view class="success">订单支付失败！</view>
+    </view>
+    <view class="text">
+      订单支付失败，原因您的余额
+      不足或请找其他原因
+    </view>
+    <!-- 查看订单 -->
+    <view class="btns" bindtap="toreturn">
+      <view class="check">返回</view>
+    </view>
+  </view>
+</block>

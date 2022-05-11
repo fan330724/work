@@ -1,0 +1,9 @@
+<!--components/newsDetail/index.wxml-->
+<view class="box">
+  <view class="top">
+    <view class="title">{{list.title}}</view>
+    <view class="date">{{list.createTime}}</view>
+  </view>
+  <!-- <text>{{list.content}}</text> -->
+  <rich-text nodes="{{list.content}}"></rich-text>
+</view>

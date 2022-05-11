@@ -1,0 +1,50 @@
+<view class="top-wrap">
+  <tabs id="category" tab-data="{{categoryMenu}}" tab-cur="{{categoryCur}}" size="{{100}}" bindchange="toggleCategory">
+  </tabs>
+</view>
+
+<swiper current="{{categoryCur}}" duration="{{duration}}" bindanimationfinish="animationFinish">
+  <swiper-item wx:for="{{categoryData}}" wx:key="index">
+    <scroll requesting="{{item.requesting}}" end="{{item.end}}" empty-show="{{item.emptyShow}}"
+      list-count="{{item.listData.length}}" has-top="{{true}}" top-size="{{100}}" bind:refresh="refresh"
+      bind:more="more">
+      <view class="cells">
+        <view class="cell" wx:for="{{item.listData}}" wx:key="index" catchtap="showArticle"
+          data-orderid="{{item.orderRecordPId}}">
+          <view class="cell__bd flex">
+            <view class="name">
+              {{item.orderNumber}}
+            </view>
+            <view class="order_status" wx:if="{{item.orderstate == 1}}">待付款</view>
+            <view class="order_status" wx:if="{{item.orderstate == 2}}">待发货</view>
+            <view class="order_status" wx:if="{{item.orderstate == 4}}">待收货</view>
+            <view class="order_status" wx:if="{{item.orderstate == 5}}">已完成</view>
+          </view>
+          <view class="cell_center flex">
+            <view class="cell-img" wx:for="{{item.goods}}" wx:if="index<=3" wx:key="*this">
+              <image src="{{'https://www.zhlezh.com/' + item}}"></image>
+            </view>
+            <view class="cell_num flex">
+              <text>共 {{item.size}} 件</text>
+              <icon class="iconfont icon-jiantou"></icon>
+            </view>
+          </view>
+          <view class="cell_footer flex">
+            <view class="cell_date">{{item.orderDate}}</view>
+            <view class="cell_price">
+              实付金额:
+              <text>￥{{item.orderPrice}}</text>
+            </view>
+          </view>
+          <view class="cell_foot flex">
+            <view class="cell_btn" catchtap="onprice" data-orderid="{{item.orderRecordPId}}"
+              wx:if="{{item.orderstate == 1}}">立即支付</view>
+            <view class="cell_btn" catchtap="onsuccess" data-orderid="{{item.orderRecordPId}}"
+              wx:if="{{item.orderstate == 4}}">确认收货</view>
+            <view class="cell_btn marle" wx:else>查看详情</view>
+          </view>
+        </view>
+      </view>
+    </scroll>
+  </swiper-item>
+</swiper>

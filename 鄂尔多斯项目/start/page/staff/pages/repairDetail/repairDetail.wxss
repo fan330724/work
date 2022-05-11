@@ -1,0 +1,62 @@
+/* page/staff/pages/repairDetail/repairDetail.wxss */
+.box {
+  padding: 30rpx;
+}
+
+.list {
+  padding: 6px 0;
+}
+
+.title {
+  color: #5B5E63;
+  font-size: 28rpx;
+  margin-bottom: 5px;
+}
+
+.content {
+  color: #6D7275;
+  font-size: 24rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 40rpx;
+}
+
+.picImg image {
+  width: 196rpx;
+  height: 196rpx;
+}
+
+.picImg image:nth-of-type(2) {
+  margin: 0 23px;
+}
+
+.sun {
+  color: #296EFF;
+  background: #F1F6FD;
+  font-size: 26rpx;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-weight: bold;
+  width: 115rpx;
+  text-align: center;
+}
+
+.sun1 {
+  color: #FF5656;
+  background: #FFE9E9;
+}
+
+.sun2 {
+  color: #1ECC8B;
+  background: #E0FDE7;
+}
+
+.btn {
+  padding: 20rpx 0;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 30rpx;
+}

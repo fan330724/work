@@ -1,0 +1,87 @@
+/* pages/coursedetail/coursedetail.wxss */
+.box{
+  padding: 30rpx;
+}
+.flex{
+  display: flex;
+  align-items: center;
+}
+.img{
+  height: 360rpx;
+}
+.main{
+  padding: 30rpx 0;
+  border-bottom: 1px solid #E6E8EB;
+  position: relative;
+}
+.top .title{
+  color: #282B32;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.center{
+  margin: 10px 0;
+}
+.center .list{
+  align-items: baseline;
+  font-size: 24rpx;
+  margin: 5px 0;
+}
+.center .span{
+  color: #282B32;
+  font-weight: bold;
+  flex: 1;
+}
+.center text{
+  color: #6D7275;
+  flex: 4;
+}
+.footer{
+  color: #6D7275;
+  font-size: 24rpx;
+}
+.news{
+  color: #282B32;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.footer-news1{
+  color: #296EFF;
+  margin-left: 15px;
+}
+.news1{
+  color: #296EFF;
+}
+.position{
+  position: absolute;
+  top: 7%;
+  right: 5%;
+  width: 100rpx;
+  height: 100rpx;
+}
+.bottom{
+  padding: 30rpx 0;
+  font-size: 28rpx;
+  color: #6D7275;
+}
+.h3{
+  color: #282B32;
+  font-size: 34rpx;
+  margin-bottom: 5px;
+}
+
+.button{
+  width: 650rpx;
+  height: 88rpx;
+  background: #296EFF;
+  color: white;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 88rpx;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.button1{
+  background: #F1F6FD;
+  color: #BEC1C5;
+}

@@ -1,0 +1,93 @@
+<!--page/tabbar/pages/index/index.wxml-->
+<view class="box" style='padding-bottom:{{isIphoneX?166:120}}rpx;'>
+  <view class="banner">
+    <image src="/images/index-ban.png" mode="widthFix"></image>
+  </view>
+  <view class="swiperBox">
+    <!-- 轮播图 -->
+    <view class="page-body">
+      <swiper catchtap="onSwiperTap" indicator-dots autoplay="autoplay" circular indicator-active-color="#FB5C3C"
+        indicator-color="#FFBCAE" snap-to-edge>
+        <swiper-item wx:for="{{swiperTap}}" wx:key="index">
+          <image src="{{item.image}}" data-id="{{item.id}}"></image>
+        </swiper-item>
+      </swiper>
+    </view>
+
+    <!--跑马灯-->
+    <view class="marquee_container" style="--marqueeWidth--:-30em">
+      <view class="marquee_text">欢迎 {{name}} 来到鄂尔多斯少数民族文化交流中心</view>
+    </view>
+    <!--跑马灯-->
+  </view>
+  <view class="list">
+    <view wx:if="{{getUserStart == 'student' || getUserStart == 'teacher'}}" class="none" bindtap="toscancode">
+      <view class="list-item">
+        <image src="/images/scancode.png"></image>
+        <text>扫码就餐</text>
+      </view>
+    </view>
+    <view wx:if="{{getUserStart == 'student'}}" class="none" bindtap="toscancode">
+      <view class="list-item">
+        <image src="/images/scancode.png"></image>
+        <text>扫码考勤</text>
+      </view>
+    </view>
+    <navigator wx:if="{{getUserStart == 'staff'}}" hover-class="none" url="/pages/clockIn/clockIn">
+      <view class="list-item">
+        <image src="/images/daka.png"></image>
+        <text>考勤</text>
+      </view>
+    </navigator>
+    <navigator url="{{item.url}}" wx:for="{{centerList}}" wx:key="*this" hover-class="none" extra-data="{{item.url}}">
+      <view class="list-item">
+        <image src="{{item.image}}"></image>
+        <text>{{item.text}}</text>
+      </view>
+    </navigator>
+
+  </view>
+  <view class="footer">
+    <view class="footer-item">
+      <view class="footer-title" bindtap="tonews">
+        <text>信息通知</text>
+        <image src="/images/1.png"></image>
+      </view>
+      <view class="footer-main">
+        <view class="footer-list" wx:for="{{getMinMessage}}" wx:key="*this">
+          <view style="margin-right: 10rpx;">{{item.title}}</view>
+          <text>{{item.createTime}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="footer-item">
+      <navigator class="footer-title" hover-class="none" url="/pages/playback/playback?id={{queryVideo[0].courseId}}">
+        <text>直播课程</text>
+        <image src="/images/3.png"></image>
+      </navigator>
+      <view class="footer-main">
+        <block wx:for="{{queryVideo}}" wx:key="*this">
+          <view class="footer-list footer-flex">
+            <image src="/images/shipin.png"></image>
+            <text>{{item.videoName}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="footer-item">
+      <navigator class="footer-title" hover-class="none" url="/pages/playback/playback?id={{queryVideo[0].courseId}}">
+        <text>网络课程</text>
+        <image src="/images/2.png"></image>
+      </navigator>
+      <view class="footer-main">
+        <block wx:for="{{queryVideo}}" wx:key="*this">
+          <!-- <video src="{{item.videoUrl}}" id="myVideo" style="width: 100%; height: 140rpx;" title="{{item.videoName}}" show-casting-button="{{true}}"></video> -->
+          <view class="footer-list footer-flex">
+            <image src="/images/shipin.png"></image>
+            <text>{{item.videoName}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

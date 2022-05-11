@@ -1,0 +1,70 @@
+{
+  "setting": {},
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "今日菜谱",
+          "pathName": "pages/menu/menu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "就餐评价",
+          "pathName": "pages/menuappraise/menuappraise",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "就餐记录",
+          "pathName": "pages/menudetail/menudetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "住宿情况",
+          "pathName": "pages/stopat/stopat",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "历史班级",
+          "pathName": "pages/historyclass/historyclass",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "历史班级详情",
+          "pathName": "pages/historyclassdetail/historyclassdetail",
+          "query": "classId=775dcd3b-35d7-4530-934d-4a97246a4a16",
+          "scene": null
+        },
+        {
+          "name": "工作审批",
+          "pathName": "pages/work/work",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "领导端工作审批",
+          "pathName": "pages/leader/leader",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "考勤记录",
+          "pathName": "pages/checkon/checkon",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/stay/stay",
+          "pathName": "pages/stay/stay",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
+}

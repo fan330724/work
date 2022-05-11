@@ -1,0 +1,108 @@
+/* pages/myappraise/myappraise.wxss */
+.box {
+  padding: 30rpx;
+}
+
+.flex {
+  display: flex;
+  box-shadow: 0 2px 8px rgba(113, 112, 112, .3);
+  border-radius: 10px;
+  padding: 20rpx;
+  margin-bottom: 15px;
+}
+
+.headImg {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 10px;
+}
+
+.main {
+  font-size: 28rpx;
+  color: #6D7275;
+  padding: 10px 0;
+  width: 570rpx;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.date {
+  font-size: 24rpx;
+}
+
+.content {
+  margin: 10px 0;
+  font-size: 24rpx;
+  color: #282B32;
+}
+.li {
+  margin-bottom: 5px;
+}
+.li text:nth-of-type(2){
+  color: #6D7275;
+}
+.score{
+  color: #282B32;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+.score-item{
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.score-item image{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 5px;
+}
+.textarea{
+  font-size: 24rpx;
+  margin: 10px 0;
+}
+.textarea-tit{
+  color: #282B32;
+}
+.footer{
+  display: flex;
+  align-items: center;
+}
+.footer image{
+  width: 180rpx;
+  height: 140rpx;
+  margin-right: 6px;
+}
+.footer image:nth-last-of-type(1){
+  margin: 0;
+}
+
+
+.none{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.none image{
+  width: 500rpx;
+  height: 540rpx;
+}
+.none .btn{
+  width: 220rpx;
+  height: 88rpx;
+  background: #296EFF;
+  color: white;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 88rpx;
+  border-radius: 24px;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  margin-top: -40px;
+}

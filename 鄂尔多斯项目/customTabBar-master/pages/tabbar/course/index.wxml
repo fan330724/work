@@ -1,0 +1,86 @@
+<!--page/tabbar/pages/course/index.wxml-->
+<view class="box">
+  <view class="continue" style='padding-bottom:{{isIphoneX?166:120}}rpx;'>
+    <!-- 学员端tab切换页 -->
+    <view class="tab" wx:if="{{getUserStart == 'student'}}">
+      <view class="{{active == 1?'active':''}}" data-id="1" bindtap="tab">未开课课程
+        <view class="cur" wx:if="{{active == 1}}"></view>
+      </view>
+      <view class="{{active == 2?'active':''}}" data-id="2" bindtap="tab">培训中课程
+        <view class="cur" wx:if="{{active == 2}}"></view>
+      </view>
+      <view class="{{active == 3?'active':''}}" data-id="3" bindtap="tab">已完成课程
+        <view class="cur" wx:if="{{active == 3}}"></view>
+      </view>
+    </view>
+    <!-- 教师端tab切换页 -->
+    <view class="tab" wx:if="{{getUserStart == 'teacher'}}">
+      <view class="{{active == 1?'active':''}}" data-id="1" bindtap="tab">未培训课程
+        <view class="cur" wx:if="{{active == 1}}"></view>
+      </view>
+      <view class="{{active == 2?'active':''}}" data-id="2" bindtap="tab">培训中课程
+        <view class="cur" wx:if="{{active == 2}}"></view>
+      </view>
+      <view class="{{active == 3?'active':''}}" data-id="3" bindtap="tab">已完成课程
+        <view class="cur" wx:if="{{active == 3}}"></view>
+      </view>
+    </view>
+
+    <!-- 内容页 -->
+    <view class="{{getUserStart!='staff'? getUserStart!='leader'? 'mt':'' : ''}}" style="padding: 0 30rpx;">
+      <!-- 没有数据页 -->
+      <view class="fail" wx:if="{{show}}">
+        <image src="/images/noneDate.png"></image>
+      </view>
+      <!-- 学员端课程页 -->
+      <block wx:if="{{getUserStart == 'student'}}">
+        <block wx:if="{{active == 1 && show == false}}">
+          <view>
+            <block wx:for="{{list}}" wx:key="index">
+              <list list="{{item}}"></list>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{active == 2 && show == false}}">
+          <view>
+            <block wx:for="{{list}}" wx:key="index">
+              <list list="{{item}}"></list>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{active == 3 && show == false}}">
+          <view>
+            <block wx:for="{{list}}" wx:key="index">
+              <list list="{{item}}"></list>
+            </block>
+          </view>
+        </block>
+      </block>
+
+      <!-- 教师端课程页 -->
+      <block wx:if="{{getUserStart == 'teacher'}}">
+        <block wx:if="{{active == 1 && show == false}}">
+          <view>
+            <block wx:for="{{list}}" wx:key="index">
+              <teacherlist list="{{item}}"></teacherlist>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{active == 2 && show == false}}">
+          <view>
+            <block wx:for="{{list}}" wx:key="index">
+              <teacherlist list="{{item}}"></teacherlist>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{active == 3 && show == false}}">
+          <view>
+            <block wx:for="{{list}}" wx:key="index">
+              <teacherlist list="{{item}}"></teacherlist>
+            </block>
+          </view>
+        </block>
+      </block>
+    </view>
+  </view>
+</view>

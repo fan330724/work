@@ -1,0 +1,24 @@
+<!--components/start/index.wxml-->
+<view class='container'>
+  <view class='evaluate_contant'>
+    <!--外层循环控制有几个评价条目 -->
+    <block wx:for='{{list.evaluate_contant}}' wx:key='*this' wx:for-index='idx'>
+      <view class='evaluate_item'>
+        <view class='evaluate_title'>{{item}}：</view>
+        <view class="evaluate_flex">
+          <!--星星评价 -->
+          <view class='evaluate_box'>
+            <!--内层循环展示每个评价条目的星星 -->
+            <block wx:for="{{stars}}" wx:key='*this'>
+              <image class="star-image" src="{{scores[idx].score > item ?selectedSrc : normalSrc}}"
+                bindtap="selectRight" data-score="{{item + 1}}" data-idx="{{idx}}">
+              </image>
+            </block>
+          </view>
+          <!-- 评价标语 -->
+          <view class="evaluate_start">{{scores[idx].start}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

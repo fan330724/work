@@ -1,0 +1,16 @@
+<!--components/inforlist/index.wxml-->
+<view class="box flex" bindtap="ondetail" data-id="{{list.id}}">
+  <view class="left flex">
+    <view class="top">{{list.title}}</view>
+    <view class="footer flex">
+      <view class="date">{{list.createTime}}</view>
+      <!-- <view class="pin flex">
+        <image src="../../images/pin.png"></image>
+        <text>{{list.pin}}</text>
+      </view> -->
+    </view>
+  </view>
+  <!-- <view class="right">
+    <image src="{{list.img}}" mode="aspectFill"></image>
+  </view> -->
+</view>

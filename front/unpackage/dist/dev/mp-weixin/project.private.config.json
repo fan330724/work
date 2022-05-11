@@ -1,0 +1,23 @@
+{
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/baomingxinxi/list",
+          "pathName": "pages/baomingxinxi/list",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

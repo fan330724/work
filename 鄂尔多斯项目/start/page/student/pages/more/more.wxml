@@ -1,0 +1,13 @@
+<!--pages/more/more.wxml-->
+<view class="box">
+  <!-- 没有数据页 -->
+  <view class="fail" wx:if="{{show}}">
+    <image src="/images/noneDate.png"></image>
+  </view>
+  <block wx:for="{{list}}" wx:key="*this" wx:if="{{show == false && getUserStart == 'student'}}">
+    <list list="{{item}}"></list>
+  </block>
+  <block wx:for="{{list}}" wx:key="*this" wx:if="{{show == false && getUserStart == 'teacher' || getUserStart == 'leader'}}">
+    <teacherlist list="{{item}}"></teacherlist>
+  </block>
+</view>

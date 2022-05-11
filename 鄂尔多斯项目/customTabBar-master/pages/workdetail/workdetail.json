@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "stafflist": "/components/staffList/index",
+    "apprase": "../../components/apprase/index"
+  }
+}

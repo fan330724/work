@@ -1,0 +1,30 @@
+/* pages/tongxun/tongxun.wxss */
+.box{
+  border-bottom: 1px solid #EEEEEE;
+  padding: 30rpx;
+}
+.title{
+  color: #282B32;
+  font-size: 34rpx;
+  margin-bottom: 5px;
+}
+.num{
+  color: #6D7275;
+  font-size: 24rpx;
+}
+.phone{
+  color: #6D7275;
+  font-size: 24rpx;
+  margin-bottom: 5px;
+}
+
+.none{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.none image{
+  width: 500rpx;
+  height: 540rpx;
+}

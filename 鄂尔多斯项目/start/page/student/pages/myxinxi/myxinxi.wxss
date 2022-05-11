@@ -1,0 +1,29 @@
+/* pages/myxinxi/myxinxi.wxss */
+.box{
+  padding: 30rpx;
+}
+.list{
+  padding: 10px 0;
+  border-bottom: 1px solid #EEEEEE;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
+}
+.list:nth-last-of-type(1){
+  border: none;
+}
+.list text{
+  color: #6D7275;
+  font-size: 36rpx;
+}
+.userinfo-avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.userinfo-nickname{
+  color: #020C17;
+  font-size: 36rpx;
+}

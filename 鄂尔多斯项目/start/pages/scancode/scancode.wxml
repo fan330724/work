@@ -1,0 +1,18 @@
+<!--pages/scancode/scancode.wxml-->
+<view>
+  <picker range="{{list}}" range-key="name" bindchange="bindChange">
+    <view class="list">
+      <view class="title">课程选择</view>
+      <view class="select">
+        <block wx:if="{{!startChange}}">
+          <view class="txt">请选择</view>
+          <text class="iconfont icon-jiantou icon"></text>
+        </block>
+        <block>
+          <view>{{value}}</view>
+        </block>
+      </view>
+    </view>
+  </picker>
+  <view class="btn" wx:if="{{remark}}" bindtap="bindSignIn">{{remark}}</view>
+</view>

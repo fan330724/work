@@ -1,0 +1,40 @@
+/* pages/teacher/teacher.wxss */
+.page{
+  padding: 30rpx;
+}
+.box{
+  padding: 30rpx;
+  box-shadow: 0 2px 8px rgba(113, 112, 112, .3);
+  border-radius: 10px;
+}
+.header{
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+.left{
+  width: 108rpx;
+  height: 108rpx;
+  margin-right: 10px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.name{
+  color: #020C17;
+  font-size: 40rpx;
+}
+.txt{
+  color: #969B9E;
+  font-size: 28rpx;
+}
+.main{
+  font-size: 28rpx;
+  color: #6D7275;
+  margin-top: 10px;
+}
+.h3{
+  color: #282B32;
+  font-size: 34rpx;
+  margin-bottom: 5px;
+}

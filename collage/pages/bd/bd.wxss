@@ -1,0 +1,61 @@
+/* pages/bd/bd.wxss */
+page {
+  background: #F7F7F7;
+}
+.img{
+  height: 367rpx;
+}
+.img image{
+  width: 100%;
+  height: 100%;
+}
+.content {
+  width: 637rpx;
+  height: 906rpx;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 38rpx 2rpx rgba(106, 106, 106, 0.22);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-40%);
+  z-index: 1;
+}
+.main{
+  color: #525252;
+  font-size: 26rpx;
+  letter-spacing: 1px;
+}
+.title{
+  color: #1D1D1D;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.text{
+  line-height: 50rpx;
+  margin: 20rpx 0;
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80rpx;
+}
+.footer image{
+  width: 256rpx;
+  height: 252rpx;
+}
+
+.footer .btn{
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #FFFFFF;
+  background: #FE5E56;
+  letter-spacing: 1px;
+  border-radius: 40rpx;
+  text-align: center;
+  font-size: 32rpx;
+}

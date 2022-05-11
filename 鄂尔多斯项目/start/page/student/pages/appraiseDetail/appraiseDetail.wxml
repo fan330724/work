@@ -1,0 +1,83 @@
+<!--page/student/pages/appraiseDetail/appraiseDetail.wxml-->
+<view class="box">
+  <view class="flex">
+    <view class="headImg">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="main">
+      <view class="user">
+        <view class="userName">
+          <open-data type="userNickName" lang="zh_CN"></open-data>
+        </view>
+        <view class="date">{{item.minute}}</view>
+      </view>
+      <view class="content">
+        <view class="li">
+          <text class="txt">培训课程：</text>
+          <text>{{item.name}}</text>
+        </view>
+        <view class="li">
+          <text class="txt">培训地点：</text>
+          <text>{{item.adress}}</text>
+        </view>
+        <view class="li">
+          <text class="txt">开课时间：</text>
+          <text>{{item.course_start_time}}</text>
+        </view>
+        <view class="li">
+          <text class="txt">课程时长：</text>
+          <text>{{item.course_duration}}</text>
+        </view>
+        <view class="li">
+          <text class="txt">培训教师：</text>
+          <text>{{item.teacherName}}</text>
+        </view>
+      </view>
+      <view class="score">
+        <view class="score-item">
+          <view class="span">教师评价：</view>
+          <view class="scoreImg">
+            <block wx:for="{{item.teacher_score}}" wx:key="*this">
+              <image src="/images/stars.png"></image>
+            </block>
+            <block wx:for="{{5-item.teacher_score}}" wx:key="*this">
+              <image src="/images/nostars.png"></image>
+            </block>
+          </view>
+        </view>
+        <view class="score-item">
+          <view class="span">就餐评价：</view>
+          <view class="scoreImg">
+            <block wx:for="{{item.restaurant_score}}" wx:key="*this">
+              <image src="/images/stars.png"></image>
+            </block>
+            <block wx:for="{{5-item.restaurant_score}}" wx:key="*this">
+              <image src="/images/nostars.png"></image>
+            </block>
+          </view>
+        </view>
+        <view class="score-item">
+          <view class="span">住宿评价：</view>
+          <block wx:for="{{item.accommodation_score}}" wx:key="*this">
+            <image src="/images/stars.png"></image>
+          </block>
+          <block wx:for="{{5-item.accommodation_score}}" wx:key="*this">
+            <image src="/images/nostars.png"></image>
+          </block>
+        </view>
+      </view>
+
+      <view class="textarea">
+        <view class="textarea-tit">评语：</view>
+        <view>{{item.content}}</view>
+      </view>
+
+      <view class="footer">
+        <block wx:for="{{item.pic_url}}" wx:key="*this" wx:for-item="item1">
+          <image src="{{item1}}" bindtap="enlarge" data-list="{{item.pic_url}}" data-src="{{item1}}" mode="aspectFit">
+          </image>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

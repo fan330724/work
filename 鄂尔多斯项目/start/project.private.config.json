@@ -1,0 +1,168 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "page/staff/pages/repairRecord/repairRecord",
+          "pathName": "page/staff/pages/repairRecord/repairRecord",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/staff/pages/repairDetail/repairDetail",
+          "pathName": "page/staff/pages/repairDetail/repairDetail",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "name": "page/staff/pages/account/account",
+          "pathName": "page/staff/pages/account/account",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/staff/pages/approve/approve",
+          "pathName": "page/staff/pages/approve/approve",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/staff/pages/repair/repair",
+          "pathName": "page/staff/pages/repair/repair",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/student/pages/appraise/appraise",
+          "pathName": "page/student/pages/appraise/appraise",
+          "query": "id=789",
+          "scene": null
+        },
+        {
+          "name": "pages/playback/playback",
+          "pathName": "pages/playback/playback",
+          "query": "id=789",
+          "scene": null
+        },
+        {
+          "name": "pages/school/school",
+          "pathName": "pages/school/school",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/student/pages/appraiseDetail/appraiseDetail",
+          "pathName": "page/student/pages/appraiseDetail/appraiseDetail",
+          "query": "id=789",
+          "scene": null
+        },
+        {
+          "name": "pages/tongxun/tongxun",
+          "pathName": "pages/tongxun/tongxun",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tongxunDetail/tongxunDetail",
+          "pathName": "pages/tongxunDetail/tongxunDetail",
+          "query": "id=789",
+          "scene": null
+        },
+        {
+          "name": "pages/my/my",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/staff/pages/account/account",
+          "pathName": "page/staff/pages/account/account",
+          "query": "id=1&name=发票",
+          "scene": null
+        },
+        {
+          "name": "page/staff/pages/repair/repair",
+          "pathName": "page/staff/pages/repair/repair",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/staff/pages/repairRecord/repairRecord",
+          "pathName": "page/staff/pages/repairRecord/repairRecord",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/staff/pages/repairDetail/repairDetail",
+          "pathName": "page/staff/pages/repairDetail/repairDetail",
+          "query": "id=59ae17c2e24642599a6e03b24635de28",
+          "scene": null
+        },
+        {
+          "name": "page/staff/pages/clockIn/clockIn",
+          "pathName": "page/staff/pages/clockIn/clockIn",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/staff/pages/approve/approve",
+          "pathName": "page/staff/pages/approve/approve",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/staff/pages/clockDetail/clockDetail",
+          "pathName": "page/staff/pages/clockDetail/clockDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/scancode/scancode",
+          "pathName": "pages/scancode/scancode",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/course/course",
+          "pathName": "pages/course/course",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "page/staff/pages/account/account",
+          "pathName": "page/staff/pages/account/account",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "课程评价",
+          "pathName": "page/student/pages/appraise/appraise",
+          "query": "id=e92d7788d4fc4fe391efd57d7cdb9358&teacherId=9edda1c26f654c27a743b86f4158df5f",
+          "scene": null
+        },
+        {
+          "name": "添加评价",
+          "pathName": "page/student/pages/addPin/addpin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/playback/playback",
+          "pathName": "pages/playback/playback",
+          "query": "id=789",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

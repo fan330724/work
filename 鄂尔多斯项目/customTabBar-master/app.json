@@ -1,0 +1,92 @@
+{
+  "pages": [
+    "pages/tabbar/index/index",
+    "pages/tabbar/course/index",
+    "pages/tabbar/classDetail/index",
+    "pages/tabbar/addressBook/index",
+    "pages/tabbar/my/index",
+    "pages/informationDetail/informationDetail",
+    "pages/login/login",
+    "pages/coursedetail/coursedetail",
+    "pages/teacher/teacher",
+    "pages/myxinxi/myxinxi",
+    "pages/resetPassword/resetPassword",
+    "pages/tongxunDetail/tongxunDetail",
+    "pages/school/school",
+    "pages/teaching/teaching",
+    "pages/news/news",
+    "pages/newsDetail/newsDetail",
+    "pages/dispatchnews/dispatchnews",
+    "pages/scancode/scancode",
+    "pages/appraise/appraise",
+    "pages/appraiseDetail/appraiseDetail",
+    "pages/playback/playback",
+    "pages/menu/menu",
+    "pages/menuappraise/menuappraise",
+    "pages/menudetail/menudetail",
+    "pages/stopat/stopat",
+    "pages/historyclass/historyclass",
+    "pages/historyclassdetail/historyclassdetail",
+    "pages/clockIn/clockIn",
+    "pages/clockDetail/clockDetail",
+    "pages/leader/leader",
+    "pages/work/work",
+    "pages/repairDetail/repairDetail",
+    "pages/checkon/checkon",
+    "pages/assess/assess",
+    "pages/workdetail/workdetail",
+    "pages/stay/stay",
+    "pages/home/index"
+  ],
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/tabbar/index/index",
+        "iconPath": "/icon/home.png",
+        "selectedIconPath": "/icon/home.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tabbar/course/index",
+        "iconPath": "/icon/course.png",
+        "selectedIconPath": "/icon/course.png",
+        "text": "课程"
+      },
+      {
+        "pagePath": "pages/tabbar/classDetail/index",
+        "iconPath": "/icon/class.png",
+        "selectedIconPath": "/icon/class.png",
+        "text": "班级"
+      },
+      {
+        "pagePath": "pages/tabbar/addressBook/index",
+        "iconPath": "/icon/address.png",
+        "selectedIconPath": "/icon/address.png",
+        "text": "通讯录"
+      },
+      {
+        "pagePath": "pages/tabbar/my/index",
+        "iconPath": "/icon/my.png",
+        "selectedIconPath": "/icon/my.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#F21314",
+    "navigationBarTitleText": "智慧中心",
+    "navigationBarTextStyle": "white"
+  },
+  "plugins": {
+    "calendar": {
+      "version": "1.3.3",
+      "provider": "wx23a9cef3522e4f7c"
+    },
+    "BmsDirectory": {
+      "version": "1.0.0",
+      "provider": "wxea14f39af1d4d74a"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

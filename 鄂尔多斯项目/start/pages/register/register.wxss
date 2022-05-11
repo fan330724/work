@@ -1,0 +1,44 @@
+/* pages/register/register.wxss */
+.box{
+  padding: 30rpx;
+}
+.p{
+  margin-bottom: 15px;
+}
+.p input{
+  height: 90rpx;
+  background: #F5F5F5;
+  padding-left: 15px;
+}
+.inp{
+  font-size: 28rpx;
+  color: #BDC4CE;
+}
+
+.btn{
+  background: var(--themeColor);
+  border: none;
+  color: white;
+  font-size: 34rpx;
+  letter-spacing: 1px;
+  margin-top: 30px;
+}
+
+.code{
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  background: var(--themeColor);
+  font-size: 28rpx;
+  color: white;
+  padding: 0 10px;
+}
+.codes{
+  background: #BDC4CE;
+}
+.flex{
+  display: flex;
+}
+.flex input{
+  flex: 1;
+}

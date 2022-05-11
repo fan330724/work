@@ -1,0 +1,89 @@
+<!--page/tabbar/pages/my/index.wxml-->
+<view class="box">
+  <view class="header" wx:if="{{userinfo}}">
+    <block>
+      <view class="left">
+        <view class="userinfo-avatar" bindtap="tomyxinxi">
+          <image src="{{userinfo.avatarUrl}}"></image>
+        </view>
+        <view class="user-li">
+          <view class="userinfo-nickname">
+            {{userinfo.nickName}}
+          </view>
+          <view class="user-text">
+            {{userText}}
+          </view>
+        </view>
+      </view>
+      <view class="right">
+        <image src="/images/my-set.png" class="myset"></image>
+        <image src="/images/my-new.png" class="mynew"></image>
+      </view>
+    </block>
+  </view>
+  <view class="header" wx:else>
+    <view bindtap="getUserProfile" class="ava" >获取信息</view>
+  </view>
+
+  <!-- 学员端横向列表显示 -->
+  <block wx:if="{{getUserStart == 'student'}}">
+    <view class="tabbar">
+      <view class="list" bindtap="totabbar" data-id="1">
+        <view class="title">
+          总课程
+        </view>
+        <view class="number">{{list.registered}}</view>
+      </view>
+      <view class="list" bindtap="totabbar" data-id="2">
+        <view class="title">
+          培训中课程
+        </view>
+        <view class="number">{{list.training}}</view>
+      </view>
+      <view class="list" bindtap="totabbar" data-id="3">
+        <view class="title">
+          已完成课程
+        </view>
+        <view class="number">{{list.accomplish}}</view>
+      </view>
+    </view>
+  </block>
+  <!-- 教师端横向列表显示 -->
+  <block wx:if="{{getUserStart == 'teacher'}}">
+    <view class="tabbar">
+      <view class="list" bindtap="totabbar" data-id="1">
+        <view class="title">
+          未培训课程
+        </view>
+        <view class="number number-color">{{list.registered}}</view>
+      </view>
+      <view class="list" bindtap="totabbar" data-id="2">
+        <view class="title">
+          培训中课程
+        </view>
+        <view class="number">{{list.training}}</view>
+      </view>
+      <view class="list" bindtap="totabbar" data-id="3">
+        <view class="title">
+          已完成课程
+        </view>
+        <view class="number">{{list.accomplish}}</view>
+      </view>
+    </view>
+  </block>
+
+  <view class="p">
+    <!-- 三端都显示 -->
+    <view class="p-item" bindtap="toreset">
+      <view>
+        <image src="/images/password.png"></image>
+        <text>修改密码</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="ban">
+    <image src="/images/my-b.png"></image>
+  </view>
+  <view class="btn" bindtap="exit">退出当前账号</view>
+</view>

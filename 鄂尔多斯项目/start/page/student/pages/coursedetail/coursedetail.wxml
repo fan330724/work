@@ -1,0 +1,74 @@
+<!--pages/coursedetail/coursedetail.wxml-->
+<view class="box">
+  <view class="img">
+    <image src="{{list.courseAvatar}}"></image>
+  </view>
+  <view class="main">
+    <view class="top flex">
+      <!-- <view class="txt">教材精讲班</view> -->
+      <view class="title">{{list.className}}</view>
+    </view>
+    <view class="center">
+      <view class="list flex">
+        <view class="span">课程名称：</view>
+        <text class="txt">{{list.courseName}}</text>
+      </view>
+      <view class="list flex">
+        <view class="span">开课时间：</view>
+        <text>{{list.courseStartTime}}</text>
+      </view>
+      <view class="list flex">
+        <view class="span">结束时间：</view>
+        <text>{{list.courseEndTime}}</text>
+      </view>
+      <view class="list flex">
+        <view class="span">培训地点：</view>
+        <text>{{list.adress}}</text>
+      </view>
+      <view class="list flex" wx:if="{{list.teacherName}}">
+        <view class="span">培训教师：</view>
+        <text>{{list.teacherName}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="h3">课程介绍</view>
+    <view class="content">
+      <rich-text nodes="{{list.introduce}}"></rich-text>
+    </view>
+  </view>
+
+  <view>
+    <!-- 学员端显示 -->
+    <block>
+      <!-- <view class="button" wx:if="{{list.audit == '立即报名'}}" bindtap="toadd">
+        {{list.audit}}
+      </view> -->
+      <view class="button button1" wx:if="{{list.audit == '培训中'}}">
+        {{list.audit}}
+      </view>
+      <!-- <view class="button button1" wx:if="{{list.audit == '等待审核'}}">
+        {{list.audit}}
+      </view> -->
+      <view class="button button1" wx:if="{{list.audit == '未开始'}}">
+        {{list.audit}}
+      </view>
+      <view class="button" wx:if="{{list.audit == '查看评价'}}" bindtap="onmyappraise" data-id="{{courseId}}">
+        {{list.audit}}
+      </view>
+      <view class="button" wx:if="{{list.audit == '去评价'}}" bindtap="onappraise" data-id="{{courseId}}"
+        data-teacherid="{{list.teacher_id}}">
+        {{list.audit}}
+      </view>
+    </block>
+    <!-- 教师端显示 -->
+    <block>
+      <view class="button" wx:if="{{list.audit == '开始上课'}}">
+        {{list.audit}}
+      </view>
+      <view class="button button1" wx:if="{{list.audit == '已结束'}}">
+        {{list.audit}}
+      </view>
+    </block>
+  </view>
+</view>

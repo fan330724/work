@@ -1,0 +1,9 @@
+{
+  "disableScroll": true,
+  "usingComponents": {
+    "tabs":"../../components/tab/index",
+    "scroll":"../../components/scroll/index"
+  },
+  "navigationBarTitleText":"订单查询"
+
+}

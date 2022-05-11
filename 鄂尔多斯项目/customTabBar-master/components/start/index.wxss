@@ -1,0 +1,22 @@
+/* components/start/index.wxss */
+.evaluate_item{
+  display: flex;
+  padding: 5px 0;
+}
+.evaluate_title{
+  color: #424D57;
+  font-size: 28rpx;
+}
+.evaluate_flex{
+  display: flex;
+}
+.evaluate_box image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10px;
+}
+.evaluate_start{
+  color: #F51B1B;
+  font-size: 24rpx;
+  margin-left: 10px;
+}

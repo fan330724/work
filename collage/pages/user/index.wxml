@@ -1,0 +1,71 @@
+<view class="user_info_wrap">
+  <view class="user_img_wrap">
+    <image class="user_bg" src="{{userinfo.avatarUrl}}"></image>
+    <view class="user_info">
+      <image class="user_icon" src="{{userinfo.avatarUrl}}"></image>
+      <view class="user_name">{{userinfo.nickName}}</view>
+      <!-- <view class="user_name martop">BD</view> -->
+    </view>
+  </view>
+</view>
+<view class="user_content">
+  <view class="body">
+    <!-- 我的订单 -->
+    <view class="myOrder">
+      <view class="title">
+        <view>我的订单</view>
+        <navigator url="/pages/order/index?type=-1&index=0">
+          <view class="flex">
+            <text>查看全部</text>
+            <text class="iconfont icon-jiantou icon"></text>
+          </view>
+        </navigator>
+      </view>
+      <view class="order">
+        <navigator url="/pages/order/index?type=1&index=1">
+          <view class="information">
+            <image src="/icons/fukuan.png"></image>
+            <view>待付款</view>
+          </view>
+        </navigator>
+        <navigator url="/pages/order/index?type=2&index=2">
+          <view class="information">
+            <image src="/icons/fahuo.png"></image>
+            <view>待发货</view>
+          </view>
+        </navigator>
+        <navigator url="/pages/order/index?type=4&index=3">
+          <view class="information">
+            <image src="/icons/shouhuo.png"></image>
+            <view>待收货</view>
+          </view>
+        </navigator>
+        <navigator url="/pages/order/index?type=5&index=4">
+          <view class="information">
+            <image src="/icons/wancheng.png"></image>
+            <view>已完成</view>
+          </view>
+        </navigator>
+
+      </view>
+    </view>
+    <view class="lists">
+      <view bindtap="toyongjin">
+        <image src="/icons/yongjin.png"></image>
+        <text>我的佣金</text>
+      </view>
+      <view bindtap="tobd">
+        <image src="/icons/mafan.png"></image>
+        <text>成为BD</text>
+      </view>
+      <view bindtap="toaddress">
+        <image src="/icons/dizhi.png"></image>
+        <text>收货地址</text>
+      </view>
+      <view>
+        <image src="/icons/kefu.png"></image>
+        <text>联系客服</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,99 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/index/index",
+    "pages/course/course",
+    "pages/my/my",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/resetPassword/resetPassword",
+    "pages/playback/playback",
+    "pages/school/school",
+    "pages/tongxun/tongxun",
+    "pages/tongxunDetail/tongxunDetail",
+    "pages/scancode/scancode",
+    "components/staffList/index",
+    "pages/leader/leader",
+    "pages/apprase/apprase"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "智慧中心",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#888D95",
+    "selectedColor": "#282B32",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/index.png",
+        "selectedIconPath": "./images/index-active.png"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "text": "课程",
+        "iconPath": "./images/course.png",
+        "selectedIconPath": "./images/course-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./images/my.png",
+        "selectedIconPath": "./images/my-active.png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "page/student/",
+      "pages": [
+        "pages/information/information",
+        "pages/news/news",
+        "pages/more/more",
+        "pages/myxinxi/myxinxi",
+        "pages/coursedetail/coursedetail",
+        "pages/teacher/teacher",
+        "pages/appraise/appraise",
+        "pages/dispatchnews/dispatchnews",
+        "pages/myappraise/myappraise",
+        "pages/newsDetail/newsDetail",
+        "pages/informationDetail/informationDetail",
+        "pages/appraiseDetail/appraiseDetail",
+        "pages/addPin/addpin"
+      ]
+    },
+    {
+      "root": "page/staff/",
+      "pages": [
+        "pages/repair/repair",
+        "pages/repairRecord/repairRecord",
+        "pages/repairDetail/repairDetail",
+        "pages/account/account",
+        "pages/approve/approve",
+        "pages/clockIn/clockIn",
+        "pages/clockDetail/clockDetail"
+      ]
+    }
+  ],
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  },
+  "plugins": {
+    "calendar": {
+      "version": "1.3.3",
+      "provider": "wx23a9cef3522e4f7c"
+    },
+    "BmsDirectory": {
+      "version": "1.0.0",
+      "provider": "wxea14f39af1d4d74a"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

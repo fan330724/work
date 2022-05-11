@@ -1,0 +1,4 @@
+<!--pages/tongxunDetail/tongxunDetail.wxml-->
+<view class="box">
+  <BmsDirectory userList="{{list}}" bindgetcall="onPhone" titlestyle="titlestyle" msgstyle="msgstyle"></BmsDirectory>
+</view>

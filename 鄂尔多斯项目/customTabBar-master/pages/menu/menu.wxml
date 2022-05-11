@@ -1,0 +1,41 @@
+<!--pages/menu/menu.wxml-->
+<view class="box">
+  <view class="tab">
+    <view class="tab-list" bindtap="toscancode">
+      <image src="/images/5.png"></image>
+      <text>扫码就餐</text>
+    </view>
+    <navigator class="tab-list" hover-class="none" url="/pages/menuappraise/menuappraise?type=就餐">
+      <image src="/images/4.png"></image>
+      <text>就餐评价</text>
+    </navigator>
+    <navigator class="tab-list" hover-class="none" url="/pages/menudetail/menudetail">
+      <image src="/images/6.png"></image>
+      <text>就餐记录</text>
+    </navigator>
+  </view>
+
+  <view class="date">
+    菜单日期：
+    <text>{{date}}</text>
+  </view>
+
+
+  <view class="main">
+    <view wx:for="{{list}}" wx:key="*this">
+      <view class="main-top">
+        <view class="main-title" wx:if="{{item.status == 1}}">早饭</view>
+        <view class="main-title" wx:if="{{item.status == 2}}">午饭</view>
+        <view class="main-title" wx:if="{{item.status == 3}}">晚饭</view>
+        <view class="main-start" wx:if="{{item.remark !=null && getUserStart == 'student'}}">{{item.remark}}</view>
+        <view class="main-start" wx:if="{{item.remark ==null && getUserStart == 'student'}}">未用餐</view>
+      </view>
+      <view class="main-item">
+        <view class="main-list" wx:for="{{item.name}}" wx:key="*this" wx:for-item="item1">{{item1}}</view>
+      </view>
+    </view>
+  </view>
+
+
+  <navigator hover-class="none" class="btn" url="/pages/assess/assess?type=就餐">立即评价</navigator>
+</view>

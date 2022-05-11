@@ -1,0 +1,79 @@
+/* components/staffList/index.wxss */
+.box {
+  padding: 30rpx;
+  box-shadow: 0 2px 8px rgba(113, 112, 112, .3);
+  border-radius: 10px;
+  margin-bottom: 23px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+.box-header{
+  border-bottom: 1px solid #E6E8EB;
+  padding-bottom: 10px;
+}
+.header-top {
+  justify-content: space-between;
+}
+.top-title {
+  color: #282B32;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.sun {
+  color: #296EFF;
+  background: #F1F6FD;
+  font-size: 26rpx;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: -40rpx -30rpx 0 0;
+  font-weight: bold;
+  width: 115rpx;
+  text-align: center;
+}
+.sun1{
+  color: #FF5656;
+  background: #FFE9E9;
+}
+.sun2{
+  color: #1ECC8B;
+  background: #E0FDE7;
+}
+.header-content {
+  margin-top: 10px;
+  font-size: 26rpx;
+}
+
+.text {
+  color: #282B32;
+  font-weight: bold;
+  flex: 1;
+}
+
+.txt {
+  color: #6D7275;
+  flex: 3;
+}
+
+.date,
+.tip {
+  align-items: baseline;
+}
+
+.tip {
+  margin-top: 5px;
+}
+.picImg{
+  margin-top: 10px;
+}
+.picImg image{
+  width: 196rpx;
+  height: 196rpx;
+}
+.picImg image:nth-of-type(2){
+  margin: 0 10px;
+}

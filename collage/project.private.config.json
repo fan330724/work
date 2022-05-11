@@ -1,0 +1,112 @@
+{
+  "setting": {},
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "分类页面",
+          "pathName": "pages/category/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "商品列表",
+          "pathName": "pages/goods_list/index",
+          "query": "cid=5",
+          "scene": null
+        },
+        {
+          "name": "商品详情",
+          "pathName": "pages/goods_detail/index",
+          "query": "goodsid=ff8080817f35b7d1017f35b82ffa0001",
+          "scene": null
+        },
+        {
+          "name": "购物车",
+          "pathName": "pages/cart/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "支付",
+          "pathName": "pages/pay/index",
+          "query": "ShoppingCartId=ff8080817f4b30a6017f4b3348fd0000,ff8080817f4b236d017f4b24431f0002,",
+          "scene": null
+        },
+        {
+          "name": "登录页面",
+          "pathName": "pages/login/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "个人中心",
+          "pathName": "pages/user/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单查询",
+          "pathName": "pages/order/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "商品收藏",
+          "pathName": "pages/collect/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "搜索中心",
+          "pathName": "pages/search/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "意见反馈",
+          "pathName": "pages/feedback/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "收货地址",
+          "pathName": "pages/address/address",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "编辑地址",
+          "pathName": "pages/addform/addform",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "支付成功",
+          "pathName": "pages/success/success",
+          "query": "orderId=ff8080817f64b918017f64e2d9540019",
+          "scene": null
+        },
+        {
+          "name": "BD",
+          "pathName": "pages/bd/bd",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的佣金",
+          "pathName": "pages/commission/commission",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单详情",
+          "pathName": "pages/order_detail/index",
+          "query": "orderid=ff8080817f64b918017f783e79710031",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
+}

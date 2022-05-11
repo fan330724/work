@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "stafflist":"../../components/staffList/index"
+  },
+  "navigationBarTitleText": "报修报账"
+}

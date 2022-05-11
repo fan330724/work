@@ -1,0 +1,35 @@
+<view>
+  <view class="list" wx:for="{{list}}" wx:key="*this">
+    <view class="center" catchtap="tosuccess" data-addressid="{{item.addressId}}">
+      <view class="top">
+        <view class="name">{{item.name}}</view>
+        <view class="phone">{{item.telephone}}</view>
+      </view>
+      <view class="bottom">
+        {{item.floorNum}}{{item.remarks}}
+      </view>
+    </view>
+    <view class="footer">
+      <view class="checkbox">
+        <label class="checkbox" bindtap="handeItemChange" data-checked="{{item.ifMr}}" data-list="{{item}}">
+          <radio-group bindchange="handeItemChange" data-checked="{{item.ifMr}}" data-list="{{item}}">
+            <radio checked="{{item.ifMr}}" value="{{item.ifMr}}">默认地址</radio>
+          </radio-group>
+        </label>
+      </view>
+      <view class="right">
+        <view bindtap="toaddform" class="edit" data-addressid="{{item.addressId}}">
+          <image src="/icons/edit.png"></image>
+          编辑
+        </view>
+        <view bindtap="bindDelete" class="delete" data-addressid="{{item.addressId}}">
+          <image src="/icons/delete.png"></image>删除
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view bindtap="toform" class="add">
+    +新增地址
+  </view>
+</view>

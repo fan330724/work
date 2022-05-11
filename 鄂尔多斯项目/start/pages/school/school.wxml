@@ -1,0 +1,13 @@
+<!--pages/school/school.wxml-->
+<view class="box">
+  <view class="top">
+    <view class="title">{{list.title}}</view>
+    <view class="foot">
+      <view class="tit">{{list.remark}}</view>
+      <view class="date">{{list.createTime}}</view>
+    </view>
+  </view>
+  <view class="main">
+    <rich-text class="" nodes="{{list.content}}"></rich-text>
+  </view>
+</view>

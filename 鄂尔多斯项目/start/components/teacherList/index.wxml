@@ -1,0 +1,37 @@
+<!--components/teacherList/index.wxml-->
+<view class="box" catchtap="tocourseDetail" data-id="{{list.id}}">
+  <view class="box-header">
+    <view class="header-top flex">
+      <view class="top-title">{{list.className}}</view>
+      <!-- <view class="sun" wx:if="{{list.audit}}">{{list.audit}}</view> -->
+    </view>
+    <view class="header-content">
+      <view class="date flex">
+        <view class="text">课程名称：</view>
+        <text class="txt">{{list.courseName}}</text>
+      </view>
+      <view class="date flex">
+        <view class="text">开课时间：</view>
+        <text class="txt">{{list.startTime}}</text>
+      </view>
+      <view class="date flex">
+        <view class="text">课程时长：</view>
+        <text class="txt">{{list.course_duration}}</text>
+      </view>
+      <view class="date flex">
+        <view class="text">培训地点：</view>
+        <text class="txt">{{list.adress}}</text>
+      </view>
+      <!-- <view class="date flex">
+        <view class="text">报名人数：</view>
+        <text class="txt">{{list.total}}</text>
+      </view> -->
+    </view>
+    <!-- <view class="button" wx:if="{{list.audit == '已完成'}}">
+      <view class="btn btn3" wx:if="{{list.audit == '已完成'}}" bindtap="toplayback" data-id="{{list.id}}">
+        <image src="../../images/hui.png"></image>
+        <text>查看回放</text>
+      </view>
+    </view> -->
+  </view>
+</view>

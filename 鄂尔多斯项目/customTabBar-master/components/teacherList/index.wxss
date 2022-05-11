@@ -1,0 +1,91 @@
+/* components/teacherList/index.wxss */
+.box {
+  padding: 30rpx;
+  box-shadow: 0 2px 8px rgba(113, 112, 112, .3);
+  border-radius: 10px;
+  margin-bottom: 23px;
+  background: white;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.header-top {
+  justify-content: space-between;
+}
+
+.top-title {
+  color: #282B32;
+  font-size: 36rpx;
+  font-weight: bold;
+  margin: -2px 0 0 0px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.sun {
+  color: #296EFF;
+  background: #F1F6FD;
+  font-size: 26rpx;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: -40rpx -30rpx 0 0;
+  font-weight: bold;
+  width: 115rpx;
+  text-align: center;
+}
+
+.header-content {
+  margin-top: 10px;
+  font-size: 26rpx;
+}
+
+.text {
+  color: #282B32;
+  font-weight: bold;
+  flex: 1;
+}
+
+.txt {
+  color: #6D7275;
+  flex: 3.3;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.date{
+  align-items: baseline;
+  padding: 2px 0;
+}
+.button{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  border-top: 1px solid #E6E8EB;
+}
+.btn {
+  padding: 5px 10px;
+  color: var(--themeColor);
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 22rpx;
+  border: 1px solid var(--themeColor);
+  border-radius: 5px;
+}
+
+.btn3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn3 image{
+  width: 30rpx;
+  height: 23rpx;
+  margin-right: 3px;
+}

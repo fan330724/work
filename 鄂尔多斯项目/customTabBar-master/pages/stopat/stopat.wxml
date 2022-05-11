@@ -1,0 +1,42 @@
+<!--pages/stopat/stopat.wxml-->
+<view class="box">
+  <view class="fail" wx:if="{{show}}">
+    <image src="/images/noneDate.png"></image>
+  </view>
+  <block wx:else>
+    <block wx:if="{{getUserStart == 'student'}}">
+      <view class="list" wx:for="{{list}}" wx:key="*this">
+        <view class="list-item">
+          <text class="list-span">住宿时间：</text>
+          <text>{{item.createTime}}</text>
+        </view>
+        <view class="list-item">
+          <text class="list-span">地址：</text>
+          <text>{{item.address}}</text>
+        </view>
+
+        <navigator class="btn" url="/pages/appraiseDetail/appraiseDetail?type=住宿" hover-class="none"
+          wx:if="{{item.remark == '查看评价'}}">{{item.remark}}</navigator>
+        <navigator class="btn" hover-class="none" url="/pages/assess/assess?type=住宿&classid={{item.classId}}"
+          wx:if="{{item.remark == '去评价'}}">{{item.remark}}</navigator>
+      </view>
+    </block>
+
+    <view class="main" wx:else>
+      <view class="main-title">
+        <view class="title">班级名称：{{list[0].className}}</view>
+        <navigator class="main-tap" hover-class="none" url="/pages/menuappraise/menuappraise?type=住宿&id={{classId}}">查看评价</navigator>
+      </view>
+      <view class="main-list">
+        <view class="main-list-item">
+          <view class="main-list-item-title">名称</view>
+          <view class="main-item" wx:for="{{list}}" wx:key="*this">{{item.sysUserName}}</view>
+        </view>
+        <view class="main-list-item">
+          <view class="main-list-item-title">地址</view>
+          <view class="main-item" wx:for="{{list}}" wx:key="*this">{{item.address}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

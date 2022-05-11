@@ -1,0 +1,23 @@
+<!--pages/assess/assess.wxml-->
+<view class="box">
+  <view class="box1">
+    <start bindselectScore="selectScore" list="{{list}}"></start>
+    <view class="text">
+      <view class="title">评价语：</view>
+      <textarea bindinput="toinput"></textarea>
+    </view>
+    <view class="uploader">
+      <view class="uploader-list" wx:for="{{pics}}" wx:key="*this">
+        <image src='{{item}}' data-index="{{index}}" mode="aspectFit" />
+        <view class='delete' data-index="{{index}}" bindtap='deleteImg'>
+          <image src="/images/delete.png"></image>
+        </view>
+      </view>
+      <view class="upadd" bindtap='chooseImage' wx:if="{{pics.length < 3 }}">
+        <view>+</view>
+        <text>添加照片</text>
+      </view>
+    </view>
+    <view class="btn" bindtap="tosubmit">确认提交</view>
+  </view>
+</view>
