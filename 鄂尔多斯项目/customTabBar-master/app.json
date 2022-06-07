@@ -36,7 +36,8 @@
     "pages/assess/assess",
     "pages/workdetail/workdetail",
     "pages/stay/stay",
-    "pages/home/index"
+    "pages/home/index",
+    "pages/information/information"
   ],
   "tabBar": {
     "custom": true,
@@ -88,5 +89,6 @@
       "provider": "wxea14f39af1d4d74a"
     }
   },
+  "lazyCodeLoading": "requiredComponents",
   "sitemapLocation": "sitemap.json"
 }

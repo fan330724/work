@@ -305,7 +305,7 @@
               />
             </el-form-item>
           </el-col>
-          <!-- <el-col :span="12">
+          <el-col :span="12">
             <el-form-item label="归属部门" prop="deptId">
               <treeselect
                 v-model="form.deptId"
@@ -314,7 +314,7 @@
                 placeholder="请选择归属部门"
               />
             </el-form-item>
-          </el-col> -->
+          </el-col>
         </el-row>
         <el-row>
           <el-col :span="12">
@@ -654,7 +654,7 @@ export default {
     /** 查询部门下拉树结构 */
     getTreeselect() {
       treeselect().then((response) => {
-        this.deptOptions = response.data;
+        this.deptOptions = response.data[0].children;
       });
     },
     // 筛选节点

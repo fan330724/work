@@ -6,8 +6,7 @@
   <view class="swiperBox">
     <!-- 轮播图 -->
     <view class="page-body">
-      <swiper catchtap="onSwiperTap" indicator-dots autoplay="autoplay" circular indicator-active-color="#FB5C3C"
-        indicator-color="#FFBCAE" snap-to-edge>
+      <swiper catchtap="onSwiperTap" indicator-dots autoplay="autoplay" circular indicator-active-color="#FB5C3C" indicator-color="#FFBCAE" snap-to-edge>
         <swiper-item wx:for="{{swiperTap}}" wx:key="index">
           <image src="{{item.image}}" data-id="{{item.id}}"></image>
         </swiper-item>
@@ -21,6 +20,19 @@
     <!--跑马灯-->
   </view>
   <view class="list">
+
+    <navigator url="{{item.url}}" wx:for="{{centerList}}" wx:key="*this" hover-class="none" extra-data="{{item.url}}">
+      <view class="list-item">
+        <image src="{{item.image}}"></image>
+        <text>{{item.text}}</text>
+      </view>
+    </navigator>
+    <navigator wx:if="{{getUserStart == 'staff'}}" hover-class="none" url="/pages/clockIn/clockIn">
+      <view class="list-item">
+        <image src="/images/daka.png"></image>
+        <text>考勤</text>
+      </view>
+    </navigator>
     <view wx:if="{{getUserStart == 'student' || getUserStart == 'teacher'}}" class="none" bindtap="toscancode">
       <view class="list-item">
         <image src="/images/scancode.png"></image>
@@ -33,19 +45,6 @@
         <text>扫码考勤</text>
       </view>
     </view>
-    <navigator wx:if="{{getUserStart == 'staff'}}" hover-class="none" url="/pages/clockIn/clockIn">
-      <view class="list-item">
-        <image src="/images/daka.png"></image>
-        <text>考勤</text>
-      </view>
-    </navigator>
-    <navigator url="{{item.url}}" wx:for="{{centerList}}" wx:key="*this" hover-class="none" extra-data="{{item.url}}">
-      <view class="list-item">
-        <image src="{{item.image}}"></image>
-        <text>{{item.text}}</text>
-      </view>
-    </navigator>
-
   </view>
   <view class="footer">
     <view class="footer-item">

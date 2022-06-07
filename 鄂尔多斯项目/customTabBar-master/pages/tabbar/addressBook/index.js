@@ -9,6 +9,7 @@ Page({
    */
   data: {
     show: true,
+    active: 2,
     list: [],
     //适配IphoneX的屏幕底部横线
     isIphoneX: app.globalData.isIphoneX,
@@ -60,6 +61,15 @@ Page({
     } = e.currentTarget.dataset
     wx.navigateTo({
       url: `../../tongxunDetail/tongxunDetail?id=${id}`,
+    })
+  },
+  //顶部切换
+  tab(e) {
+    var {
+      id
+    } = e.currentTarget.dataset
+    this.setData({
+      active: id,
     })
   },
   /**

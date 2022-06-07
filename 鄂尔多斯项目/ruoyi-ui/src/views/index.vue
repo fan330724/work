@@ -102,7 +102,7 @@
       </el-col>
     </el-row>
     <el-row :gutter="20">
-      <el-col :sm="24" :lg="9">
+      <el-col :sm="24" :lg="10">
         <div class="intel">
           <h3>老师名单</h3>
           <ul>
@@ -143,7 +143,7 @@
         </div>
       </el-col>
 
-      <el-col :sm="24" :lg="15">
+      <!-- <el-col :sm="24" :lg="15">
         <div class="intel">
           <h3>学生名单</h3>
           <el-table v-loading="loading" :data="studentlist">
@@ -171,7 +171,7 @@
             </el-button>
           </div>
         </div>
-      </el-col>
+      </el-col> -->
     </el-row>
   </div>
 </template>
@@ -207,7 +207,7 @@ export default {
       let data = res.data;
       this.teacherlist = data;
     });
-    this.getstudent();
+    // this.getstudent();
   },
   mounted() {
     this.time = setInterval(() => {
@@ -219,7 +219,7 @@ export default {
         let data = res.data;
         this.teacherlist = data;
       });
-      this.getstudent();
+      // this.getstudent();
     }, 60000);
   },
   beforeDestroy() {
@@ -297,6 +297,7 @@ export default {
         margin-top: 10px;
         .left {
           margin-right: 30px;
+          flex: 1;
         }
       }
     }

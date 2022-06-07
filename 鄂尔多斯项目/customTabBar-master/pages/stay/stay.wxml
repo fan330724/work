@@ -1,16 +1,22 @@
 <!--pages/stay/stay.wxml-->
 <view class="box">
-  <view class="title">鄂尔多斯文化交流中心酒店介绍</view>
+  <view class="title">鄂尔多斯文化交流中心中心住宿餐饮基本情况</view>
   <image src="/images/cb69c9df2f76df492d1d9676ea43d7ca@2x.png"></image>
   <view class="main">
-    <view class="main-item">酒店配有空调，暖气，淋浴，卫生间，浴室，电视，浴巾，亚麻织品等设施</view>
-    <view class="main-item">酒店提供免费wifi，如果您有特殊要求，酒店还提供机场等接车服务</view>
-    <view class="main-item">超级大酒店酒店还会提供一项住宿的免费政策:1名12岁以下的儿童在使用现有的床铺时免费。</view>
+    <view class="main-item">内设房间95间,能承载容纳170人住宿。空调、电视、写字台、茶桌、沙发、暖气、淋浴、卫生间、浴室、洗漱用品等设施配备齐全。</view>
+    <view class="main-item">提供24小时免费WiFi、24小时热水、共享充电宝、自助售货机、免费停车位，住宿风格庄重大方、功能布局齐全。</view>
   </view>
   <image src="/images/725a19d65d2f90aec299465b6595f19b@2x.png"></image>
   <view class="main">
-    <view class="main-title">儿童和加床</view>
-    <view class="main-item">1名12岁以下的儿童在使用现有的床铺时免费。</view>
-    <view class="main-item">所有额外年龄较大的儿童或者成人加床的收费是每晚100元。</view>
+    <view class="main-title">餐饮情况</view>
+    <view class="main-item">餐厅内有雅间7间，茶室1间、大型自助餐厅1个，小型自助餐厅2个。</view>
+    <view class="main-item">1.餐厅一楼:6厅1室
+      茶室、准格尔厅、康巴什厅、鄂托克厅、乌兰木伦厅（小型自助餐厅，员工餐厅）、乌审召厅、达拉特厅。
+    </view>
+    <view class="main-item">2.餐厅二楼:4厅
+      蒙古源流厅（小型自助餐厅）、伊克昭厅（大型自助餐厅）、鄂尔多斯厅、伊金霍洛厅。
+    </view>
+    <view class="main-title">用餐环境</view>
+    <view class="main-item">餐厅环境庄重优美，饮食融入四方风味，蒙餐饮食尤具特色，烤羊、烤羊排、手抓羊肉、烤羊腿、奶皮子、奶豆腐、铜锅奶茶......美食种类丰富，菜品口感极佳，欢迎八方来客前来品尝。</view>
   </view>
 </view>

@@ -1,5 +1,5 @@
 <!--page/tabbar/pages/addressBook/index.wxml-->
-<view class="box">
+<view class="box" wx:if="{{getUserStart == 'student' || getUserStart == 'teacher'}}">
   <view class="none" wx:if="{{show}}">
     <image src="/images/noneDate.png"></image>
   </view>
@@ -11,4 +11,30 @@
       </view>
     </view>
   </block>
+</view>
+
+<view class="box" wx:else>
+  <!-- tab切换页 -->
+  <view class="tab">
+    <view class="{{active == 2?'active':''}}" data-id="2" bindtap="tab">班級
+      <view class="cur" wx:if="{{active == 2}}"></view>
+    </view>
+    <view class="{{active == 3?'active':''}}" data-id="3" bindtap="tab">部门
+      <view class="cur" wx:if="{{active == 3}}"></view>
+    </view>
+  </view>
+  <!-- 内容页 -->
+  <view class="mt">
+    <view class="none" wx:if="{{show}}">
+      <image src="/images/noneDate.png"></image>
+    </view>
+    <block wx:else>
+      <view style='padding-bottom:{{isIphoneX?166:120}}rpx;'>
+        <view class="box1" bindtap="toTonxunDetail" wx:for="{{list}}" wx:key="pid" data-id="{{item.pid}}">
+          <view class="title">{{item.name}}</view>
+          <view class="num">{{item.count}}人</view>
+        </view>
+      </view>
+    </block>
+  </view>
 </view>

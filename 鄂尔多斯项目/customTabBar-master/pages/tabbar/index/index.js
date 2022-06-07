@@ -11,9 +11,14 @@ var listData = {
       url: "/pages/teaching/teaching"
     },
     {
-      image: "/images/caipu.png",
-      text: "今日菜谱",
-      url: "/pages/menu/menu"
+      image: "/images/banji.png",
+      text: "历史班级",
+      url: "/pages/historyclass/historyclass"
+    },
+    {
+      image: "/images/jianjie.png",
+      text: "资讯",
+      url: "/pages/information/information"
     },
     {
       image: "/images/zhusu1.png",
@@ -21,9 +26,9 @@ var listData = {
       url: "/pages/stay/stay"
     },
     {
-      image: "/images/banji.png",
-      text: "历史班级",
-      url: "/pages/historyclass/historyclass"
+      image: "/images/caipu.png",
+      text: "今日菜谱",
+      url: "/pages/menu/menu"
     },
     {
       image: "/images/zhusu1.png",
@@ -42,6 +47,16 @@ var listData = {
       url: "/pages/teaching/teaching"
     },
     {
+      image: "/images/banji.png",
+      text: "历史班级",
+      url: "/pages/historyclass/historyclass"
+    },
+    {
+      image: "/images/jianjie.png",
+      text: "资讯",
+      url: "/pages/information/information"
+    },
+    {
       image: "/images/caipu.png",
       text: "今日菜谱",
       url: "/pages/menu/menu"
@@ -51,11 +66,7 @@ var listData = {
       text: "住宿情况",
       url: "/pages/stay/stay"
     },
-    {
-      image: "/images/banji.png",
-      text: "历史班级",
-      url: "/pages/historyclass/historyclass"
-    },
+
   ],
   listData3: [{
       image: "/images/jianjie.png",
@@ -67,15 +78,21 @@ var listData = {
       text: "教学科研",
       url: "/pages/teaching/teaching"
     },
-    {
-      image: "/images/caipu.png",
-      text: "今日菜谱",
-      url: "/pages/menu/menu"
-    },
+
     {
       image: "/images/zhusu1.png",
       text: "住宿情况",
       url: "/pages/stay/stay"
+    },
+    {
+      image: "/images/jianjie.png",
+      text: "资讯",
+      url: "/pages/information/information"
+    },
+    {
+      image: "/images/caipu.png",
+      text: "今日菜谱",
+      url: "/pages/menu/menu"
     },
     {
       image: "/images/anfang.png",
@@ -101,6 +118,11 @@ var listData = {
       image: "/images/zhusu1.png",
       text: "住宿情况",
       url: "/pages/stay/stay"
+    },
+    {
+      image: "/images/jianjie.png",
+      text: "资讯",
+      url: "/pages/information/information"
     },
   ]
 }

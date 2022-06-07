@@ -1,0 +1,19 @@
+<!--pages/information/information.wxml-->
+<view class="continue">
+  <view class="tab">
+    <view class="{{active == item.id?'active':''}} fontSize" data-id="{{item.id}}" bindtap="tab" wx:for="{{tabbar}}"
+      wx:key="*this">{{item.name}}
+      <view class="cur" wx:if="{{active == item.id}}"></view>
+    </view>
+  </view>
+  <view class="mt">
+    <view class="fail" wx:if="{{show}}">
+      <image src="/images/noneDate.png"></image>
+    </view>
+    <view wx:else>
+      <block wx:for="{{list}}" wx:key="*this">
+        <infolist list="{{item}}"></infolist>
+      </block>
+    </view>
+  </view>
+</view>

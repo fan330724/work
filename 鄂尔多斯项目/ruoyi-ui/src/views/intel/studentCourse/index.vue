@@ -26,7 +26,7 @@
         />
       </el-form-item>
 
-      <el-form-item label="状态" prop="status">
+      <!-- <el-form-item label="状态" prop="status">
         <el-select
           v-model="queryParams.status"
           placeholder="请选择状态"
@@ -39,7 +39,7 @@
             :value="dict.dictValue"
           ></el-option>
         </el-select>
-      </el-form-item>
+      </el-form-item> -->
       <el-form-item label="时间">
         <el-date-picker
           v-model="time"

@@ -90,7 +90,8 @@
       <!-- <el-table-column label="id" align="center" prop="id" /> -->
       <el-table-column label="姓名" align="center" prop="name" />
       <el-table-column label="联系方式" align="center" prop="phonenumber" />
-      <el-table-column label="民族" align="center" prop="national" />
+      <el-table-column label="职务" align="center" prop="national" />
+      <el-table-column label="单位" align="center" prop="remark" />
       <el-table-column label="性别" align="center" prop="sex" />
       <el-table-column label="添加时间" align="center" prop="createTime" />
       <el-table-column
@@ -149,10 +150,17 @@
             </el-form-item>
           </el-col>
           <el-col :span="12"
-            ><el-form-item label="学员民族" prop="national">
+            ><el-form-item label="职务" prop="national">
               <el-input
                 v-model="form.national"
-                placeholder="请输入民族"
+                placeholder="请输入职务"
+              /> </el-form-item
+          ></el-col>
+          <el-col :span="12"
+            ><el-form-item label="单位" prop="remark">
+              <el-input
+                v-model="form.remark"
+                placeholder="请输入单位"
               /> </el-form-item
           ></el-col>
           <el-col :span="12"
@@ -289,6 +297,7 @@ export default {
         national: null,
         avatar: null,
         address:null,
+        remark: null,
       },
       // 表单校验
       rules: {
@@ -304,7 +313,6 @@ export default {
         password: [
           { required: true, message: "请输入登录密码", trigger: "blur" },
         ],
-        national: [{ required: true, message: "请输入民族", trigger: "blur" }],
         avatar: [{ required: true, message: "请上传图片", trigger: "blur" }],
         position: [
           { required: true, message: "请输入职位名称", trigger: "blur" },
@@ -356,7 +364,8 @@ export default {
         position:null,
         pid:null,
         address:null,
-        className:null
+        className:null,
+        remark: null,
       };
       this.resetForm("form");
     },

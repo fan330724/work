@@ -17,9 +17,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (wx.getStorageSync('userInfo').data.avatar) {
+      this.setData({
+        userinfo: {
+          avatar: wx.getStorageSync('userInfo').data.avatar,
+          nickName: wx.getStorageSync('userInfo').data.nickName,
+        }
+      })
+    } else {
+      this.setData({
+        userinfo: {
+          avatar: wx.getStorageSync('avatar').avatarUrl,
+          nickName: wx.getStorageSync('userInfo').data.nickName,
+        }
+      })
+    }
     this.setData({
-      getUserStart: getUserStart.getUserStart(),
-      userinfo: wx.getStorageSync('avatar')
+      getUserStart: getUserStart.getUserStart()
     })
   },
 

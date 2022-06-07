@@ -25,6 +25,36 @@
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
+      <el-form-item label="部门" prop="deptId">
+        <el-select
+          v-model="queryParams.deptId"
+          placeholder="请选择部门"
+          clearable
+          size="small"
+        >
+          <el-option
+            v-for="dict in deptOptions"
+            :key="dict.deptId"
+            :label="dict.deptName"
+            :value="dict.deptId"
+          />
+        </el-select>
+      </el-form-item>
+      <el-form-item label="类型" prop="type">
+        <el-select
+          v-model="queryParams.type"
+          placeholder="请选择类型"
+          clearable
+          size="small"
+        >
+          <el-option
+            v-for="dict in startOptions"
+            :key="dict.dictValue"
+            :label="dict.dictLabel"
+            :value="dict.dictValue"
+          />
+        </el-select>
+      </el-form-item>
       <el-form-item>
         <el-button
           type="primary"
@@ -90,8 +120,15 @@
       <!-- <el-table-column label="id" align="center" prop="id" /> -->
       <el-table-column label="姓名" align="center" prop="name" />
       <el-table-column label="联系方式" align="center" prop="phonenumber" />
-      <el-table-column label="民族" align="center" prop="introduce" />
       <el-table-column label="性别" align="center" prop="sex" />
+      <el-table-column label="职务" align="center" prop="introduce" />
+      <el-table-column label="部门" align="center" prop="deptName" />
+      <el-table-column
+        label="类型"
+        align="center"
+        prop="type"
+        :formatter="typeFormat"
+      />
       <el-table-column label="添加时间" align="center" prop="createTime" />
       <el-table-column
         label="操作"
@@ -120,43 +157,78 @@
     />
 
     <!-- 添加或修改教师/员工对话框 -->
-    <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
+    <el-dialog :title="title" :visible.sync="open" width="700px" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
-        <el-form-item label="姓名" prop="name">
-          <el-input v-model="form.name" placeholder="请输入姓名" />
-        </el-form-item>
-        <el-form-item label="联系方式" prop="phonenumber">
-          <el-input v-model="form.phonenumber" placeholder="请输入联系方式" />
-        </el-form-item>
-        <el-form-item label="性别" prop="sex">
-          <el-select v-model="form.sex" placeholder="请选择性别">
-            <el-option
-              v-for="dict in typeOptions"
-              :key="dict.dictValue"
-              :label="dict.dictLabel"
-              :value="dict.dictValue"
-            ></el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item label="民族" prop="introduce">
-          <el-input v-model="form.introduce" placeholder="请输入民族" />
-        </el-form-item>
-        <el-form-item label="登录账号" prop="userName">
-          <el-input v-model="form.userName" placeholder="请输入登录账号" />
-        </el-form-item>
-        <el-form-item label="登录密码" prop="password">
-          <el-input v-model="form.password" placeholder="请输入登录密码" />
-        </el-form-item>
-        <el-form-item label="类型" prop="type">
-          <el-select v-model="form.type" placeholder="请选择类型">
-            <el-option
-              v-for="dict in startOptions"
-              :key="dict.dictValue"
-              :label="dict.dictLabel"
-              :value="dict.dictValue"
-            ></el-option>
-          </el-select>
-        </el-form-item>
+        <el-row>
+          <el-col :span="12"
+            ><el-form-item label="姓名" prop="name">
+              <el-input
+                v-model="form.name"
+                placeholder="请输入姓名"
+              /> </el-form-item
+          ></el-col>
+          <el-col :span="12"
+            ><el-form-item label="联系方式" prop="phonenumber">
+              <el-input
+                v-model="form.phonenumber"
+                placeholder="请输入联系方式"
+              /> </el-form-item
+          ></el-col>
+          <el-col :span="12"
+            ><el-form-item label="性别" prop="sex">
+              <el-select v-model="form.sex" placeholder="请选择性别">
+                <el-option
+                  v-for="dict in typeOptions"
+                  :key="dict.dictValue"
+                  :label="dict.dictLabel"
+                  :value="dict.dictValue"
+                ></el-option>
+              </el-select> </el-form-item
+          ></el-col>
+          <el-col :span="12"
+            ><el-form-item label="职务" prop="introduce">
+              <el-input
+                v-model="form.introduce"
+                placeholder="请输入职务"
+              /> </el-form-item
+          ></el-col>
+          <el-col :span="12"
+            ><el-form-item label="登录账号" prop="userName">
+              <el-input
+                v-model="form.userName"
+                placeholder="请输入登录账号"
+              /> </el-form-item
+          ></el-col>
+          <el-col :span="12"
+            ><el-form-item label="登录密码" prop="password">
+              <el-input
+                v-model="form.password"
+                placeholder="请输入登录密码"
+              /> </el-form-item
+          ></el-col>
+          <el-col :span="12"
+            ><el-form-item label="类型" prop="type">
+              <el-select v-model="form.type" placeholder="请选择类型">
+                <el-option
+                  v-for="dict in startOptions"
+                  :key="dict.dictValue"
+                  :label="dict.dictLabel"
+                  :value="dict.dictValue"
+                ></el-option>
+              </el-select> </el-form-item
+          ></el-col>
+          <el-col :span="12"
+            ><el-form-item label="部门" prop="deptId">
+              <el-select v-model="form.deptId" placeholder="请选择部门">
+                <el-option
+                  v-for="dict in deptOptions"
+                  :key="dict.deptId"
+                  :label="dict.deptName"
+                  :value="dict.deptId"
+                ></el-option>
+              </el-select> </el-form-item
+          ></el-col>
+        </el-row>
         <el-form-item label="头像" prop="avatar">
           <el-upload
             class="avatar-uploader"
@@ -186,6 +258,7 @@ import {
   addEmployees,
   updateEmployees,
   exportEmployees,
+  dept,
 } from "@/api/intel/employees";
 const reg = /^1[3|4|5|6|7|8|9][0-9]\d{8}$/;
 var checkphone = (rule, value, callback) => {
@@ -224,22 +297,16 @@ export default {
       // 性别(0是男 1是女)字典
       typeOptions: [],
       //类型 2是员工 3是领导
-      startOptions: [
-        {
-          dictLabel: '员工',
-          dictValue: 2
-        },
-        {
-          dictLabel: '领导',
-          dictValue: 3
-        },
-      ],
+      startOptions: [],
+      deptOptions: [],
       // 查询参数
       queryParams: {
         pageNum: 1,
         pageSize: 10,
         name: null,
         phonenumber: null,
+        deptId: null,
+        type: null,
       },
       // 表单参数
       form: {
@@ -251,6 +318,7 @@ export default {
         introduce: null,
         avatar: null,
         type: null,
+        deptId: null,
       },
       // 表单校验
       rules: {
@@ -266,9 +334,8 @@ export default {
         password: [
           { required: true, message: "请输入登录密码", trigger: "blur" },
         ],
-        introduce: [{ required: true, message: "请输入民族", trigger: "blur" }],
         avatar: [{ required: true, message: "请上传图片", trigger: "blur" }],
-        type:[{ required: true, message: "请选择类型", trigger: "change" }]
+        type: [{ required: true, message: "请选择类型", trigger: "change" }],
       },
     };
   },
@@ -277,6 +344,10 @@ export default {
     this.getDicts("user_sex").then((response) => {
       this.typeOptions = response.data;
     });
+    this.getDicts("employees_status").then((response) => {
+      this.startOptions = response.data;
+    });
+    this.deptList()
   },
   methods: {
     /** 查询员工列表 */
@@ -287,6 +358,15 @@ export default {
         this.total = response.total;
         this.loading = false;
       });
+    },
+    deptList() {
+      dept({ parentId: 100 }).then((response) => {
+        this.deptOptions = response.data;
+      });
+    },
+    // 类型字典翻译
+    typeFormat(row, column) {
+      return this.selectDictLabel(this.startOptions, row.type);
     },
     // 取消按钮
     cancel() {
@@ -304,6 +384,7 @@ export default {
         introduce: null,
         avatar: null,
         type: null,
+        deptId: null,
       };
       this.resetForm("form");
     },
@@ -326,6 +407,7 @@ export default {
     /** 新增按钮操作 */
     handleAdd() {
       this.reset();
+      this.deptList();
       this.open = true;
       this.title = "添加员工";
     },

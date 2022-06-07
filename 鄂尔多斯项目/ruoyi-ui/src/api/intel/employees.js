@@ -8,6 +8,14 @@ export function listEmployees(query) {
     params: query
   })
 }
+//查询部门列表
+export function dept(query) {
+  return request({
+    url: '/system/dept/list',
+    method: 'get',
+    params: query
+  })
+}
 //查询教师列表
 export function listTeacher(query) {
   return request({

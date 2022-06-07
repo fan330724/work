@@ -94,7 +94,7 @@
       <el-table-column label="性别" align="center" prop="sex" />
       <el-table-column label="教师简介" align="center">
         <template slot-scope="scope">
-          <div v-html="scope.row.introduce"></div>
+          <div class="webkit-box" v-html="scope.row.introduce"></div>
         </template>
       </el-table-column>
       <el-table-column label="添加时间" align="center" prop="createTime" />
@@ -104,6 +104,14 @@
         class-name="small-padding fixed-width"
       >
         <template slot-scope="scope">
+          <el-button
+            size="mini"
+            type="text"
+            icon="el-icon-view"
+            @click="handleView(scope.row)"
+            v-hasPermi="['intel:employees:view']"
+            >查看</el-button
+          >
           <el-button
             size="mini"
             type="text"
@@ -180,6 +188,16 @@
         <el-button @click="cancel">取 消</el-button>
       </div>
     </el-dialog>
+    <!-- 查看消息对话框 -->
+    <el-dialog title="消息详情" :visible.sync="open1" append-to-body>
+      <div class="viewBox">
+        <div class="top">
+          <h3>{{ messageView.name }}</h3>
+          <span>{{ messageView.createTime }}</span>
+        </div>
+        <div v-html="messageView.introduce" class="content"></div>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
@@ -228,8 +246,11 @@ export default {
       title: "",
       // 是否显示弹出层
       open: false,
+      open1: false,
       // 性别(0是男 1是女)字典
       typeOptions: [],
+      //查看详情的数据
+      messageView: "",
       //教学科目
       subjectsId: [],
       // 查询参数
@@ -338,6 +359,12 @@ export default {
       this.open = true;
       this.title = "添加教师";
     },
+    /**查看按钮操作 */
+    handleView(row) {
+      console.log(row);
+      this.open1 = true;
+      this.messageView = row;
+    },
     handleAvatarSuccess(res, file) {
       this.form.avatar = "https://stu.yikang.co" + res.imgUrl;
     },
@@ -412,6 +439,13 @@ export default {
 </script>
 
 <style scoped>
+.top {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.content {
+  text-indent: 2em;
+}
 .avatar-uploader-icon {
   font-size: 28px;
   color: #8c939d;
@@ -425,5 +459,21 @@ export default {
   width: 150px;
   height: 150px;
   display: block;
+}
+</style>
+<style>
+.app-container .cell img {
+  width: 100px;
+  height: 100px;
+  margin-right: 5px;
+}
+.content img {
+  margin: 0;
+  width: 200px;
+  height: 200px;
+  margin-right: 5px;
+}
+.content img:nth-of-type(1) {
+  margin-left: -2em;
 }
 </style>
