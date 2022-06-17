@@ -377,6 +377,22 @@ export default {
   },
 
   /**
+   * 员工端通讯录接口
+   */
+  Phone(props) {
+    return request({
+      url: url + "/api-min/employ/phone",
+      data: {
+        ...props
+      },
+      method: 'post',
+    }).then(res => {
+      return res
+    })
+  },
+
+
+  /**
    * 通讯录详情接口，参数：{学员(用户id):pid }
    */
   addressBook(props) {

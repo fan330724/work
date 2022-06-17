@@ -104,7 +104,7 @@
       <!-- <el-table-column label="id" align="center" prop="id" /> -->
       <el-table-column label="消息标题" align="center" prop="title">
         <template slot-scope="scope">
-          <div class="webkit-box">{{scope.row.title}}</div>
+          <div class="webkit-box">{{ scope.row.title }}</div>
         </template>
       </el-table-column>
 
@@ -116,7 +116,12 @@
         min-width="150px"
       >
         <template slot-scope="scope">
-          <div v-html="scope.row.content" class="webkit-box"></div>
+          <div
+            v-html="scope.row.content"
+            class="webkit-box"
+            v-if="scope.row.content"
+          ></div>
+          <img :src="scope.row.image" alt="" v-else />
         </template>
       </el-table-column>
       <el-table-column
@@ -246,7 +251,14 @@
           <h3>{{ messageView.title }}</h3>
           <span>{{ messageView.createTime }}</span>
         </div>
-        <div v-html="messageView.content" class="content"></div>
+        <div
+          v-html="messageView.content"
+          class="content"
+          v-if="messageView.content"
+        ></div>
+        <div class="content" v-else>
+          <img :src="messageView.image" alt="" />
+        </div>
       </div>
     </el-dialog>
   </div>
@@ -348,7 +360,7 @@ export default {
         file.type === "image/jpeg" ||
         file.type === "image/jpg" ||
         file.type === "image/png";
-      const isLt2M = file.size / 1024 / 1024 < 2;
+      const isLt2M = file.size / 1024 / 1024 < 30;
 
       if (!isJPG) {
         this.$message.error("上传头像图片只能是 JPG JPEG PNG 格式!");
@@ -513,7 +525,7 @@ export default {
   -webkit-line-clamp: 3;
 } */
 .content {
-  text-indent: 2em;
+  /* text-indent: 2em; */
 }
 .avatar-uploader-icon {
   font-size: 28px;
@@ -543,7 +555,7 @@ export default {
   height: 200px;
   margin-right: 5px;
 }
-.content img:nth-of-type(1) {
+/* .content img:nth-of-type(1) {
   margin-left: -2em;
-}
+} */
 </style>

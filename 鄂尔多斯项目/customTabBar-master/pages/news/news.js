@@ -1,7 +1,9 @@
 // pages/news/news.js
 import http from '../../request/http'
 import getUserStart from '../../utils/http'
-import {formatRichText} from "../../utils/rictTextFormatRich"
+import {
+  formatRichText
+} from "../../utils/rictTextFormatRich"
 Page({
 
   /**
@@ -57,13 +59,12 @@ Page({
           },
         ]
       })
-    }else if(getUserStart.getUserStart() == "leader"){
+    } else if (getUserStart.getUserStart() == "leader") {
       this.setData({
         list: [{
-            active: 1,
-            tit: "系统消息",
-          }
-        ]
+          active: 1,
+          tit: "系统消息",
+        }]
       })
     }
 
@@ -74,15 +75,25 @@ Page({
             item[key] = data[key];
           }
         }
-        arr.push({
-          type: item.type,
-          title: item.tit,
-          createTime: item.createTime.substring(0, 10),
-          content: formatRichText(item.content)
-        })
-        that.setData({
-          list: arr
-        })
+        if (data) {
+          arr.push({
+            type: item.type,
+            title: item.tit,
+            createTime: item.createTime.substring(0, 10),
+            content: formatRichText(item.content)
+          })
+          that.setData({
+            list: arr
+          })
+        } else {
+          arr.push({
+            type: item.active,
+            title: item.tit,
+          })
+          that.setData({
+            list: arr
+          })
+        }
       })
     })
   },
@@ -92,9 +103,19 @@ Page({
       userId: wx.getStorageSync('userInfo').data.userId
     }).then(res => {
       let {
-        data
+        data,
+        code,
+        msg
       } = res.data;
-      fun(data[0])
+      if (code == 200) {
+        fun(data[0])
+      }else{
+        wx.showToast({
+          title: msg,
+          icon:"none",
+          mask: true
+        })
+      }
     })
   },
   tonews(e) {

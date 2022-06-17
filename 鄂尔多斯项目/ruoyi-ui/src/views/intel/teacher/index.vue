@@ -90,7 +90,7 @@
       <!-- <el-table-column label="id" align="center" prop="id" /> -->
       <el-table-column label="姓名" align="center" prop="name" />
       <el-table-column label="联系方式" align="center" prop="phonenumber" />
-      <el-table-column label="教学科目" align="center" prop="subjectName" />
+      <el-table-column label="教师级别" align="center" prop="subjectName" />
       <el-table-column label="性别" align="center" prop="sex" />
       <el-table-column label="教师简介" align="center">
         <template slot-scope="scope">
@@ -133,40 +133,60 @@
     />
 
     <!-- 添加或修改教师/员工对话框 -->
-    <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
+    <el-dialog :title="title" :visible.sync="open" width="700px" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
-        <el-form-item label="姓名" prop="name">
-          <el-input v-model="form.name" placeholder="请输入姓名" />
-        </el-form-item>
-        <el-form-item label="联系方式" prop="phonenumber">
-          <el-input v-model="form.phonenumber" placeholder="请输入联系方式" />
-        </el-form-item>
-        <el-form-item label="性别" prop="sex">
-          <el-select v-model="form.sex" placeholder="请选择性别">
-            <el-option
-              v-for="dict in typeOptions"
-              :key="dict.dictValue"
-              :label="dict.dictLabel"
-              :value="dict.dictValue"
-            ></el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item label="教学科目" prop="subjectsId">
-          <el-select v-model="form.subjectsId" placeholder="请选择教学科目">
-            <el-option
-              v-for="dict in subjectsId"
-              :key="dict.name"
-              :label="dict.name"
-              :value="dict.id"
-            ></el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item label="登录账号" prop="userName">
-          <el-input v-model="form.userName" placeholder="请输入登录账号" />
-        </el-form-item>
-        <el-form-item label="登录密码" prop="password">
-          <el-input v-model="form.password" placeholder="请输入登录密码" />
-        </el-form-item>
+        <el-row>
+          <el-col :span="12"
+            ><el-form-item label="姓名" prop="name">
+              <el-input
+                v-model="form.name"
+                placeholder="请输入姓名"
+              /> </el-form-item
+          ></el-col>
+          <el-col :span="12"
+            ><el-form-item label="联系方式" prop="phonenumber">
+              <el-input
+                v-model="form.phonenumber"
+                placeholder="请输入联系方式"
+              /> </el-form-item
+          ></el-col>
+          <el-col :span="12">
+            <el-form-item label="性别" prop="sex">
+              <el-select v-model="form.sex" placeholder="请选择性别">
+                <el-option
+                  v-for="dict in typeOptions"
+                  :key="dict.dictValue"
+                  :label="dict.dictLabel"
+                  :value="dict.dictValue"
+                ></el-option>
+              </el-select> </el-form-item
+          ></el-col>
+          <el-col :span="12">
+            <el-form-item label="教师级别" prop="subjectsId">
+              <el-select v-model="form.subjectsId" placeholder="请选择教师级别">
+                <el-option
+                  v-for="dict in subjectsId"
+                  :key="dict.name"
+                  :label="dict.name"
+                  :value="dict.id"
+                ></el-option>
+              </el-select> </el-form-item
+          ></el-col>
+          <el-col :span="12">
+            <el-form-item label="登录账号" prop="userName">
+              <el-input
+                v-model="form.userName"
+                placeholder="请输入登录账号"
+              /> </el-form-item
+          ></el-col>
+          <el-col :span="12"
+            ><el-form-item label="登录密码" prop="password">
+              <el-input
+                v-model="form.password"
+                placeholder="请输入登录密码"
+              /> </el-form-item
+          ></el-col>
+        </el-row>
         <el-form-item label="头像" prop="avatar">
           <el-upload
             class="avatar-uploader"
@@ -251,7 +271,7 @@ export default {
       typeOptions: [],
       //查看详情的数据
       messageView: "",
-      //教学科目
+      //教师级别
       subjectsId: [],
       // 查询参数
       queryParams: {
@@ -279,9 +299,9 @@ export default {
           { required: true, validator: checkphone, trigger: "blur" },
         ],
         sex: [{ required: true, message: "请选择性别", trigger: "change" }],
-        subjectsId: [
-          { required: true, message: "请选择教学科目", trigger: "change" },
-        ],
+        // subjectsId: [
+        //   { required: true, message: "请选择教师级别", trigger: "change" },
+        // ],
         userName: [
           { required: true, message: "请输入登录账号", trigger: "blur" },
           { required: true, validator: checkphone, trigger: "blur" },
@@ -290,7 +310,7 @@ export default {
           { required: true, message: "请输入登录密码", trigger: "blur" },
         ],
         introduce: [{ required: true, message: "请输入简介", trigger: "blur" }],
-        avatar: [{ required: true, message: "请上传图片", trigger: "blur" }],
+        // avatar: [{ required: true, message: "请上传图片", trigger: "blur" }],
       },
     };
   },
@@ -311,7 +331,7 @@ export default {
         this.loading = false;
       });
     },
-    /**查询教学科目列表 */
+    /**查询教师级别列表 */
     teachercourselist() {
       listSubjects().then((res) => {
         this.subjectsId = res.rows;
@@ -373,13 +393,13 @@ export default {
         file.type === "image/jpeg" ||
         file.type === "image/jpg" ||
         file.type === "image/png";
-      const isLt2M = file.size / 1024 / 1024 < 2;
+      const isLt2M = file.size / 1024 / 1024 < 30;
 
       if (!isJPG) {
         this.$message.error("上传头像图片只能是 JPG JPEG PNG 格式!");
       }
       if (!isLt2M) {
-        this.$message.error("上传头像图片大小不能超过 2MB!");
+        this.$message.error("上传头像图片大小不能超过 30MB!");
       }
       return isJPG && isLt2M;
     },

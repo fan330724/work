@@ -1,10 +1,10 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" v-show="showSearch" label-width="68px">
-      <el-form-item label="科目名称" prop="name">
+      <el-form-item label="级别名称" prop="name">
         <el-input
           v-model="queryParams.name"
-          placeholder="请输入科目名称"
+          placeholder="请输入级别名称"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
@@ -55,7 +55,7 @@
     <el-table v-loading="loading" :data="subjectsList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center" />
       <!-- <el-table-column label="id" align="center" prop="id" /> -->
-      <el-table-column label="科目名称" align="center" prop="name" />
+      <el-table-column label="级别名称" align="center" prop="name" />
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
         <template slot-scope="scope">
           <el-button
@@ -84,11 +84,11 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改教学科目对话框 -->
+    <!-- 添加或修改教师级别对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
-        <el-form-item label="科目名称" prop="name">
-          <el-input v-model="form.name" placeholder="请输入科目名称" />
+        <el-form-item label="级别名称" prop="name">
+          <el-input v-model="form.name" placeholder="请输入级别名称" />
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -120,7 +120,7 @@ export default {
       showSearch: true,
       // 总条数
       total: 0,
-      // 教学科目表格数据
+      // 教师级别表格数据
       subjectsList: [],
       // 弹出层标题
       title: "",
@@ -146,7 +146,7 @@ export default {
     this.getList();
   },
   methods: {
-    /** 查询教学科目列表 */
+    /** 查询教师级别列表 */
     getList() {
       this.loading = true;
       listSubjects(this.queryParams).then(response => {
@@ -193,7 +193,7 @@ export default {
     handleAdd() {
       this.reset();
       this.open = true;
-      this.title = "添加教学科目";
+      this.title = "添加教师级别";
     },
     /** 修改按钮操作 */
     handleUpdate(row) {
@@ -202,7 +202,7 @@ export default {
       getSubjects(id).then(response => {
         this.form = response.data;
         this.open = true;
-        this.title = "修改教学科目";
+        this.title = "修改教师级别";
       });
     },
     /** 提交按钮 */
@@ -228,7 +228,7 @@ export default {
     /** 删除按钮操作 */
     handleDelete(row) {
       const ids = row.id || this.ids;
-      this.$confirm('是否确认删除教学科目编号为"' + ids + '"的数据项?', "警告", {
+      this.$confirm('是否确认删除教师级别编号为"' + ids + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -242,7 +242,7 @@ export default {
     /** 导出按钮操作 */
     handleExport() {
       const queryParams = this.queryParams;
-      this.$confirm('是否确认导出所有教学科目数据项?', "警告", {
+      this.$confirm('是否确认导出所有教师级别数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

@@ -24,7 +24,7 @@
   height: 60rpx;
   line-height: 60rpx;
   position: absolute;
-  top: 0;
+  top: -8rpx;
   left: 0;
   width: 100%;
 }

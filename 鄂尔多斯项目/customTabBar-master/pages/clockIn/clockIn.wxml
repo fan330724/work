@@ -25,7 +25,7 @@
         <view class="round active"></view>
         <view class="span">{{list.gotoClockTime}}</view>
       </view>
-      <view class="list-clockIn" bindtap="bindClock" wx:if="{{list.remark == '上班打卡'}}">
+      <view class="list-clockIn" bindtap="bindClock" wx:if="{{list.remark == '上班打卡'}}" data-clock="{{list.remark}}">
         <view class="text">{{list.remark}}</view>
         <view class="list-date">{{time}}</view>
       </view>
@@ -40,7 +40,7 @@
         <view class="round {{list.afterClockDate&&list.afterClockDate != '' ? 'active' : ''}}"></view>
         <view class="span">{{list.afterClockTime}}</view>
       </view>
-      <view class="list-clockIn" bindtap="bindClock" wx:if="{{list.remark == '下班打卡'}}">
+      <view class="list-clockIn" bindtap="bindClock" wx:if="{{list.remark == '下班打卡'}}" data-clock="{{list.remark}}">
         <view class="text">{{list.remark}}</view>
         <view class="list-date">{{time}}</view>
       </view>
@@ -58,8 +58,8 @@
   <view class="modalDlg" wx:if="{{showModal}}">
     <view class="pop-title">打卡成功</view>
     <view class="pop-main">
-      <view class="pop-date">08:00</view>
-      <view class="pop-text">上班打卡成功</view>
+      <view class="pop-date">{{clock.time}}</view>
+      <view class="pop-text">{{clock.text}}</view>
     </view>
     <view class="pop-btn" catchtap="bindKnow">知道了</view>
   </view>

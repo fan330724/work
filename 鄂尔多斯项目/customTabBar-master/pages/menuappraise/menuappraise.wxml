@@ -83,7 +83,7 @@
 
         <view class="footer">
           <block wx:for="{{item.pic_url}}" wx:key="*this" wx:for-item="item1">
-            <image src="{{item1}}" bindtap="enlarge" data-list="{{item.pic_url}}" data-src="{{item1}}" mode="aspectFit">
+            <image src="{{item1}}" bindtap="enlarge" data-list="{{item.pic_url}}" data-src="{{item1}}" mode="aspectFit" wx:if="{{item1!= 'undefined'}}">
             </image>
           </block>
         </view>

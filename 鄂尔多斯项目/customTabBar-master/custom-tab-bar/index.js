@@ -72,6 +72,12 @@ Component({
           "text": "班级详情"
         },
         {
+          "pagePath": "/pages/tabbar/addressBook/index",
+          "iconPath": "/icon/address.png",
+          "selectedIconPath": "/icon/address.png",
+          "text": "通讯录"
+        },
+        {
           "pagePath": "/pages/tabbar/my/index",
           "iconPath": "/icon/my.png",
           "selectedIconPath": "/icon/my.png",

@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询教学科目列表
+// 查询教师级别列表
 export function listSubjects(query) {
   return request({
     url: '/intel/subjects/list',
@@ -9,7 +9,7 @@ export function listSubjects(query) {
   })
 }
 
-// 查询教学科目详细
+// 查询教师级别详细
 export function getSubjects(id) {
   return request({
     url: '/intel/subjects/' + id,
@@ -17,7 +17,7 @@ export function getSubjects(id) {
   })
 }
 
-// 新增教学科目
+// 新增教师级别
 export function addSubjects(data) {
   return request({
     url: '/intel/subjects',
@@ -26,7 +26,7 @@ export function addSubjects(data) {
   })
 }
 
-// 修改教学科目
+// 修改教师级别
 export function updateSubjects(data) {
   return request({
     url: '/intel/subjects',
@@ -35,7 +35,7 @@ export function updateSubjects(data) {
   })
 }
 
-// 删除教学科目
+// 删除教师级别
 export function delSubjects(id) {
   return request({
     url: '/intel/subjects/' + id,
@@ -43,7 +43,7 @@ export function delSubjects(id) {
   })
 }
 
-// 导出教学科目
+// 导出教师级别
 export function exportSubjects(query) {
   return request({
     url: '/intel/subjects/export',

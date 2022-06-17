@@ -5,5 +5,5 @@
     <view class="date">{{list.createTime}}</view>
   </view>
   <!-- <text>{{list.content}}</text> -->
-  <rich-text nodes="{{list.content}}"></rich-text>
+  <rich-text class="textIndent" nodes="{{list.content}}"></rich-text>
 </view>

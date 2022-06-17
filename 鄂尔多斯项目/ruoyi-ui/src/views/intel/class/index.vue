@@ -150,8 +150,8 @@
             clearable
             size="small"
             v-model="form.startTime"
-            value-format="yyyy-MM-dd"
-            type="date"
+            value-format="yyyy-MM-dd HH:mm:ss"
+            type="datetime"
             placeholder="选择开始时间"
           >
           </el-date-picker>
@@ -161,8 +161,8 @@
             clearable
             size="small"
             v-model="form.endTime"
-            value-format="yyyy-MM-dd"
-            type="date"
+            value-format="yyyy-MM-dd HH:mm:ss"
+            type="datetime"
             placeholder="选择结束时间"
           >
           </el-date-picker>
@@ -170,7 +170,7 @@
         <el-form-item
           label="职位名称"
           prop="position"
-          v-if="form.userlist.length > 0"
+          v-if="form.userlist && form.userlist.length > 0"
         >
           <el-input v-model="form.position" placeholder="请输入职位名称" />
         </el-form-item>
@@ -202,12 +202,13 @@
       >
         <i class="el-icon-upload"></i>
         <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-        <div
-          class="el-upload__tip"
-          slot="tip"
-          style="margin: 10px 0"
-        >
-          <el-form ref="uploadForm" :model="upload" :rules="rules" label-width="80px">
+        <div class="el-upload__tip" slot="tip" style="margin: 10px 0">
+          <el-form
+            ref="uploadForm"
+            :model="upload"
+            :rules="rules"
+            label-width="80px"
+          >
             <el-form-item label="班级名称" prop="value">
               <el-select v-model="upload.value" placeholder="请选择班级名称">
                 <el-option
@@ -248,7 +249,7 @@ import {
   addClass,
   updateClass,
   exportClass,
-  importTemplate
+  importTemplate,
 } from "@/api/intel/class";
 import { getToken } from "@/utils/auth";
 import { listEmployees } from "@/api/intel/employees";
@@ -297,7 +298,7 @@ export default {
       queryParams: {
         pageNum: 1,
         pageSize: 10,
-        type: '0',
+        type: "0",
         name: null,
       },
       // 表单参数
@@ -306,7 +307,7 @@ export default {
         position: null,
         endTime: null,
         startTime: null,
-        userlist: [],
+        userlist: null,
       },
       // 表单校验
       rules: {
@@ -324,7 +325,9 @@ export default {
         position: [
           { required: true, message: "请输入职位名称", trigger: "blur" },
         ],
-        value:[{required: true, message: "请选择班级名称", trigger: "change"}]
+        value: [
+          { required: true, message: "请选择班级名称", trigger: "change" },
+        ],
       },
     };
   },
@@ -343,7 +346,7 @@ export default {
     },
     /**查询班级名称列表 */
     getListClass() {
-      listClass({type:'0'}).then((res) => {
+      listClass({ type: "0" }).then((res) => {
         this.classOption = res.rows;
       });
     },
@@ -360,14 +363,23 @@ export default {
     // 表单重置
     reset() {
       this.form = {
+        count: null,
+        createBy: null,
+        createTime: null,
+        endTime: null,
         id: null,
         name: null,
+        params: null,
         pid: null,
-        usreId: null,
         position: null,
-        endTime: null,
+        remark: null,
+        searchValue: null,
         startTime: null,
-        userlist: [],
+        type: null,
+        updateBy: null,
+        updateTime: null,
+        userId: null,
+        userlist: null,
       };
       this.resetForm("form");
     },
@@ -443,7 +455,7 @@ export default {
         .catch(() => {});
     },
     //导入取消按钮
-    uploadCancel(){
+    uploadCancel() {
       this.upload.open = false;
       this.upload.value = null;
       this.$refs.upload.clearFiles();

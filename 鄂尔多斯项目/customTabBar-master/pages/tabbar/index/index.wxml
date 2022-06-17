@@ -5,8 +5,8 @@
   </view>
   <view class="swiperBox">
     <!-- 轮播图 -->
-    <view class="page-body">
-      <swiper catchtap="onSwiperTap" indicator-dots autoplay="autoplay" circular indicator-active-color="#FB5C3C" indicator-color="#FFBCAE" snap-to-edge>
+    <view class="page-body" style="padding-top: 54rpx;">
+      <swiper  indicator-dots autoplay="autoplay" circular indicator-active-color="#FB5C3C" indicator-color="#FFBCAE" snap-to-edge>
         <swiper-item wx:for="{{swiperTap}}" wx:key="index">
           <image src="{{item.image}}" data-id="{{item.id}}"></image>
         </swiper-item>
@@ -15,7 +15,7 @@
 
     <!--跑马灯-->
     <view class="marquee_container" style="--marqueeWidth--:-30em">
-      <view class="marquee_text">欢迎 {{name}} 来到鄂尔多斯少数民族文化交流中心</view>
+      <view class="marquee_text">欢迎 {{name}} 来到铸牢中华民族共同体意识干部教育中心</view>
     </view>
     <!--跑马灯-->
   </view>

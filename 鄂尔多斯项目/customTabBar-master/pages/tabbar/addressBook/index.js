@@ -9,8 +9,8 @@ Page({
    */
   data: {
     show: true,
-    active: 2,
-    list: [],
+    active: 3,
+    list: null,
     //适配IphoneX的屏幕底部横线
     isIphoneX: app.globalData.isIphoneX,
   },
@@ -27,8 +27,13 @@ Page({
   ifon() {
     if (getUserStart.getUserStart() == "student" || getUserStart.getUserStart() == "teacher") {
       this.request(wx.getStorageSync("userInfo").data.userId)
-    } else if (getUserStart.getUserStart() == "leader") {
-      this.request("")
+    } else if (getUserStart.getUserStart() == "leader" || getUserStart.getUserStart() == "staff") {
+      if (this.data.active == 3) {
+        this.request1()
+      } else {
+        this.request("")
+      }
+
     }
   },
   // 获取数据
@@ -43,6 +48,29 @@ Page({
         msg
       } = res.data;
       if (code == 200 && data.length > 0) {
+        this.setData({
+          show: false,
+          list: data
+        })
+      } else {
+        this.setData({
+          show: true,
+        })
+      }
+    })
+  },
+  request1() {
+    http.Phone().then(res => {
+      console.log(res);
+      let {
+        data,
+        code,
+        msg
+      } = res.data;
+      if (code == 200 && data.length > 0) {
+        data.map((item, index) => {
+          item['tel'] = item.phonenumber
+        })
         this.setData({
           show: false,
           list: data
@@ -70,6 +98,23 @@ Page({
     } = e.currentTarget.dataset
     this.setData({
       active: id,
+      list: null,
+    })
+    if (id == 3) {
+      this.request1()
+    } else {
+      this.request("")
+    }
+  },
+  onPhone(e) {
+    let {
+      phone
+    } = e.detail;
+    wx.makePhoneCall({
+      phoneNumber: phone,
+      success(res) {
+        console.log(res);
+      }
     })
   },
   /**

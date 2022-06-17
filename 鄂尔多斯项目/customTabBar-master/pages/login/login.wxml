@@ -15,13 +15,15 @@
       </view>
     </view>
     <view class="foot">
-      <checkbox-group bindchange="onchecked">
-        <checkbox value="true"></checkbox>
-      </checkbox-group>
-      <view class="text">
-        <text>阅读相关条例</text>
-        <text>《相关条例》</text>
-      </view>
+      <label for="">
+        <checkbox-group bindchange="onchecked">
+          <checkbox value="true"></checkbox>
+        </checkbox-group>
+        <view class="text">
+          <text>阅读相关条例</text>
+          <text>《相关条例》</text>
+        </view>
+      </label>
     </view>
 
     <view class="btn" bindtap="onsubmit">登录</view>

@@ -8,7 +8,7 @@ Page({
    */
   data: {
     time: "", //当前时间
-    list: "", 
+    list: "",
     showModal: false,
   },
 
@@ -16,12 +16,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow(){
+  onShow() {
     setInterval(() => {
       let time = utils.formathour(new Date());
       this.setData({
@@ -30,47 +30,59 @@ Page({
     }, 1000);
     this.request()
   },
-  request(){
+  request() {
     http.clockInUser({
       userId: wx.getStorageSync('userInfo').data.userId
     }).then(res => {
       console.log(res);
-      let {data,code,msg} = res.data;
-      if(code == 200){
+      let {
+        data,
+        code,
+        msg
+      } = res.data;
+      if (code == 200) {
         this.setData({
-          list:data
+          list: data
         })
-      }else{
+      } else {
         wx.showToast({
           title: msg,
           mask: true,
-          icon:"error"
+          icon: "error"
         })
       }
     })
   },
   //点击打卡
-  bindClock() {
+  bindClock(e) {
+    console.log(e);
+    let {
+      clock
+    } = e.currentTarget.dataset
     http.attendanceClockAdd({
       userId: wx.getStorageSync('userInfo').data.userId,
       time: this.data.time.substring(0,5)
     }).then(res => {
       this.request();
       this.setData({
-        showModal: true
+        showModal: true,
+        clock:{
+          time: this.data.time.substring(0,5),
+          text: clock + '成功'
+        }
       })
     })
   },
   //跳转打卡详情页面
-  bindClockDetail(){
+  bindClockDetail() {
     wx.navigateTo({
       url: '../clockDetail/clockDetail',
     })
   },
   //点击我知道了
-  bindKnow(){
+  bindKnow() {
     this.setData({
-      showModal:false
+      showModal: false
     })
     this.onShow()
   },

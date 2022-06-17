@@ -22,7 +22,7 @@ var listData = {
     },
     {
       image: "/images/zhusu1.png",
-      text: "住宿情况",
+      text: "后勤简介",
       url: "/pages/stay/stay"
     },
     {
@@ -63,7 +63,7 @@ var listData = {
     },
     {
       image: "/images/zhusu1.png",
-      text: "住宿情况",
+      text: "后勤简介",
       url: "/pages/stay/stay"
     },
 
@@ -81,7 +81,7 @@ var listData = {
 
     {
       image: "/images/zhusu1.png",
-      text: "住宿情况",
+      text: "后勤简介",
       url: "/pages/stay/stay"
     },
     {
@@ -116,7 +116,7 @@ var listData = {
     },
     {
       image: "/images/zhusu1.png",
-      text: "住宿情况",
+      text: "后勤简介",
       url: "/pages/stay/stay"
     },
     {

@@ -23,7 +23,7 @@ Page({
     } else if (options.type == '住宿') {
       this.request2(options.id)
     } else {
-      this.request(wx.getStorageSync('userInfo').data.userId,2)
+      this.request(2)
     }
     this.setData({
       userinfo: wx.getStorageSync('avatar')
@@ -33,9 +33,8 @@ Page({
     })
   },
 
-  request(userId,type) {
+  request(type) {
     http.getMinAppraiseList({
-      userId,
       type
     }).then(res => {
       console.log(res);

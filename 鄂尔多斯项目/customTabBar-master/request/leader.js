@@ -43,8 +43,8 @@ export default {
       data: {
         ...props
       },
-      header:{
-        "Content-Type":"application/x-www-form-urlencoded;charset=utf-8"
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
       },
       method: 'post',
     }).then(res => {
@@ -56,12 +56,12 @@ export default {
    */
   getRepairId(props) {
     return request({
-      url: url + "/api-min/leader/getRepairId" ,
+      url: url + "/api-min/leader/getRepairId",
       // data: {
       //   ...props
       // },
-      header:{
-        "Content-Type":"application/x-www-form-urlencoded;charset=utf-8"
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
       },
       method: 'post',
     }).then(res => {
@@ -77,8 +77,8 @@ export default {
       data: {
         ...props
       },
-      header:{
-        "Content-Type":"application/x-www-form-urlencoded;charset=utf-8"
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
       },
       method: 'post',
     }).then(res => {
@@ -108,8 +108,8 @@ export default {
       data: {
         ...props
       },
-      header:{
-        "Content-Type":"application/x-www-form-urlencoded;charset=utf-8"
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
       },
       method: 'post',
     }).then(res => {
@@ -125,8 +125,26 @@ export default {
       data: {
         ...props
       },
-      header:{
-        "Content-Type":"application/x-www-form-urlencoded;charset=utf-8"
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
+      },
+      method: 'post',
+    }).then(res => {
+      return res
+    })
+  },
+
+  /**
+   * 教学科研 现场教学点跟课程体系接口
+   */
+  getMessage(props) {
+    return request({
+      url: url + "/api-min/leader/getMessage",
+      data: {
+        ...props
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
       },
       method: 'post',
     }).then(res => {

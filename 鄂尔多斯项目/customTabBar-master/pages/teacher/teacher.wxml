@@ -13,7 +13,7 @@
     <view class="main">
       <view class="h3">教师介绍</view>
       <view class="text">
-        <rich-text nodes="{{date.Introduction || date.introduce}}"></rich-text>
+        <rich-text class="textIndent" nodes="{{date.Introduction || date.introduce}}"></rich-text>
       </view>
 
     </view>

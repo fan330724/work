@@ -334,7 +334,7 @@ export default {
         password: [
           { required: true, message: "请输入登录密码", trigger: "blur" },
         ],
-        avatar: [{ required: true, message: "请上传图片", trigger: "blur" }],
+        // avatar: [{ required: true, message: "请上传图片", trigger: "blur" }],
         type: [{ required: true, message: "请选择类型", trigger: "change" }],
       },
     };
@@ -419,7 +419,7 @@ export default {
         file.type === "image/jpeg" ||
         file.type === "image/jpg" ||
         file.type === "image/png";
-      const isLt2M = file.size / 1024 / 1024 < 2;
+      const isLt2M = file.size / 1024 / 1024 < 30;
 
       if (!isJPG) {
         this.$message.error("上传头像图片只能是 JPG JPEG PNG 格式!");

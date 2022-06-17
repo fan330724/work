@@ -65,5 +65,14 @@
 
 .mt{
   margin-top: 80rpx;
-  padding: 0 30rpx;
+  /* padding: 0 30rpx; */
+  padding-bottom: 30rpx;
+}
+
+
+.titlestyle{
+  background: none !important;
+}
+.msgstyle{
+  background: none !important;
 }

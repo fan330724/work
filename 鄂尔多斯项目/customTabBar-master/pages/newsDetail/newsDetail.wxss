@@ -8,3 +8,13 @@
 .mar-top:nth-of-type(1){
   margin: 0;
 }
+.none{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.none image{
+  width: 500rpx;
+  height: 540rpx;
+}

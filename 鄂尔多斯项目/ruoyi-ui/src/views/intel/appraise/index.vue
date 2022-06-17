@@ -33,7 +33,21 @@
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-
+      <el-form-item label="评价类型" prop="type">
+        <el-select
+          v-model="queryParams.type"
+          placeholder="请选择评价类型"
+          clearable
+          size="small"
+        >
+          <el-option
+            v-for="dict in typeOptions"
+            :key="dict.dictValue"
+            :label="dict.dictLabel"
+            :value="dict.dictValue"
+          />
+        </el-select>
+      </el-form-item>
       <el-form-item label="时间">
         <el-date-picker
           v-model="time"
@@ -84,17 +98,32 @@
     >
       <el-table-column type="selection" width="55" align="center" />
       <!-- <el-table-column label="id" align="center" prop="id" /> -->
-      <el-table-column label="课程名称" align="center" prop="courseName" />
-      <el-table-column label="老师名称" align="center" prop="teacherName" />
+      <!-- <el-table-column
+        label="课程名称"
+        align="center"
+        prop="courseName"
+        min-width="150"
+      >
+        <template slot-scope="scope">
+          <div class="webkit-box">{{ scope.row.courseName }}</div>
+        </template>
+      </el-table-column> -->
+      <!-- <el-table-column label="老师名称" align="center" prop="teacherName" /> -->
       <el-table-column label="评价人" align="center" prop="studentName" />
-      <el-table-column label="评分" align="center" width="240">
+      <el-table-column label="评分" align="center" min-width="180">
         <template slot-scope="scope">
           <div
             style="display: flex; align-items: center; justify-content: center"
           >
-            <span style="margin-right: 5px" v-if="scope.row.type == 1">教师评价</span>
-            <span style="margin-right: 5px" v-if="scope.row.type == 2">饭菜质量</span>
-            <span style="margin-right: 5px" v-if="scope.row.type == 3">住宿环境</span>
+            <span style="margin-right: 5px" v-if="scope.row.type == 1"
+              >教师评价</span
+            >
+            <span style="margin-right: 5px" v-if="scope.row.type == 2"
+              >饭菜质量</span
+            >
+            <span style="margin-right: 5px" v-if="scope.row.type == 3"
+              >住宿环境</span
+            >
             <el-rate
               v-model="scope.row.teacherScore"
               disabled
@@ -105,9 +134,15 @@
           <div
             style="display: flex; align-items: center; justify-content: center"
           >
-            <span style="margin-right: 5px" v-if="scope.row.type == 1">课程质量</span>
-            <span style="margin-right: 5px" v-if="scope.row.type == 2">饭菜卫生</span>
-            <span style="margin-right: 5px" v-if="scope.row.type == 3">住宿卫生</span>
+            <span style="margin-right: 5px" v-if="scope.row.type == 1"
+              >课程质量</span
+            >
+            <span style="margin-right: 5px" v-if="scope.row.type == 2"
+              >饭菜卫生</span
+            >
+            <span style="margin-right: 5px" v-if="scope.row.type == 3"
+              >住宿卫生</span
+            >
             <el-rate
               v-model="scope.row.restaurantScore"
               disabled
@@ -128,17 +163,33 @@
           </div>
         </template>
       </el-table-column>
-      <el-table-column label="评价内容" align="center" prop="content" />
+      <el-table-column
+        label="评价内容"
+        align="center"
+        prop="content"
+        min-width="120"
+      >
+        <template slot-scope="scope">
+          <div class="webkit-box">{{ scope.row.content }}</div>
+        </template>
+      </el-table-column>
+      <el-table-column
+        label="评价类型"
+        align="center"
+        prop="type"
+        :formatter="typeFormat"
+      />
       <el-table-column
         label="评价时间"
         align="center"
         prop="createTime"
-        width="130"
+        min-width="100"
       />
       <el-table-column
         label="操作"
         align="center"
         class-name="small-padding fixed-width"
+        min-width="100"
       >
         <template slot-scope="scope">
           <el-button
@@ -207,6 +258,8 @@ export default {
       total: 0,
       // 评价表格数据
       appraiseList: [],
+      //评价类型(1教师评价 2就餐评价3 住宿评价)
+      typeOptions: [],
       // 弹出层标题
       title: "",
       // 是否显示弹出层
@@ -227,6 +280,9 @@ export default {
   },
   created() {
     this.getList();
+    this.getDicts("appraise_status").then((response) => {
+      this.typeOptions = response.data;
+    });
   },
   methods: {
     /** 查询评价列表 */
@@ -237,6 +293,9 @@ export default {
         this.total = response.total;
         this.loading = false;
       });
+    },
+    typeFormat(row, column) {
+      return this.selectDictLabel(this.typeOptions, row.type);
     },
     /** 搜索按钮操作 */
     handleQuery() {

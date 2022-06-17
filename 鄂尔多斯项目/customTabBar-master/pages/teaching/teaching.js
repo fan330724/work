@@ -8,6 +8,7 @@ Page({
   data: {
     show: true, //是否有数据
     list: [],
+    active: 1,
   },
 
   /**
@@ -36,6 +37,40 @@ Page({
     wx.navigateTo({
       url: `/pages/teacher/teacher?id=${e.currentTarget.dataset.id}`,
     })
+  },
+
+  request(name) {
+    leader.getMessage({
+      name
+    }).then(res => {
+      let list = res.data.rows;
+      if (res.data.code == 200 && list.length > 0) {
+        this.setData({
+          list,
+          show: false
+        })
+      } else {
+        this.setData({
+          show: true
+        })
+      }
+    })
+  },
+  //顶部切换
+  tab(e) {
+    var {
+      id,
+      name
+    } = e.currentTarget.dataset
+    this.setData({
+      active: id,
+      list: null,
+    })
+    if (id != 1) {
+      this.request(name)
+    }else{
+      this.teacherlist()
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

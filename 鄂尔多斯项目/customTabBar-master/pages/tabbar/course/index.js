@@ -39,7 +39,7 @@ Page({
   //什么端判断函数
   ifon(tabbar) {
     if (getUserStart.getUserStart() == "student") {
-      this.request(tabbar)
+      this.request(tabbar) 
     } else if (getUserStart.getUserStart() == "teacher") {
       this.request1(tabbar)
     }

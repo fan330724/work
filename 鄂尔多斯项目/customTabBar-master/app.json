@@ -22,7 +22,6 @@
     "pages/appraiseDetail/appraiseDetail",
     "pages/playback/playback",
     "pages/menu/menu",
-    "pages/menuappraise/menuappraise",
     "pages/menudetail/menudetail",
     "pages/stopat/stopat",
     "pages/historyclass/historyclass",
@@ -37,7 +36,8 @@
     "pages/workdetail/workdetail",
     "pages/stay/stay",
     "pages/home/index",
-    "pages/information/information"
+    "pages/information/information",
+    "pages/menuappraise/menuappraise"
   ],
   "tabBar": {
     "custom": true,

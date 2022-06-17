@@ -465,14 +465,14 @@ export default {
           trigger: "blur",
         },
         adress: { required: true, message: "请输入上课地址", trigger: "blur" },
-        introduction: {
-          required: true,
-          message: "请输入培训目的",
-          trigger: "blur",
-        },
-        course_avatar: [
-          { required: true, message: "请上传图片", trigger: "blur" },
-        ],
+        // introduction: {
+        //   required: true,
+        //   message: "请输入培训目的",
+        //   trigger: "blur",
+        // },
+        // course_avatar: [
+        //   { required: true, message: "请上传图片", trigger: "blur" },
+        // ],
       },
     };
   },
@@ -550,7 +550,7 @@ export default {
         file.type === "image/jpeg" ||
         file.type === "image/jpg" ||
         file.type === "image/png";
-      const isLt2M = file.size / 1024 / 1024 < 2;
+      const isLt2M = file.size / 1024 / 1024 < 30;
 
       if (!isJPG) {
         this.$message.error("上传头像图片只能是 JPG JPEG PNG 格式!");

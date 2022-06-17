@@ -20,9 +20,9 @@ Page({
       classId:options.id
     })
   },
-  request(userId,classId){
+  request(sysUserId,classId){
     http.queryStayList({
-      userId,
+      sysUserId,
       classId
     }).then(res => {
       console.log(res);
@@ -59,7 +59,6 @@ Page({
     }else{
       this.request(wx.getStorageSync('userInfo').data.userId)
     }
-    
   },
 
   /**

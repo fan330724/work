@@ -1,12 +1,51 @@
 <!--pages/teaching/teaching.wxml-->
 <view class="box">
-  <view class="leader" wx:for="{{list}}" wx:key="id" bindtap="toteacher" data-id="{{item.id}}">
-    <view class="leader-img">
-      <image src="{{item.avatar}}"></image>
+  <!-- tab切换页 -->
+  <view class="tab">
+    <view class="{{active == 1?'active':''}}" data-id="1" bindtap="tab">名师风采
+      <view class="cur" wx:if="{{active == 1}}"></view>
     </view>
-    <view class="leader-content">
-      <view class="leader-title">{{item.name}}</view>
-      <view class="leader-subject" wx:if="{{item.subjectName}}">{{item.subjectName}}</view>
+    <view class="{{active == 2?'active':''}}" data-id="2" bindtap="tab" data-name="现场教学点">现场教学点
+      <view class="cur" wx:if="{{active == 2}}"></view>
     </view>
+    <view class="{{active == 3?'active':''}}" data-id="3" bindtap="tab" data-name="课程体系">课程体系
+      <view class="cur" wx:if="{{active == 3}}"></view>
+    </view>
+  </view>
+  <!-- 内容页 -->
+  <view class="mt">
+    <view class="none" wx:if="{{show}}">
+      <image src="/images/noneDate.png"></image>
+    </view>
+    <block wx:else>
+      <view style='padding-bottom:{{isIphoneX?166:120}}rpx;'>
+        <block wx:if="{{active == 1}}">
+          <view class="leader" wx:for="{{list}}" wx:key="id" bindtap="toteacher" data-id="{{item.id}}">
+            <view class="leader-img">
+              <image src="{{item.avatar}}" mode="widthFix"></image>
+            </view>
+            <view class="leader-content">
+              <view class="leader-title">{{item.name}}</view>
+              <view class="leader-subject" wx:if="{{item.subjectName}}">{{item.subjectName}}</view>
+              <rich-text class="textIndent" nodes="{{item.Introduction || item.introduce}}"></rich-text>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{active == 2}}">
+          <view style="padding: 0 30rpx;">
+            <block wx:for="{{list}}" wx:key="*this">
+              <infolist list="{{item}}"></infolist>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{active == 3}}">
+          <view style="padding: 0 30rpx;">
+            <block wx:for="{{list}}" wx:key="*this">
+              <infolist list="{{item}}"></infolist>
+            </block>
+          </view>
+        </block>
+      </view>
+    </block>
   </view>
 </view>

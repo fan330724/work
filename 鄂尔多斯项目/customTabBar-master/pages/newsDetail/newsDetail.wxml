@@ -1,6 +1,11 @@
 <!--page/student/pages/newsDetail/newsDetail.wxml-->
 <view class="box">
-  <view wx:for="{{list}}" wx:key="*this" class="mar-top">
-    <newsDetail list="{{item}}"></newsDetail>
+  <view class="none" wx:if="{{show}}">
+    <image src="/images/noneDate.png"></image>
   </view>
+  <block wx:else>
+    <view wx:for="{{list}}" wx:key="*this" class="mar-top">
+      <newsDetail list="{{item}}"></newsDetail>
+    </view>
+  </block>
 </view>

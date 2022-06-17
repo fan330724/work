@@ -1,13 +1,16 @@
 // page/student/pages/newsDetail/newsDetail.js
 import http from '../../request/http'
-import {formatRichText} from "../../utils/rictTextFormatRich"
+import {
+  formatRichText
+} from "../../utils/rictTextFormatRich"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: []
+    list: [],
+    show: true,
   },
 
   /**
@@ -29,21 +32,30 @@ Page({
       userId: wx.getStorageSync('userInfo').data.userId
     }).then(res => {
       let {
-        data
+        data,
+        code,
+        msg
       } = res.data;
-      console.log(data);
-      var arr = [];
-      data.map((item, index) => {
-        arr.push({
-          content: formatRichText(item.content),
-          createTime: item.createTime.substring(0, 10),
-          title: item.title
-        })
+      if (code == 200 && data.length > 0) {
+        var arr = [];
+        data.map((item, index) => {
+          arr.push({
+            content: formatRichText(item.content),
+            createTime: item.createTime.substring(0, 10),
+            title: item.title
+          })
 
-      })
-      this.setData({
-        list: arr
-      })
+        })
+        this.setData({
+          list: arr,
+          show: false
+        })
+      } else {
+        this.setData({
+          show: true
+        })
+      }
+
     })
   },
   /**

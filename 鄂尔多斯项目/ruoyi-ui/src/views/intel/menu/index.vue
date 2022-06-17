@@ -7,20 +7,20 @@
       v-show="showSearch"
       label-width="68px"
     >
-      <el-form-item label="菜单名称" prop="name">
+      <el-form-item label="菜品" prop="name">
         <el-input
           v-model="queryParams.name"
-          placeholder="请输入菜单名称"
+          placeholder="请输入菜品"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="菜单日期" prop="createTime">
+      <el-form-item label="菜单日期" prop="menuTime">
         <el-date-picker
           clearable
           size="small"
-          v-model="queryParams.createTime"
+          v-model="queryParams.menuTime"
           type="date"
           value-format="yyyy-MM-dd"
           placeholder="选择菜单日期"
@@ -116,8 +116,8 @@
       @selection-change="handleSelectionChange"
     >
       <el-table-column type="selection" width="55" align="center" />
-      <el-table-column label="id" align="center" prop="id" />
-      <el-table-column label="菜单名称" align="center" prop="name" />
+      <!-- <el-table-column label="id" align="center" prop="id" /> -->
+      <el-table-column label="菜品" align="center" prop="name" />
       <el-table-column
         label="菜单类型"
         align="center"
@@ -254,7 +254,7 @@ export default {
         pageNum: 1,
         pageSize: 10,
         name: null,
-        createTime: null,
+        menuTime: null,
         status: null,
       },
       // 表单参数

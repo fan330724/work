@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "BmsDirectory": "plugin://BmsDirectory/BmsDirectory"
+  }
 }

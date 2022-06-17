@@ -15,10 +15,10 @@
           </view>
         </view>
       </view>
-      <view class="right">
+      <!-- <view class="right">
         <image src="/images/my-set.png" class="myset"></image>
         <image src="/images/my-new.png" class="mynew"></image>
-      </view>
+      </view> -->
     </block>
   </view>
   <view class="header" wx:else>

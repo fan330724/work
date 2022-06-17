@@ -34,7 +34,7 @@
   <view class="bottom">
     <view class="h3">课程介绍</view>
     <view class="content">
-      <rich-text nodes="{{list.introduce}}"></rich-text>
+      <rich-text class="textIndent" nodes="{{list.introduce}}"></rich-text>
     </view>
   </view>
 

@@ -1,5 +1,7 @@
 /* pages/menu/menu.wxss */
-.box {}
+.box {
+  padding-bottom: 30rpx;
+}
 
 .tab {
   display: flex;
@@ -58,14 +60,13 @@
 .main-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
 }
 
 .main-list {
   border: 1px solid #F6B9B9;
   width: 48%;
-  height: 80rpx;
+  height: max-content;
   text-align: center;
   line-height: 80rpx;
   color: #6D7275;

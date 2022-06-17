@@ -13,9 +13,18 @@ Component({
    */
   data: {
     leaveType: [{
-      id: 0,
-      name: "事假"
-    }], //请假类型列表
+        id: 0,
+        name: "事假"
+      },
+      {
+        id: 1,
+        name: "病假"
+      },
+      {
+        id: 2,
+        name: "外出"
+      }
+    ], //请假类型列表
     startChange: "", //请假类型
     dateChange: "", //开始时间
     endDateChange: "", //结束时间
