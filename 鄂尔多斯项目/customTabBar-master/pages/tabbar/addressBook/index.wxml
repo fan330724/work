@@ -16,7 +16,7 @@
 <view class="box" wx:else>
   <!-- tab切换页 -->
   <view class="tab">
-    <view class="{{active == 3?'active':''}}" data-id="3" bindtap="tab">单位职务
+    <view class="{{active == 3?'active':''}}" data-id="3" bindtap="tab">部门
       <view class="cur" wx:if="{{active == 3}}"></view>
     </view>
     <view class="{{active == 2?'active':''}}" data-id="2" bindtap="tab">班级

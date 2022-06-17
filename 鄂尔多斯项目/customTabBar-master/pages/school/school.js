@@ -1,13 +1,15 @@
 // pages/school/school.js
 import http from "../../request/http"
-import {formatRichText} from "../../utils/rictTextFormatRich"
+import {
+  formatRichText
+} from "../../utils/rictTextFormatRich"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list:"",
+    list: "",
   },
 
   /**
@@ -16,16 +18,20 @@ Page({
   onLoad: function (options) {
     this.request()
   },
-  request(){
+  request() {
     http.getMinMessageList({
       messageType: 6,
     }).then(res => {
       console.log(res);
-      let {data,msg,code} = res.data
+      let {
+        data,
+        msg,
+        code
+      } = res.data
       if (code == 200) {
         data[0].content = formatRichText(data[0].content)
         this.setData({
-          list:data[0]
+          list: data[0]
         })
       }
     })
@@ -34,9 +40,19 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.videoContext = wx.createVideoContext('myVideo')
   },
-
+  // 监听播放到末尾时触发
+  bindended() {
+    this.setData({
+      isShow: true
+    })
+    this.videoContext.stop();
+  },
+  // 监听暂停播放时触发
+  bindpause() {
+    console.log('pause')
+  },
   /**
    * 生命周期函数--监听页面显示
    */
